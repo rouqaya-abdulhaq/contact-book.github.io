@@ -1,0 +1,24 @@
+{
+  "name": "contact-book",
+  "version": "1.0.0",
+  "description": "stores your family, friends and colleagues information",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rouqaya-abdulhaq/contact-book.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rouqaya-abdulhaq/contact-book/issues"
+  },
+  "homepage": "https://github.com/rouqaya-abdulhaq/contact-book#readme",
+  "devDependencies": {
+    "webpack": "^4.29.3",
+    "webpack-cli": "^3.2.3"
+  }
+}
