@@ -1,7 +1,7 @@
-import Styling from "styling.js";
-import Information from "information.js";
+import Styling from "./styling.js";
+import Information from "./information.js";
 
-const Card = class {
+export class Card {
     /* maybe i should create a different class for handling information that is passed to the 
     card*/
     createCard(){
@@ -18,4 +18,3 @@ const Card = class {
 
 } 
 
-export default Card;

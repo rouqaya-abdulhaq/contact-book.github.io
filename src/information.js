@@ -1,4 +1,4 @@
-const Information = class {
+export class Information  {
     constructor(firstName, lastName, age, address, mobileNumber, email){
         this.firstName = firstName;
         this.lastName = lastName;
@@ -10,4 +10,4 @@ const Information = class {
 
 }
 
-export default Information;
+

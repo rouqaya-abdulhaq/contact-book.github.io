@@ -1,1 +1,1 @@
-import Card from "card.js";
+import Card from "./card.js";

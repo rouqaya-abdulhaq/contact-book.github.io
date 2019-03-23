@@ -5,7 +5,21 @@ module.exports = {
     output:{
         path: path.resolve(__dirname,"dist"),
         filename: "bundle.js",
-        publicPath: "/"
+        publicPath: "/dist"
     },
-    mode: 'development'
+    mode: 'development',
+    module: {
+        rules : [
+            {
+                test: /\.m?.js$/,
+                exclude: /(node_modules|browser_components)/,
+                use:{
+                    loader: 'babel-loader', 
+                    options:{
+                        presets: ['@babel-preset-env']
+                    }
+                }
+            }
+        ]
+    }
 }
