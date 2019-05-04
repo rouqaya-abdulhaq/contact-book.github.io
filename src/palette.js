@@ -1,4 +1,4 @@
-export class Styling{
+export class Palette{
     /*my ideas for now is to make a style button in the card that pops up a palette of
     some sort that allows the user to choose different styles. so i need to figure
     that out also need to make the code extendable so i can add more styles in the future */

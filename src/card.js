@@ -1,4 +1,4 @@
-import Styling from "./styling.js";
+import Palette from "./palette";
 import Information from "./information.js";
 
 export class Card {
