@@ -151,3 +151,9 @@ header{
     color:#74B43C;
     border-color:#74B43C;
   }
+
+  footer{
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: 40vw;
+    margin-top: 25vh;
+}

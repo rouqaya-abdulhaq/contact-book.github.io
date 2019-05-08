@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>sign up</title>
+	<link rel="stylesheet" type="text/css" href="signUp.css">
+</head>
+<body>
+
+	<header>
+		<div id="logo">
+			<div class="straps"></div>
+			<div class="straps"></div>
+			<div class="straps"></div>
+		    <!-- <div id="icon">
+				<div class="person-icon"></div>
+			</div> -->
+		</div>
+
+		<nav id="navigation">
+				<button id="signIn" class="navButton">Sign Up</button>
+			  <button id="logIn" class="navButton">Log In</button>
+		</nav>
+	</header>
+
+	<main>
+		<form id="signUpForm">
+			<div class="field-wrap">
+				<label for="firstName">
+					First Name :<span class="req">*</span>
+				 </label>
+				<input type="text" title="firstName" name="firstName" required="on">
+			</div>
+			
+			<div class="field-wrap">
+				<label>
+					Last Name :<span class="req">*</span>
+				</label>
+				<input type="text" name="lastName" required="on">
+			</div>
+			
+			<div class="field-wrap">
+				<label>
+					Email Adress :<span class="req">*</span>
+				</label>
+				<input type="email" name="emailAdress" required="on">
+			</div>
+			
+			<div class="field-wrap">
+				<label>
+				     Password :<span class="req">*</span>
+				</label>
+				<input type="password"required autocomplete="off"/>
+			</div>
+					  
+			<button type="submit" id="submitButton">sign up</button>
+		</form>
+	</main>
+
+	<footer>designed by rouqaya abdulhaq</footer>
+</body>
+</html>
