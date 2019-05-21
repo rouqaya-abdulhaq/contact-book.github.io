@@ -3,7 +3,8 @@
   #main{
      width: 40vw;
      height: 25vh;
-     margin: 14% auto;
+     margin-top: 20vh;
+     margin-left: 30vw;
      padding: 2%;
      position: relative;
      background: lightgrey;
