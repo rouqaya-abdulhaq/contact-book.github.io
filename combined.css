@@ -1,4 +1,6 @@
 *, ::before*, ::after* {box-sizing: border-box}
+/*use a grid system and align items with flex for a better layout 
+this is just for the basic design*/
 
 html ,body{
   padding: 0;
@@ -92,8 +94,8 @@ header{
 
     footer{
         font-family: 'Times New Roman', Times, serif;
-        margin-left: 40vw;
-        margin-top: 25vh;
+        margin-left: 38vw;
+        margin-top: 15vh;
     }
 
     #submitButton{
@@ -102,4 +104,9 @@ header{
       color: #f9f9f9;
       background: #74B43C;
       margin: 3%;
+  }
+  #palette{
+    width: 6vw;
+    height: 6vh;
+    margin-left: 2vw;
   }
