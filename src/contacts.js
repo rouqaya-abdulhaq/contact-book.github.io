@@ -3,12 +3,12 @@ import Information from "./information.js";
 
 const addButton = document.querySelector("#addButton");
 const contactList = document.querySelector("#contactsList");
+//is the class approach really needed or just setting things back 
 export class Contact {
-    //need a way to access the methods
     createContact(){
         let contact = document.createElement("div");
         contact.setAttribute("class", "card");
-        contact.innerText("hello");
+        contact.innerText = 'rouqaya abdulhaq';
         contactList.appendChild(contact);
     }
     submiteInformation(information){
@@ -16,4 +16,6 @@ export class Contact {
     }
 } 
 
-addButton.addEventListener("click",()=>console.log("clicked"));
+const test = new Contact;
+
+addButton.addEventListener("click",test.createContact);
