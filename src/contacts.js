@@ -1,21 +1,25 @@
-import Palette from "./palette";
-import Information from "./information.js";
-
-const addButton = document.querySelector("#addButton");
-const contactList = document.querySelector("#contactsList");
 //is the class approach really needed or just setting things back 
-export class Contact {
-    createContact(){
+const contactList = document.querySelector("#contactsList");
+
+ class Contact {
+     //this method should display the add form and not submit the actual contact
+    createContact(info){
         let contact = document.createElement("div");
         contact.setAttribute("class", "card");
-        contact.innerText = 'rouqaya abdulhaq';
+        contact.innerText = info;
         contactList.appendChild(contact);
     }
+    //submit the form to the data storage and have a different method that displays 
+    //the contact to the contact list
     submiteInformation(information){
+        //
+    }
+    editContact(editedinfo){
+        //
+    }
+    deleteContact(){
         //
     }
 } 
 
-const test = new Contact;
-
-addButton.addEventListener("click",test.createContact);
+export default Contact;

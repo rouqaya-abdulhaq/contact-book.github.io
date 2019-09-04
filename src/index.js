@@ -1,4 +1,5 @@
 import Contact from "./contacts";
+//Needs serious renaming
 /*synopsis:
    1- the user should sign up or log in and then be directed to the contact list
     where he can add , edit and delete contacts.
@@ -15,3 +16,9 @@ import Contact from "./contacts";
     5-if the delete button is pressed the user will be warned if he is sure about the delete
     
     6-the color palette should be able to change the page's style at any point of the programm*/
+
+const addButton = document.querySelector("#addButton");
+
+const contact = new Contact;
+
+addButton.addEventListener("click",()=>contact.createContact("rouqaya"));
