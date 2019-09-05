@@ -8,6 +8,18 @@ export class Information  {
         this.email = email;
     }
 
+    createContactForm (){
+        
+    }
+
+    handlesignInForm (){
+        
+    }
+
+    handlesignUpForm (){
+        
+    }
+
 }
 
 
