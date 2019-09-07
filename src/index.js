@@ -1,4 +1,5 @@
 import Contact from "./contacts";
+import Information from "./information";
 //Needs serious renaming
 /*synopsis:
    1- the user should sign up or log in and then be directed to the contact list
@@ -47,6 +48,10 @@ const onPalette = () =>{
 const changePageStyle = () => {
     //
 }
+
+const info = new Information;
+
+info.createContactForm();
 
 const addButton = document.querySelector("#addButton");
 
