@@ -1,5 +1,5 @@
 import Contact from "./contacts";
-import Information from "./information";
+import formHandler from "./formHandler";
 //Needs serious renaming
 /*synopsis:
    1- the user should sign up or log in and then be directed to the contact list
@@ -22,7 +22,7 @@ const addButton = document.querySelector("#addButton");
 const contact = new Contact;
 
 
-const info = new Information;
+const formHandle = new formHandler;
 
 const onSignIn = () =>{
     //
@@ -34,7 +34,7 @@ const onSignUp = () =>{
 
 const diasplayForm = () => {
     //display form to add or edit contact
-    const form = info.createContactForm();
+    const form = formHandle.createContactForm();
     contactMain.appendChild(form);
 }
 

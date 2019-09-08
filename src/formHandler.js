@@ -1,6 +1,6 @@
-import {createInput , createBtn} from './form';
+import {createInput , createBtn} from './formDynamics';
 
- class Information  {
+ class formHandler  {
     constructor(firstName, lastName, age, address, mobileNumber, email){
         this.firstName = firstName;
         this.lastName = lastName;
@@ -32,4 +32,4 @@ import {createInput , createBtn} from './form';
 
 }
 
-export default Information;
+export default formHandler;
