@@ -10,9 +10,11 @@ export const createInput = (labelValue) => {
     return wrapper;
 }
 
-export const createBtn = (value) => {
-    const btn = document.createElement("button");
-    btn.innerText = value;
+export const createBtn = (value,func) => {
+    const btn = document.createElement("input");
+    btn.setAttribute("type" , "button");
+    btn.value = value;
+    btn.addEventListener("click",func);
     return btn;
 }
 

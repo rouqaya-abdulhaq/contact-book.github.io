@@ -16,7 +16,7 @@ import {createInput , createBtn} from './form';
         const lastNameInput = createInput("last name : "); 
         const emailInput = createInput("email : "); 
         const phoneNumberInput = createInput("phone number : ");
-        const submitBtn = createBtn("submit");
+        const submitBtn = createBtn("submit",()=>console.log("submit"));
         form.append(firstNameInput,lastNameInput,emailInput,phoneNumberInput,submitBtn);
         return form; 
     }
