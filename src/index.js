@@ -17,6 +17,11 @@ import Information from "./information";
     5-if the delete button is pressed the user will be warned if he is sure about the delete
         6-the color palette should be able to change the page's style at any point of the programm*/
 const contactMain = document.querySelector("#contactMain");
+const addButton = document.querySelector("#addButton");
+
+const contact = new Contact;
+
+
 const info = new Information;
 
 const onSignIn = () =>{
@@ -53,10 +58,5 @@ const changePageStyle = () => {
     //
 }
 
-
-
-const addButton = document.querySelector("#addButton");
-
-const contact = new Contact;
 
 addButton.addEventListener("click",diasplayForm);

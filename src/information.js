@@ -1,4 +1,4 @@
-import {createInput} from './form';
+import {createInput , createBtn} from './form';
 
  class Information  {
     constructor(firstName, lastName, age, address, mobileNumber, email){
@@ -16,7 +16,8 @@ import {createInput} from './form';
         const lastNameInput = createInput("last name : "); 
         const emailInput = createInput("email : "); 
         const phoneNumberInput = createInput("phone number : ");
-        form.append(firstNameInput,lastNameInput,emailInput,phoneNumberInput);
+        const submitBtn = createBtn("submit");
+        form.append(firstNameInput,lastNameInput,emailInput,phoneNumberInput,submitBtn);
         return form; 
     }
 

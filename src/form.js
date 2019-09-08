@@ -10,6 +10,12 @@ export const createInput = (labelValue) => {
     return wrapper;
 }
 
+export const createBtn = (value) => {
+    const btn = document.createElement("button");
+    btn.innerText = value;
+    return btn;
+}
+
 const createInputBox = (className) => {
     const inputBox = document.createElement("input");
     inputBox.setAttribute("class" , className);
