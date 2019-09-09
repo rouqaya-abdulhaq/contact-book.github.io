@@ -10,13 +10,13 @@ import {createInput , createBtn} from './formDynamics';
         this.email = email;
     }
 
-    createContactForm (){
+    createContactForm (onSubmit){
         const form = document.createElement("form");
         const firstNameInput = createInput("first name : "); 
         const lastNameInput = createInput("last name : "); 
         const emailInput = createInput("email : "); 
         const phoneNumberInput = createInput("phone number : ");
-        const submitBtn = createBtn("submit",()=>console.log("submit"));
+        const submitBtn = createBtn("submit",onSubmit);
         form.append(firstNameInput,lastNameInput,emailInput,phoneNumberInput,submitBtn);
         return form; 
     }

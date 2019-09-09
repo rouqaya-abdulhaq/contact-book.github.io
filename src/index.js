@@ -34,12 +34,18 @@ const onSignUp = () =>{
 
 const diasplayForm = () => {
     //display form to add or edit contact
-    const form = formHandle.createContactForm();
+    const form = formHandle.createContactForm(onSubmit);
     contactMain.appendChild(form);
+}
+
+const removeForm = () =>{
+    const form = document.querySelector("form");
+    contactMain.removeChild(form);
 }
 
 const onSubmit = () => {
     //submit contact or user or edit
+    removeForm();
 }
 
 const onEdit = ( ) => {
