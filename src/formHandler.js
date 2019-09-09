@@ -1,6 +1,7 @@
 import {createInput , createBtn} from './formDynamics';
 
  class formHandler  {
+     //may delete constructor in the future
     constructor(firstName, lastName, age, address, phoneNumber, email){
         this.firstName = firstName;
         this.lastName = lastName;

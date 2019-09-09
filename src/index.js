@@ -45,14 +45,17 @@ const removeForm = () =>{
 
 const onSubmit = () => {
     //submit contact or user or edit
+    //method is too long needs to be broken down
     const firstName = document.querySelector("#firstName").value;
     const lastName = document.querySelector("#lastName").value;
     const email = document.querySelector("#email").value;
     const phoneNumber = document.querySelector("#phoneNumber").value;
+    //are these really needed??
     formHandle.firstName = firstName;
     formHandle.lastName = lastName;
     formHandle.email = email;
     formHandle.phoneNumber = phoneNumber;
+    contact.createContact(firstName + " " + lastName);
     removeForm();
 }
 
