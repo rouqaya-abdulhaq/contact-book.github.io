@@ -1,9 +1,9 @@
 //the class names are hard coded for the time being i'll see if that works in the future
 
 
-export const createInput = (labelValue) => {
+export const createInput = (labelValue, id) => {
     const wrapper = document.createElement("div");
-    const inputBox = createInputBox("inputBox");
+    const inputBox = createInputBox(id);
     const label = createLabel("label", labelValue);
     wrapper.appendChild(label);
     wrapper.appendChild(inputBox);
@@ -18,10 +18,14 @@ export const createBtn = (value,func) => {
     return btn;
 }
 
-const createInputBox = (className) => {
+const createInputBox = (id) => {
     const inputBox = document.createElement("input");
-    inputBox.setAttribute("class" , className);
+    inputBox.setAttribute("id" , id);
     return inputBox;
+}
+
+const addEventToInput = (input) =>{
+    input.addEventListener("change")
 }
 
 const createLabel = (className, value) => {

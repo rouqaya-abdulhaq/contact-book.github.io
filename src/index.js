@@ -45,6 +45,14 @@ const removeForm = () =>{
 
 const onSubmit = () => {
     //submit contact or user or edit
+    const firstName = document.querySelector("#firstName").value;
+    const lastName = document.querySelector("#lastName").value;
+    const email = document.querySelector("#email").value;
+    const phoneNumber = document.querySelector("#phoneNumber").value;
+    formHandle.firstName = firstName;
+    formHandle.lastName = lastName;
+    formHandle.email = email;
+    formHandle.phoneNumber = phoneNumber;
     removeForm();
 }
 
@@ -63,6 +71,5 @@ const onPalette = () =>{
 const changePageStyle = () => {
     //
 }
-
 
 addButton.addEventListener("click",diasplayForm);
