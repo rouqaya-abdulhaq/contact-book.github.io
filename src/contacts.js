@@ -3,20 +3,23 @@ const contactList = document.querySelector("#contactsList");
 
  class Contact {
      //this method should display the add form and not submit the actual contact
-    createContact(info){
+    createContact(info,onEdit){
         let contact = document.createElement("div");
         contact.setAttribute("class", "card");
         contact.innerText = info;
         contactList.appendChild(contact);
-        contactList.appendChild(this.createEditBtn());
+        contactList.appendChild(this.createEditBtn(onEdit));
         contactList.appendChild(this.createDeleteBtn());
     }
-    createEditBtn(){
+
+    createEditBtn(onEdit){
         let editImg = document.createElement("IMG");
         editImg.setAttribute("src","src/icon.png");
         editImg.setAttribute("alt","edit icon");
+        editImg.addEventListener("click",onEdit)
         return editImg; 
     }
+
     createDeleteBtn(){
         let deleteBtn = document.createElement("span");
         deleteBtn.innerText = " x ";

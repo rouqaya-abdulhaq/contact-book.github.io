@@ -55,12 +55,12 @@ const onSubmit = () => {
     formHandle.lastName = lastName;
     formHandle.email = email;
     formHandle.phoneNumber = phoneNumber;
-    contact.createContact(firstName + " " + lastName);
+    contact.createContact(firstName + " " + lastName,onEdit);
     removeForm();
 }
 
 const onEdit = ( ) => {
-    //
+    diasplayForm();
 }
 
 const onDelete = () =>{
