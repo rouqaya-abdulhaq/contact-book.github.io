@@ -34,7 +34,7 @@ const onSignUp = () =>{
 
 const diasplayForm = () => {
     //display form to add or edit contact
-    const form = formHandle.createContactForm(onSubmit);
+    const form = formHandle.createContactForm(onSubmit,removeForm);
     contactMain.appendChild(form);
 }
 
