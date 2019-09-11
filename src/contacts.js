@@ -1,15 +1,21 @@
 //is the class approach really needed or just setting things back 
 const contactList = document.querySelector("#contactsList");
 
+const deleteContact = (contact)=>{ 
+        contactList.removeChild(contact);
+    }
+//class approach ??!!!
  class Contact {
      //this method should display the add form and not submit the actual contact
     createContact(info,onEdit){
+        let contContainer = document.createElement("div");
         let contact = document.createElement("div");
         contact.setAttribute("class", "card");
         contact.innerText = info;
-        contactList.appendChild(contact);
-        contactList.appendChild(this.createEditBtn(onEdit));
-        contactList.appendChild(this.createDeleteBtn());
+        contContainer.appendChild(contact);
+        contContainer.appendChild(this.createEditBtn(onEdit));
+        contContainer.appendChild(this.createDeleteBtn(()=>deleteContact(contContainer)));
+        contactList.appendChild(contContainer);
     }
 
     createEditBtn(onEdit){
@@ -20,11 +26,17 @@ const contactList = document.querySelector("#contactsList");
         return editImg; 
     }
 
-    createDeleteBtn(){
-        let deleteBtn = document.createElement("span");
+    createDeleteBtn(onDelete){
+        let deleteBtn = document.createElement("div");
         deleteBtn.innerText = " x ";
+        deleteBtn.addEventListener("click",onDelete);
         return deleteBtn;
     }
+
+    // deleteContact(){ 
+    //     console.log("delete");
+    //     // contactList.removeChild(contact);
+    // }
     //submit the form to the data storage and have a different method that displays 
     //the contact to the contact list
     submiteInformation(information){

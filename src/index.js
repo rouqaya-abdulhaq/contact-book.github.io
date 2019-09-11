@@ -64,7 +64,7 @@ const onEdit = ( ) => {
 }
 
 const onDelete = () =>{
-    //
+    
 }
 
 const onPalette = () =>{
