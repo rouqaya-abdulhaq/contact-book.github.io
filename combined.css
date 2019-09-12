@@ -110,3 +110,7 @@ header{
     height: 6vh;
     margin-left: 2vw;
   }
+
+  #contactForm{
+    border: black dashed;
+}

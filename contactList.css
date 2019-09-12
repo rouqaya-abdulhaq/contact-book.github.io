@@ -19,3 +19,38 @@ html , body{
 #listTitle{
     font-size: 3vw;
 }
+
+#contactForm{
+    border: black dashed;
+    background: green;
+    width: 30vw;
+    height: 40vh;
+    position: fixed;
+    top : 27vh;
+    left: 30vw;
+    text-align: center;
+    padding: 2vh;
+}
+
+.contactInput{
+    margin : 2%;
+}
+
+#contactEdit,#contactDelete {
+    display: inline;
+}
+
+ #contactDelete:hover {
+    cursor: pointer;
+}
+#contactEdit:hover{
+    cursor: pointer;
+}
+
+#contactDelete{
+    
+}
+
+#contactEdit{
+
+}

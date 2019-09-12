@@ -22,6 +22,7 @@ const deleteContact = (contact)=>{
         let editImg = document.createElement("IMG");
         editImg.setAttribute("src","src/icon.png");
         editImg.setAttribute("alt","edit icon");
+        editImg.setAttribute("id","contactEdit");
         editImg.addEventListener("click",onEdit)
         return editImg; 
     }
@@ -29,6 +30,7 @@ const deleteContact = (contact)=>{
     createDeleteBtn(onDelete){
         let deleteBtn = document.createElement("div");
         deleteBtn.innerText = " x ";
+        deleteBtn.setAttribute("id","contactDelete");
         deleteBtn.addEventListener("click",onDelete);
         return deleteBtn;
     }
