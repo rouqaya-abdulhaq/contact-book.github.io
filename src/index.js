@@ -1,5 +1,6 @@
 import Contact from "./contacts";
 import formHandler from "./formHandler";
+import {addContactToList} from "./contactList";
 //Needs serious renaming
 /*synopsis:
    1- the user should sign up or log in and then be directed to the contact list
@@ -20,9 +21,8 @@ const contactMain = document.querySelector("#contactMain");
 const addButton = document.querySelector("#addButton");
 
 const contact = new Contact;
-
-
 const formHandle = new formHandler;
+
 
 const onSignIn = () =>{
     //
@@ -50,15 +50,11 @@ const onSubmit = () => {
     const lastName = document.querySelector("#lastName").value;
     const email = document.querySelector("#email").value;
     const phoneNumber = document.querySelector("#phoneNumber").value;
-    //are these really needed??
-    formHandle.firstName = firstName;
-    formHandle.lastName = lastName;
-    formHandle.email = email;
-    formHandle.phoneNumber = phoneNumber;
     contact.createContact(firstName + " " + lastName,onEdit);
+    addContactToList(firstName,lastName,email,phoneNumber);
     removeForm();
 }
-
+//change to onEditClick
 const onEdit = ( ) => {
     diasplayForm();
 }

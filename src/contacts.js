@@ -1,3 +1,4 @@
+//change name to something more appropriate
 //is the class approach really needed or just setting things back 
 const contactList = document.querySelector("#contactsList");
 
@@ -6,7 +7,7 @@ const deleteContact = (contact)=>{
     }
 //class approach ??!!!
  class Contact {
-     //this method should display the add form and not submit the actual contact
+     //break to smaller methods
     createContact(info,onEdit){
         let contContainer = document.createElement("div");
         let contact = document.createElement("div");

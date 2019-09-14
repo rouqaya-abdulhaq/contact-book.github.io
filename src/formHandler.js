@@ -1,16 +1,6 @@
 import {createInput , createBtn} from './formDynamics';
 
  class formHandler  {
-     //may delete constructor in the future
-    constructor(firstName, lastName, age, address, phoneNumber, email){
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.age =age;
-        this.address= address;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
-    }
-
     createContactForm (onSubmit, onCancel){
         const form = document.createElement("form");
         form.setAttribute("id","contactForm");
