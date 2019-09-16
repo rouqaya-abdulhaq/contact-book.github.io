@@ -38,25 +38,47 @@ const diasplayForm = () => {
     contactMain.appendChild(form);
 }
 
+const displayEditForm = (targetedContact) =>{
+    const form = formHandle.createContactForm(()=>onEdit(targetedContact),removeForm);
+    contactMain.appendChild(form);
+}
+
 const removeForm = () =>{
     const form = document.querySelector("form");
     contactMain.removeChild(form);
 }
 
+const getContactInfo = () =>{
+    const info = {
+        firstName : document.querySelector("#firstName").value,
+        lastName : document.querySelector("#lastName").value,
+        email : document.querySelector("#email").value,
+        phoneNumber : document.querySelector("#phoneNumber").value 
+    }
+    return info;
+}
+
 const onSubmit = () => {
     //submit contact or user or edit
     //method is too long needs to be broken down
-    const firstName = document.querySelector("#firstName").value;
-    const lastName = document.querySelector("#lastName").value;
-    const email = document.querySelector("#email").value;
-    const phoneNumber = document.querySelector("#phoneNumber").value;
-    contact.createContact(firstName + " " + lastName,onEdit);
-    addContactToList(firstName,lastName,email,phoneNumber);
+    const contactInfo = getContactInfo();
+    contact.createContact(contactInfo.firstName + " " + contactInfo.lastName,onEditClick);
+    addContactToList(contactInfo.firstName,contactInfo.lastName,
+        contactInfo.email,contactInfo.phoneNumber);
     removeForm();
 }
+
+const onEdit = (targetedContact) =>{
+    const newContactInfo = getContactInfo();
+    contact.editContact(newContactInfo.firstName + " " + newContactInfo.lastName,
+       targetedContact,onEditClick);
+    removeForm();
+}
+
 //change to onEditClick
-const onEdit = ( ) => {
-    diasplayForm();
+const onEditClick = ( ) => {
+    const targetedContact = event.target.parentNode;
+    displayEditForm(targetedContact);
 }
 
 const onDelete = () =>{

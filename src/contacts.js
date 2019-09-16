@@ -36,17 +36,15 @@ const deleteContact = (contact)=>{
         return deleteBtn;
     }
 
-    // deleteContact(){ 
-    //     console.log("delete");
-    //     // contactList.removeChild(contact);
-    // }
     //submit the form to the data storage and have a different method that displays 
     //the contact to the contact list
     submiteInformation(information){
-        //
+        
     }
-    editContact(editedinfo){
-        //
+    editContact(editedinfo,contactTargeted,onEdit){
+        contactTargeted.innerText = editedinfo;
+        contactTargeted.appendChild(this.createEditBtn(onEdit));
+        contactTargeted.appendChild(this.createDeleteBtn(()=>deleteContact(contactTargeted)));
     }
     deleteContact(){
         //
