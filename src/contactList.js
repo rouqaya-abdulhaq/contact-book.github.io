@@ -1,19 +1,22 @@
 //until i connect to data base
-const contactList = [];
+export const contactList = document.createElement("div");
+export const dataBase = [];
 
-const ContactFile = {
-    firstName : "",
-    lastName : "",
-    email : "",
-    phoneNumber : "",
+// let ContactFile = {
+//     firstName : "",
+//     lastName : "",
+//     email : "",
+//     phoneNumber : "",
+// }
+
+export const addContactToDataBase = (contact) =>{
+    dataBase.push(contact);
 }
 
-export const addContactToList = (firstName,lastName,email,phoneNumber) =>{
-    const Contact = ContactFile;
-    Contact.firstName = firstName;
-    Contact.lastName = lastName;
-    Contact.email = email;
-    Contact.phoneNumber = phoneNumber;
-    contactList.push(Contact);
-    console.log(contactList);
+export const addContactToList = (childNode) =>{
+    contactList.appendChild(childNode);
+}
+
+export const EditContactData = (index,newData) =>{
+    dataBase[index] = newData;
 }

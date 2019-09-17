@@ -1,6 +1,7 @@
 import Contact from "./contacts";
 import formHandler from "./formHandler";
-import {addContactToList} from "./contactList";
+import {addContactToList , contactList,addContactToDataBase
+    ,dataBase,EditContactData} from "./contactList";
 //Needs serious renaming
 /*synopsis:
    1- the user should sign up or log in and then be directed to the contact list
@@ -19,9 +20,20 @@ import {addContactToList} from "./contactList";
         6-the color palette should be able to change the page's style at any point of the programm*/
 const contactMain = document.querySelector("#contactMain");
 const addButton = document.querySelector("#addButton");
+const contactWrap = document.querySelector("#contactsList");
+
 
 const contact = new Contact;
 const formHandle = new formHandler;
+
+let ContactFile = {
+    firstName : "",
+    lastName : "",
+    email : "",
+    phoneNumber : "",
+}
+
+let editIndex;
 
 
 const onSignIn = () =>{
@@ -58,27 +70,59 @@ const getContactInfo = () =>{
     return info;
 }
 
-const onSubmit = () => {
-    //submit contact or user or edit
-    //method is too long needs to be broken down
+const createContactInfo = () =>{
     const contactInfo = getContactInfo();
-    contact.createContact(contactInfo.firstName + " " + contactInfo.lastName,onEditClick);
-    addContactToList(contactInfo.firstName,contactInfo.lastName,
-        contactInfo.email,contactInfo.phoneNumber);
+    return {firstName : contactInfo.firstName,
+            lastName : contactInfo.lastName,
+            email : contactInfo.email,
+            phoneNumber : contactInfo.phoneNumber}
+}
+
+const onSubmit = () => {
+    //method is too long needs to be broken down
+    const add = createContactInfo();
+    addContactToDataBase(add);
+    const index = dataBase.indexOf(add);
+    const child = contact.createContact(dataBase[index].firstName,
+        dataBase[index].lastName,onEditClick);
+    addContactToList(child);
+    contactWrap.appendChild(contactList);
     removeForm();
 }
 
 const onEdit = (targetedContact) =>{
     const newContactInfo = getContactInfo();
-    contact.editContact(newContactInfo.firstName + " " + newContactInfo.lastName,
-       targetedContact,onEditClick);
+    const contactDisplay = displayContact(newContactInfo.firstName,newContactInfo.lastName);
+    contact.editContact(contactDisplay,targetedContact,onEditClick);
     removeForm();
+    let object = {
+        firstName : newContactInfo.firstName,
+        lastName : newContactInfo.lastName,
+        email : newContactInfo.email,
+        phoneNumber : newContactInfo.phoneNumber
+    }
+    EditContactData(editIndex,object);
+    console.log(dataBase);
+}
+
+const displayContact = (firstName, lastName) =>{
+    return firstName + " " + lastName;
 }
 
 //change to onEditClick
 const onEditClick = ( ) => {
     const targetedContact = event.target.parentNode;
+    const list = targetedContact.parentNode;
+    changeIndex(list,targetedContact);
     displayEditForm(targetedContact);
+}
+
+const getIndexOfNode = (parentNode,childNode) =>{
+    return Array.prototype.indexOf.call(parentNode.children,childNode);
+}
+
+const changeIndex = (parent,child) => {
+    editIndex = getIndexOfNode(parent,child);
 }
 
 const onDelete = () =>{
