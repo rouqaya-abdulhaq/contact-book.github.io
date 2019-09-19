@@ -1,4 +1,4 @@
-import formHandler from "./formHandler";
+import {createContactForm} from "./formHandler";
 import {onSubmit} from './contactSubmit';
 
 //Needs serious renaming
@@ -21,7 +21,6 @@ const contactMain = document.querySelector("#contactMain");
 const addButton = document.querySelector("#addButton");
 
 
-const formHandle = new formHandler;
 
 
 
@@ -35,7 +34,7 @@ const onSignUp = () =>{
 }
 
 const diasplayForm = () => {
-    const form = formHandle.createContactForm(onSubmit,removeForm);
+    const form = createContactForm(onSubmit,removeForm);
     contactMain.appendChild(form);
 }
 //repeated on multiple pages move this to form handler and import it
