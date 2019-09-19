@@ -8,15 +8,14 @@ const deleteContact = (contact)=>{
 //class approach ??!!!
  class Contact {
      //break to smaller methods
-    createContact(firstName,lastName,onEdit){
+    createContact(firstName,lastName,onEdit,onDelete){
         let contContainer = document.createElement("div");
         let contact = document.createElement("div");
         contact.setAttribute("class", "card");
         contact.innerText = firstName + " " + lastName;
         contContainer.appendChild(contact);
         contContainer.appendChild(this.createEditBtn(onEdit));
-        contContainer.appendChild(this.createDeleteBtn(()=>deleteContact(contContainer)));
-        // contactList.appendChild(contContainer);
+        contContainer.appendChild(this.createDeleteBtn(()=> onDelete(contContainer)));
         return contContainer;
     }
 
@@ -42,14 +41,14 @@ const deleteContact = (contact)=>{
     submiteInformation(information){
         
     }
-    editContact(editedinfo,contactTargeted,onEdit){
-        console.log(contactTargeted.parentNode);
+    
+    editContact(editedinfo,contactTargeted,onEdit,onDelete){
         contactTargeted.innerText = "";
         let info = document.createElement("div");
         info.innerText = editedinfo;
         contactTargeted.appendChild(info);
         contactTargeted.appendChild(this.createEditBtn(onEdit));
-        contactTargeted.appendChild(this.createDeleteBtn(()=>deleteContact(contactTargeted)));
+        contactTargeted.appendChild(this.createDeleteBtn(() => onDelete(contactTargeted)));
     }
     deleteContact(){
         //
