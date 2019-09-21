@@ -1,10 +1,10 @@
 import {addContactToDataBase , contactList,
     addContactToList,dataBase,deleteContactFromDom} from './contactList';
 import {onEditClick} from './editContact';
-import Contact from "./contacts";
+import {createContact} from "./contactDisplay";
 
 
-const contact = new Contact;
+// const contact = new Contact;
 const contactWrap = document.querySelector("#contactsList");
 
     export const onSubmit = () => {
@@ -27,7 +27,7 @@ const contactWrap = document.querySelector("#contactsList");
     }
 
     const addContactToDom = (index) => {
-        const child = contact.createContact(dataBase[index].firstName,
+        const child = createContact(dataBase[index].firstName,
             dataBase[index].lastName,onEditClick,deleteContactFromDom);
         addContactToList(child);
     }

@@ -1,9 +1,9 @@
 import {EditContactData, deleteContactFromDom} from './contactList';
-import Contact from "./contacts";
+import {editContact} from "./contactDisplay";
 import {displayEditForm} from "./index"; //more thought should be put into this
 
 let editIndex;
-const contact = new Contact;
+// const contact = new Contact;
 
 const contactMain = document.querySelector("#contactMain");
 
@@ -25,7 +25,7 @@ const getIndexOfNode = (parentNode,childNode) =>{
 const onEdit = (targetedContact) =>{
     const newContactInfo = getContactInfo();
     const contactDisplay = displayContact(newContactInfo.firstName,newContactInfo.lastName);
-    contact.editContact(contactDisplay,targetedContact,onEditClick,deleteContactFromDom);
+    editContact(contactDisplay,targetedContact,onEditClick,deleteContactFromDom);
     removeForm();
     let object = fillData(newContactInfo);
     EditContactData(editIndex,object);
