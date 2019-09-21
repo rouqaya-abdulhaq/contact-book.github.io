@@ -42,6 +42,12 @@ const removeForm = () =>{
     const form = document.querySelector("form");
     contactMain.removeChild(form);
 }
+//trying this approach for now not really sure if index should export anything but better 
+//than having editContact import from formhandle
+export const displayEditForm = (targetedContact , onEdit) =>{
+    const form = createContactForm(()=>onEdit(targetedContact),removeForm);
+    contactMain.appendChild(form);
+}
 
  
 const onDelete = () =>{

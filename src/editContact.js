@@ -1,6 +1,6 @@
 import {EditContactData, deleteContactFromDom} from './contactList';
 import Contact from "./contacts";
-import {createContactForm} from "./formHandler"; //i don't want to import it here it's risky
+import {displayEditForm} from "./index"; //more thought should be put into this
 
 let editIndex;
 const contact = new Contact;
@@ -11,7 +11,7 @@ export const onEditClick = ( ) => {
     const targetedContact = event.target.parentNode;
     const list = targetedContact.parentNode;
     changeIndex(list,targetedContact);
-    displayEditForm(targetedContact);
+    displayEditForm(targetedContact,onEdit);
 }
 
 const changeIndex = (parent,child) => {
@@ -20,11 +20,6 @@ const changeIndex = (parent,child) => {
 
 const getIndexOfNode = (parentNode,childNode) =>{
     return Array.prototype.indexOf.call(parentNode.children,childNode);
-}
-
-const displayEditForm = (targetedContact) =>{
-    const form = createContactForm(()=>onEdit(targetedContact),removeForm);
-    contactMain.appendChild(form);
 }
 
 const onEdit = (targetedContact) =>{
