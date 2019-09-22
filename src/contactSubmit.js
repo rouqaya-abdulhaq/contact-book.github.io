@@ -4,7 +4,6 @@ import {onEditClick} from './editContact';
 import {createContact} from "./contactDisplay";
 
 
-// const contact = new Contact;
 const contactWrap = document.querySelector("#contactsList");
 
     export const onSubmit = () => {

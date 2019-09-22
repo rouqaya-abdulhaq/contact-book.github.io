@@ -32,7 +32,7 @@ const onSignIn = () =>{
 const onSignUp = () =>{
     //
 }
-
+// SHOULD ALL THE METHODS MANPULATING THE DOM BE IN ONE PLACE
 const diasplayForm = () => {
     const form = createContactForm(onSubmit,removeForm);
     contactMain.appendChild(form);

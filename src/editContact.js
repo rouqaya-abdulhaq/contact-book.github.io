@@ -1,7 +1,10 @@
 import {EditContactData, deleteContactFromDom, dataBase} from './contactList';
 import {editContact} from "./contactDisplay";
 import {displayEditForm} from "./index"; //more thought should be put into this
-//wrong approach it only registers the last edited contact 
+
+//wrong approach it only registers the last edited contact
+//MAYBE I CAN MAKE A SPECIAL ID FOR EACH CONTACT AND ON EDIT GRAB THAT CONTACT AND CHANGE 
+//IT'S INNER TEXT 
 let editIndex;
 
 const contactMain = document.querySelector("#contactMain");
