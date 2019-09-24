@@ -1,6 +1,6 @@
 import {addContactToDataBase , contactList,
     addContactToList,dataBase} from './contactList';
-import {createContact} from "./contactDisplay";
+import {createContact} from "./contactCreate";
 
 
 const contactWrap = document.querySelector("#contactsList");
@@ -25,10 +25,15 @@ const contactWrap = document.querySelector("#contactsList");
     }
 
     const addContactToDom = (index) => {
-        const child = createContact(dataBase[index].firstName,
-            dataBase[index].lastName,
+        const container = document.createElement("div");
+        const name = getContactName(index);
+        const child = createContact(name,container,
             ()=>console.log(dataBase[index]));
         addContactToList(child);
+    }
+
+    const getContactName = (index) =>{
+        return dataBase[index].firstName + " "  + dataBase[index].lastName;
     }
 
     const removeForm = () =>{

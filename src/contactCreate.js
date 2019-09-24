@@ -1,28 +1,25 @@
 //ONEDIT AND ONDELETE ARE DONE HERE NOW PERHAPS A BETTER NAME FOR THE FILE IS SUITED
 
-//NEED TO TURN THIS TO A METHOD THAT CAN BE USED ON BOTH SUBMIT AND EDIT
-//SO CREATING THE DIV WILL BE DONE ELSE WHERE INSTEAD IT WILL BE PASSED AS AN ARGUMENT
-
 import {deleteContactFromDom} from './contactList';
 import {onEditClick} from './editContact';
 
-export const createContact = (firstName,lastName,onClick) => {
-    let contContainer = document.createElement("div");
-    let contact = createContactName(firstName,lastName);
-    addContactToContainer(contact,contContainer,onClick);
+
+export const createContact = (name,contContainer,onClick) => {
+    let contactName = createContactName(name);
+    contactName.addEventListener("click",onClick);
+    addContactToContainer(contactName,contContainer);
     return contContainer;
 }
 
-const createContactName = (firstName,lastName) => {
+const createContactName = (name) => {
     const contact = document.createElement("div");
     contact.setAttribute("class", "contactName");
-    contact.innerText = firstName + " " + lastName; 
+    contact.innerText = name; 
     return contact;
 }
 
-const addContactToContainer = (contact ,container ,onClick) =>{
+const addContactToContainer = (contact ,container) =>{
     container.appendChild(contact);
-    contact.addEventListener("click",onClick);
     container.appendChild(createEditBtn(onEditClick));
     container.appendChild(createDeleteBtn(container));
 }
@@ -42,12 +39,5 @@ const createDeleteBtn = (contact) => {
     deleteBtn.setAttribute("id","contactDelete");
     deleteBtn.addEventListener("click",()=>deleteContactFromDom(contact));
     return deleteBtn;
-}
-
-export const editContact = (editedinfo,contactTargeted,onEdit,onClick) => {
-    contactTargeted.innerText = "";
-    let info = document.createElement("div");
-    info.innerText = editedinfo;
-    addContactToContainer(info,contactTargeted,onEdit,onClick);
 }
 

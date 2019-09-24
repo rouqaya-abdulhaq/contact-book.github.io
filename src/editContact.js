@@ -1,5 +1,5 @@
 import {EditContactData, dataBase} from './contactList';
-import {editContact} from "./contactDisplay";
+import {createContact} from "./contactCreate";
 import {displayEditForm} from "./index"; //more thought should be put into this
 
 //wrong approach it only registers the last edited contact
@@ -23,13 +23,14 @@ const changeIndex = (parent,child) => {
 const getIndexOfNode = (parentNode,childNode) =>{
     return Array.prototype.indexOf.call(parentNode.children,childNode);
 }
-
+//METHOD IS TOO LONG
 const onEdit = (targetedContact) =>{
     const newContactInfo = getContactInfo();
-    const contactDisplay = displayContact(newContactInfo.firstName,newContactInfo.lastName);
+    const contactName = getContactName(newContactInfo.firstName,newContactInfo.lastName);
     let object = fillData(newContactInfo);
     EditContactData(editIndex,object);
-    editContact(contactDisplay,targetedContact,onEditClick,
+    targetedContact.innerText = "";
+    createContact(contactName,targetedContact,
         ()=>console.log(dataBase[editIndex]));
     removeForm();
 }
@@ -43,8 +44,8 @@ const getContactInfo = () =>{
     }
     return info;
 }
-
-const displayContact = (firstName, lastName) =>{
+//only for now once i fix the index proplem it will be passed and extracted from the db
+const getContactName = (firstName, lastName) =>{
     return firstName + " " + lastName;
 }
 
