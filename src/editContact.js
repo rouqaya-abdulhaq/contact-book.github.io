@@ -1,4 +1,4 @@
-import {EditContactData, deleteContactFromDom, dataBase} from './contactList';
+import {EditContactData, dataBase} from './contactList';
 import {editContact} from "./contactDisplay";
 import {displayEditForm} from "./index"; //more thought should be put into this
 

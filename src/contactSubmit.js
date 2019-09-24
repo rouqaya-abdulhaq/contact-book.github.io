@@ -1,6 +1,5 @@
 import {addContactToDataBase , contactList,
-    addContactToList,dataBase,deleteContactFromDom} from './contactList';
-import {onEditClick} from './editContact';
+    addContactToList,dataBase} from './contactList';
 import {createContact} from "./contactDisplay";
 
 
@@ -27,7 +26,7 @@ const contactWrap = document.querySelector("#contactsList");
 
     const addContactToDom = (index) => {
         const child = createContact(dataBase[index].firstName,
-            dataBase[index].lastName,onEditClick,
+            dataBase[index].lastName,
             ()=>console.log(dataBase[index]));
         addContactToList(child);
     }

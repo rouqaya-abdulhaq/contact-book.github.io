@@ -1,13 +1,15 @@
-//ONEDIT is BETTER HERE MAYBE CONSIDERING THEY DON'T CHANGE ,
+//ONEDIT AND ONDELETE ARE DONE HERE NOW PERHAPS A BETTER NAME FOR THE FILE IS SUITED
+
 //NEED TO TURN THIS TO A METHOD THAT CAN BE USED ON BOTH SUBMIT AND EDIT
 //SO CREATING THE DIV WILL BE DONE ELSE WHERE INSTEAD IT WILL BE PASSED AS AN ARGUMENT
 
 import {deleteContactFromDom} from './contactList';
+import {onEditClick} from './editContact';
 
-export const createContact = (firstName,lastName,onEdit,onClick) => {
+export const createContact = (firstName,lastName,onClick) => {
     let contContainer = document.createElement("div");
     let contact = createContactName(firstName,lastName);
-    addContactToContainer(contact,contContainer,onEdit,onClick);
+    addContactToContainer(contact,contContainer,onClick);
     return contContainer;
 }
 
@@ -18,10 +20,10 @@ const createContactName = (firstName,lastName) => {
     return contact;
 }
 
-const addContactToContainer = (contact ,container ,onEdit ,onClick) =>{
+const addContactToContainer = (contact ,container ,onClick) =>{
     container.appendChild(contact);
     contact.addEventListener("click",onClick);
-    container.appendChild(createEditBtn(onEdit));
+    container.appendChild(createEditBtn(onEditClick));
     container.appendChild(createDeleteBtn(container));
 }
 
