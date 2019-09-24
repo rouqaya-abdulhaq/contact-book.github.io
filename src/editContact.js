@@ -29,7 +29,7 @@ const onEdit = (targetedContact) =>{
     const contactDisplay = displayContact(newContactInfo.firstName,newContactInfo.lastName);
     let object = fillData(newContactInfo);
     EditContactData(editIndex,object);
-    editContact(contactDisplay,targetedContact,onEditClick,deleteContactFromDom,
+    editContact(contactDisplay,targetedContact,onEditClick,
         ()=>console.log(dataBase[editIndex]));
     removeForm();
 }

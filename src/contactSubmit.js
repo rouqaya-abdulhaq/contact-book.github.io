@@ -27,7 +27,7 @@ const contactWrap = document.querySelector("#contactsList");
 
     const addContactToDom = (index) => {
         const child = createContact(dataBase[index].firstName,
-            dataBase[index].lastName,onEditClick,deleteContactFromDom,
+            dataBase[index].lastName,onEditClick,
             ()=>console.log(dataBase[index]));
         addContactToList(child);
     }
