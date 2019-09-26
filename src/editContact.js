@@ -2,9 +2,7 @@ import {EditContactData, dataBase} from './contactList';
 import {createContact} from "./contactCreate";
 import {displayEditForm} from "./index"; //more thought should be put into this
 
-//wrong approach it only registers the last edited contact
-//MAYBE I CAN MAKE A SPECIAL ID FOR EACH CONTACT AND ON EDIT GRAB THAT CONTACT AND CHANGE 
-//IT'S INNER TEXT 
+
 let editIndex;
 
 const contactMain = document.querySelector("#contactMain");
@@ -30,8 +28,7 @@ const onEdit = (targetedContact) =>{
     let object = fillData(newContactInfo);
     EditContactData(editIndex,object);
     targetedContact.innerText = "";
-    createContact(contactName,targetedContact,
-        ()=>console.log(dataBase[editIndex]));
+    createContact(contactName,targetedContact,object);
     removeForm();
 }
 

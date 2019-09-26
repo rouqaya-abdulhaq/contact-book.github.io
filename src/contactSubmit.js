@@ -4,12 +4,14 @@ import {createContact} from "./contactCreate";
 
 
 const contactWrap = document.querySelector("#contactsList");
+const contactMain = document.querySelector("#contactMain");
+
 
     export const onSubmit = () => {
         const add = getContactInfo();
         addContactToDataBase(add);
         const index = dataBase.indexOf(add);
-        addContactToDom(index);
+        addContactToDom(index,add);
         contactWrap.appendChild(contactList);
         removeForm();
     }
@@ -24,11 +26,10 @@ const contactWrap = document.querySelector("#contactsList");
         return info;
     }
 
-    const addContactToDom = (index) => {
+    const addContactToDom = (index,contactInfo) => {
         const container = document.createElement("div");
         const name = getContactName(index);
-        const child = createContact(name,container,
-            ()=>console.log(dataBase[index]));
+        const child = createContact(name,container,contactInfo);
         addContactToList(child);
     }
 

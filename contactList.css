@@ -32,6 +32,18 @@ html , body{
     padding: 2vh;
 }
 
+#infoCard{
+    border: black dashed;
+    background: green;
+    width: 30vw;
+    height: 40vh;
+    position: fixed;
+    top : 27vh;
+    left: 30vw;
+    text-align: center;
+    padding: 2vh; 
+}
+
 .contactInput{
     margin : 2%;
 }

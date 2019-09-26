@@ -2,11 +2,13 @@
 
 import {deleteContactFromDom} from './contactList';
 import {onEditClick} from './editContact';
+import {displayContactInfo} from './contactInfoDisplay';
 
+const contactMain = document.querySelector("#contactMain");
 
-export const createContact = (name,contContainer,onClick) => {
+export const createContact = (name,contContainer,contactInfo) => {
     let contactName = createContactName(name);
-    contactName.addEventListener("click",onClick);
+    contactName.addEventListener("click",()=>{displayContactInfo(contactMain,contactInfo)});
     addContactToContainer(contactName,contContainer);
     return contContainer;
 }
