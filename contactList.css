@@ -44,6 +44,21 @@ html , body{
     padding: 2vh; 
 }
 
+#infoWrap{
+    margin : 3%;
+}
+
+.cancelBtn{
+    height: auto;
+}
+
+.infoPlaceHolder{
+    display: block;
+    margin : 2%;
+    background: white;
+}
+
+
 .contactInput{
     margin : 2%;
 }

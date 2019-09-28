@@ -19,6 +19,7 @@ const createInfoCardElement = () =>{
 
 const createInfo = (contactInfo) =>{
     const infoWrap = document.createElement("div");
+    infoWrap.setAttribute("id","infoWrap");
     const firstName = createInfoPH("First Name",contactInfo.firstName);
     const lastName = createInfoPH("Last Name",contactInfo.lastName);
     const email = createInfoPH("Email",contactInfo.email);
@@ -30,12 +31,14 @@ const createInfo = (contactInfo) =>{
 const createInfoPH = (label,value) =>{
     const ph = document.createElement("span");
     ph.innerText = label + " : " + value;
+    ph.setAttribute("class","infoPlaceHolder");
     return ph;
 }
 
 const createCancelBtn = (container,infoCard) =>{
     const cancelBtn = document.createElement("button");
     cancelBtn.innerText = " X ";
+    cancelBtn.setAttribute("class","cancelBtn");
     cancelBtn.addEventListener("click",()=>removeCard(container,infoCard));
     return cancelBtn;
 }
