@@ -1,5 +1,3 @@
-//ONEDIT AND ONDELETE ARE DONE HERE NOW PERHAPS A BETTER NAME FOR THE FILE IS SUITED
-
 import {deleteContactFromDom} from './contactList';
 import {onEditClick} from './editContact';
 import {displayContactInfo} from './contactInfoDisplay';

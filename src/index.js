@@ -1,5 +1,5 @@
-import {createContactForm} from "./formHandler";
-import {onSubmit} from './contactSubmit';
+import {createContactForm} from "./form/formHandler";
+import {onSubmit} from './contacts/contactSubmit';
 
 //Needs serious renaming
 /*synopsis:

@@ -1,6 +1,6 @@
-import {EditContactData, dataBase} from './contactList';
+import {EditContactData} from './contactList';
 import {createContact} from "./contactCreate";
-import {displayEditForm} from "./index"; //more thought should be put into this
+import {displayEditForm} from "../index"; //more thought should be put into this
 
 
 let editIndex;
