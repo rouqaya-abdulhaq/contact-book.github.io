@@ -1,11 +1,10 @@
 import {EditContactData} from './contactList';
 import {createContact} from "./contactCreate";
 import {displayEditForm} from "../index"; //more thought should be put into this
+import {removeFormFromDom} from '../domHandling/domChanges';
 
 
 let editIndex;
-
-const contactMain = document.querySelector("#contactMain");
 
 export const onEditClick = ( ) => {
     const targetedContact = event.target.parentNode;
@@ -29,7 +28,7 @@ const onEdit = (targetedContact) =>{
     EditContactData(editIndex,object);
     targetedContact.innerText = "";
     createContact(contactName,targetedContact,object);
-    removeForm();
+    removeFormFromDom();
 }
 
 const getContactInfo = () =>{
@@ -41,6 +40,7 @@ const getContactInfo = () =>{
     }
     return info;
 }
+
 //only for now once i fix the index proplem it will be passed and extracted from the db
 const getContactName = (firstName, lastName) =>{
     return firstName + " " + lastName;
@@ -53,9 +53,4 @@ const fillData = (newContactInfo) =>{
         email : newContactInfo.email,
         phoneNumber : newContactInfo.phoneNumber
     }
-}
-
-const removeForm = () =>{
-    const form = document.querySelector("form");
-    contactMain.removeChild(form);
 }

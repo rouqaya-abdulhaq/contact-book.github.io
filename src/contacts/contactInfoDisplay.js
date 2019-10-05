@@ -1,6 +1,11 @@
-export const displayContactInfo = (container,contactInfo)=>{
-    const infoCard = createInfoCard(container,contactInfo);
-    container.appendChild(infoCard);
+import {contactMain} from '../domHandling/domElements';
+
+//would it be better to pass the contact main as a container or should i just
+//use it directly 
+
+export const displayContactInfo = (contactInfo)=>{
+    const infoCard = createInfoCard(contactMain,contactInfo);
+    contactMain.appendChild(infoCard);
 }
 
 const createInfoCard = (container,contactInfo) =>{

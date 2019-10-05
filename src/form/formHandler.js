@@ -1,5 +1,6 @@
 import {createInput , createBtn} from './formDynamics';
 
+
 export const  createContactForm = (onSubmit, onCancel) => {
         const form = createForm("contactForm");
         const cancelBtn = createBtn(" x ", onCancel);
@@ -7,7 +8,7 @@ export const  createContactForm = (onSubmit, onCancel) => {
         const submitBtn = createBtn("submit",onSubmit);
         form.append(cancelBtn,inputFields,submitBtn);
         return form;
-    }
+}
 
 const  createContactInputs = () => {
     const inputfilds = document.createElement("div");
