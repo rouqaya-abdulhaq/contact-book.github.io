@@ -1,5 +1,4 @@
-import {createContactForm} from "./form/formHandler";
-import {onSubmit} from './contacts/contactSubmit';
+import {displayContactForm} from './events/contactForm';
 
 //Needs serious renaming
 /*synopsis:
@@ -17,7 +16,8 @@ import {onSubmit} from './contacts/contactSubmit';
     
     5-if the delete button is pressed the user will be warned if he is sure about the delete
         6-the color palette should be able to change the page's style at any point of the programm*/
-const contactMain = document.querySelector("#contactMain");
+
+
 const addButton = document.querySelector("#addButton");
 
 
@@ -31,18 +31,6 @@ const onSignIn = () =>{
 
 const onSignUp = () =>{
     //
-}
-// SHOULD ALL THE METHODS MANPULATING THE DOM BE IN ONE PLACE
-const diasplayForm = () => {
-    const form = createContactForm(onSubmit);
-    contactMain.appendChild(form);
-}
-
-//trying this approach for now not really sure if index should export anything but better 
-//than having editContact import from formhandle
-export const displayEditForm = (targetedContact , onEdit) =>{
-    const form = createContactForm(()=>onEdit(targetedContact));
-    contactMain.appendChild(form);
 }
 
  
@@ -58,4 +46,4 @@ const changePageStyle = () => {
     //
 }
 
-addButton.addEventListener("click",diasplayForm);
+addButton.addEventListener("click",displayContactForm);
