@@ -1,7 +1,6 @@
 import {addContactToDataBase , contactList,
     addContactToList,dataBase} from './contactList';
 import {createContact} from "./contactCreate";
-import {removeFormFromDom} from '../domHandling/domChanges';
 import {contactWrap} from '../domHandling/domElements';
 
 export const onSubmit = () => {
@@ -10,7 +9,6 @@ export const onSubmit = () => {
     const index = dataBase.indexOf(add);
     addContactToDom(index,add);
     contactWrap.appendChild(contactList);
-    removeFormFromDom();
 }
 
 const getContactInfo = () => {
@@ -33,4 +31,3 @@ const addContactToDom = (index,contactInfo) => {
 const getContactName = (index) =>{
     return dataBase[index].firstName + " "  + dataBase[index].lastName;
 }
-

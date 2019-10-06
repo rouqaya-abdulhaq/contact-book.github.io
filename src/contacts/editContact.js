@@ -1,7 +1,6 @@
 import {EditContactData} from './contactList';
 import {createContact} from "./contactCreate";
 import {displayEditForm} from "../index"; //more thought should be put into this
-import {removeFormFromDom} from '../domHandling/domChanges';
 
 
 let editIndex;
@@ -20,6 +19,7 @@ const changeIndex = (parent,child) => {
 const getIndexOfNode = (parentNode,childNode) =>{
     return Array.prototype.indexOf.call(parentNode.children,childNode);
 }
+
 //METHOD IS TOO LONG
 const onEdit = (targetedContact) =>{
     const newContactInfo = getContactInfo();
@@ -28,7 +28,6 @@ const onEdit = (targetedContact) =>{
     EditContactData(editIndex,object);
     targetedContact.innerText = "";
     createContact(contactName,targetedContact,object);
-    removeFormFromDom();
 }
 
 const getContactInfo = () =>{

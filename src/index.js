@@ -34,18 +34,14 @@ const onSignUp = () =>{
 }
 // SHOULD ALL THE METHODS MANPULATING THE DOM BE IN ONE PLACE
 const diasplayForm = () => {
-    const form = createContactForm(onSubmit,removeForm);
+    const form = createContactForm(onSubmit);
     contactMain.appendChild(form);
 }
-//repeated on multiple pages move this to form handler and import it
-const removeForm = () =>{
-    const form = document.querySelector("form");
-    contactMain.removeChild(form);
-}
+
 //trying this approach for now not really sure if index should export anything but better 
 //than having editContact import from formhandle
 export const displayEditForm = (targetedContact , onEdit) =>{
-    const form = createContactForm(()=>onEdit(targetedContact),removeForm);
+    const form = createContactForm(()=>onEdit(targetedContact));
     contactMain.appendChild(form);
 }
 

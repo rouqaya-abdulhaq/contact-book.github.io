@@ -1,11 +1,11 @@
 import {createInput , createBtn} from './formDynamics';
+import {removeFromMain} from '../domHandling/domChanges';
 
-
-export const  createContactForm = (onSubmit, onCancel) => {
+export const  createContactForm = (onSubmit) => {
         const form = createForm("contactForm");
-        const cancelBtn = createBtn(" x ", onCancel);
+        const cancelBtn = createBtn(" x ", ()=>{removeFromMain(form)});
         const inputFields = createContactInputs();
-        const submitBtn = createBtn("submit",onSubmit);
+        const submitBtn = createBtn("submit",()=>{submitPressed(onSubmit,form)});
         form.append(cancelBtn,inputFields,submitBtn);
         return form;
 }
@@ -26,8 +26,12 @@ const createForm = (id) => {
         const form = document.createElement("form");
         form.setAttribute("id",id);
         return form;
-    }
+}
 
+const submitPressed = ( onSubmit,form) =>{
+    onSubmit();
+    removeFromMain(form);
+}
 //Later
     // handlesignInForm (){
         
