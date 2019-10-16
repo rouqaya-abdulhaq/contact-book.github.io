@@ -1,6 +1,7 @@
-import {deleteContactFromDom} from './contactList';
+import {deleteContact} from './contactList';
 import {onEditClick} from './editContact';
 import {displayContactInfo} from './contactInfoDisplay';
+import {getIndexOfNode} from './contactUseful';
 
 
 export const createContact = (name,contContainer,contactInfo) => {
@@ -36,7 +37,8 @@ const createDeleteBtn = (contact) => {
     let deleteBtn = document.createElement("div");
     deleteBtn.innerText = " x ";
     deleteBtn.setAttribute("id","contactDelete");
-    deleteBtn.addEventListener("click",()=>deleteContactFromDom(contact));
+    deleteBtn.addEventListener("click",()=>deleteContact(contact,getIndexOfNode(contact)));
     return deleteBtn;
 }
+
 

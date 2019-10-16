@@ -1,6 +1,7 @@
 import {EditContactData} from './contactList';
 import {createContact} from "./contactCreate";
 import {displayEditForm} from "../events/contactForm";
+import {getIndexOfNode} from './contactUseful';
 
 //This page needs serious imrovments to be overlooked again once i connect to data base
 //or something else comes up
@@ -15,10 +16,6 @@ export const onEditClick = ( ) => {
 
 const changeIndex = (parent,child) => {
     editIndex = getIndexOfNode(parent,child);
-}
-
-const getIndexOfNode = (parentNode,childNode) =>{
-    return Array.prototype.indexOf.call(parentNode.children,childNode);
 }
 
 const onEdit = (targetedContact) =>{

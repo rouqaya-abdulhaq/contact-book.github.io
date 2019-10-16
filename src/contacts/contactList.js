@@ -14,6 +14,8 @@ export const EditContactData = (index,newData) =>{
     dataBase[index] = newData;
 }
 
-export const deleteContactFromDom = (contactNode) =>{
+export const deleteContact = (contactNode,index) =>{
+    dataBase.splice(index,1);
     contactList.removeChild(contactNode);
 }
+
