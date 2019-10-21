@@ -2,7 +2,7 @@ import {deleteContact} from './contactList';
 import {onEditClick} from './editContact';
 import {displayContactInfo} from './contactInfoDisplay';
 import {getIndexOfNode} from './contactUseful';
-
+import './styles/test.css';
 
 export const createContact = (name,contContainer,contactInfo) => {
     let contactName = createContactName(name);
@@ -15,6 +15,7 @@ const createContactName = (name) => {
     const contact = document.createElement("div");
     contact.setAttribute("class", "contactName");
     contact.innerText = name; 
+    contact.className = "test";
     return contact;
 }
 
