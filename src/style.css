@@ -34,6 +34,14 @@ height: 65vh;
  box-shadow: 13px 5px 32px -19px rgba(0,0,0,1);
 }
 
+
+.hide{
+   display: none;
+}
+
+.show{
+   display : block;
+}
 /*---------------------------------------------------------------------*/
 /*2- MEDIA QUERIES*/
 @media (max-width : 900px ) {

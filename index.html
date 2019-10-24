@@ -19,12 +19,12 @@
 		</div>
 
 		<nav id="navigation">
-			<a href="signUp.html"><button id="signIn" class="navButton">Sign Up</button></a>
-		  <a href="index.html"><button id="logIn" class="navButton">Log In</button></a>
+			<button id="signIn" class="navButton">Sign Up</button>
+		    <button id="logIn" class="navButton">Log In</button>
 		</nav>
 	</header>
 
-	<main id="main">
+	<main id="signInMain">
 		<form>
 			 <label class="label" id="emailLabel" for="email">email: </label>
 			 <input type="email" id="emailInputBox" 
@@ -34,7 +34,52 @@
 			 <input type="password" id="passwordInputBox" 
 			 class="input" title="password" required>
 
-			 <a href="contactList.html"><button type="submit" id="submitButton">log in</button></a>
+			 <button type="button" class="submitButton">log in</button>
+		</form>
+	</main>
+
+	<main id="contactMain">
+		<div id="contactsList">
+			<label for="contactsList" id="listTitle">contacts : </label>
+			<button type="button" id="addButton"> + </button>
+		</div>
+
+		<div id="styleIcon">
+
+		</div>
+	</main>
+
+	<main id="signUpMain">
+		<form id="signUpForm">
+			<div class="field-wrap">
+				<label for="firstName">
+					First Name :<span class="req">*</span>
+				 </label>
+				<input type="text" title="firstName" name="firstName" required="on">
+			</div>
+			
+			<div class="field-wrap">
+				<label>
+					Last Name :<span class="req">*</span>
+				</label>
+				<input type="text" name="lastName" required="on">
+			</div>
+			
+			<div class="field-wrap">
+				<label>
+					Email Adress :<span class="req">*</span>
+				</label>
+				<input type="email" name="emailAdress" required="on">
+			</div>
+			
+			<div class="field-wrap">
+				<label>
+				     Password :<span class="req">*</span>
+				</label>
+				<input type="password"required autocomplete="off"/>
+			</div>
+					  
+			<button type="button" class="submitButton">sign up</button>
 		</form>
 	</main>
 
