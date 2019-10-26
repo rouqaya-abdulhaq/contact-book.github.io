@@ -1,9 +1,11 @@
 import {createInput , createBtn} from './formDynamics';
 import {removeFromMain} from '../domHandling/domChanges';
+import '../contacts/styles/contactList.css';
 
 export const  createContactForm = (onSubmit) => {
         const form = createForm("contactForm");
         const cancelBtn = createBtn(" x ", ()=>{removeFromMain(form)});
+        cancelBtn.className = "cancelButton"
         const inputFields = createContactInputs();
         const submitBtn = createBtn("submit",()=>{submitPressed(onSubmit,form)});
         form.append(cancelBtn,inputFields,submitBtn);
@@ -25,6 +27,7 @@ const  createContactInputs = () => {
 const createForm = (id) => {
         const form = document.createElement("form");
         form.setAttribute("id",id);
+        form.className = 'contactPopUps'
         return form;
 }
 

@@ -22,7 +22,7 @@ import {displayContactForm} from './events/contactForm';
 // TURNED TO A SINGLE PAGE NOT REALLY GLAD WITH THE WAY, IT SEEMS A BIT MISSY 
 
 
-const addButton = document.querySelector("#addButton");
+const addButton = document.querySelector(".addButton");
 
 const contactMain = document.querySelector("#contactMain");
 const signUpMain = document.querySelector("#signUpMain");

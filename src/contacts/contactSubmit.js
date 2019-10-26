@@ -2,6 +2,7 @@ import {addContactToDataBase , contactList,
     addContactToList,dataBase} from './contactList';
 import {createContact} from "./contactCreate";
 import {contactWrap} from '../domHandling/domElements';
+import './styles/contactList.css';
 
 export const onSubmit = () => {
     const add = getContactInfo();
@@ -23,6 +24,7 @@ const getContactInfo = () => {
 
 const addContactToDom = (index,contactInfo) => {
     const container = document.createElement("div");
+    container.className = "contact";
     const name = getContactName(index);
     const child = createContact(name,container,contactInfo);
     addContactToList(child);

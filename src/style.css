@@ -4,7 +4,8 @@
 /*-----------------
 STYLE TABLE :
 1- GLOBAL SELECTORS
-2- MEDIA QUERIES  
+2- DISPLAY CLASSES
+3- MEDIA QUERIES  
 /*-------------------
   1- GLOBAL SELECTORS
   -------------------*/
@@ -33,8 +34,9 @@ height: 65vh;
  -moz-box-shadow: 13px 5px 32px -19px rgba(0,0,0,1);
  box-shadow: 13px 5px 32px -19px rgba(0,0,0,1);
 }
+/*---------------------------------------------------------------------*/
 
-
+/*2- DISPLAY CLASSES*/
 .hide{
    display: none;
 }
@@ -43,7 +45,8 @@ height: 65vh;
    display : block;
 }
 /*---------------------------------------------------------------------*/
-/*2- MEDIA QUERIES*/
+
+/*3- MEDIA QUERIES*/
 @media (max-width : 900px ) {
 main{
    width : 30VW ;

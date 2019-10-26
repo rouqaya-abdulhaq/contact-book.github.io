@@ -1,0 +1,67 @@
+/*-------------------*/
+/*STYLE TABLE:
+  1- CONTACT LIST OUTSIDE STRUCTURE
+  2- CONTACT LIST INSIDE ELEMENTS
+    2-1 DYNAMIC ELEMENTS
+    2-2 CONTACTS
+  3- CONTACT POPUPS
+    3-1 POPUPS DYNAMICS
+----------------------*/
+/*1- CONTACT LIST OUTSIDE STRUCTURE*/
+.contactList{
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2%;
+}
+/*--------------------------------------------------------------*/
+/*2- CONTACT LIST INSIDE ELEMENTS*/
+/*2-1 DYNAMIC ELEMENTS*/
+.contactList .title{
+    font-family: monospace;
+    font-size: 2em;
+    position: sticky;
+    top: 1vh;
+    margin : 2%;
+}
+.contactList .addButton{
+    height: 3vh;
+    width: 2vw;
+    text-align: center;
+    outline: none;
+    margin : 2%;
+}
+/*-----------------------*/
+/*2-2 CONTACTS*/
+.contact{
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+}
+/*the margin for the edit is not really showing*/
+.contactButtons{
+    margin-left: 2.5%;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 20px;
+    height: 3.5vh;
+    width: auto;
+}
+/*--------------------------------------------------------------*/
+/*3- CONTACT POPUPS */
+.contactPopUps{
+    position: fixed;
+    width: 40vw;
+    left : 33vw;
+    top: 28vh;
+    border-radius: 3%;
+}
+/*-----------------------*/
+/*3-1 POPUPS DYNAMICS*/
+.cancelButton{
+    outline: none;
+    font-size: 10%;
+}
+/*--------------------------------------------------------------*/
