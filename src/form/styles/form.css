@@ -1,0 +1,74 @@
+.submitBtn{
+    outline: none;
+    border-radius: 10%;
+    font-weight: bold;
+}
+/*validation : i want this to go red if all the inputs are not filled*/
+.submitBtn:focus , .submitBtn:hover{
+    background: limegreen;
+}
+
+/*TABLET QUERIES*/
+/*TABLET*/
+@media (max-width : 1024px ) and (min-width : 768px) {
+    .submitBtn{
+        width: 20vw;
+        height: 4vh;
+        font-size: 3vw;
+    }
+ }
+ /*-----------------------------------------------------------------------------------*/
+ .inputWrapper{
+    margin: 5%;
+}
+.inputBox{
+   background: transparent;
+   border: none;
+   border-bottom : 0.3vh dashed black;
+   padding-left: 1%; 
+   outline: none;
+   font-family: "Comic Sans MS", cursive, sans-serif;	
+}
+.inputBox:focus{
+    border-bottom-color: green;
+}
+.label{
+    margin-right: 2vw; 
+    margin-left: 2vw;
+    font-size: 1.5vw; 
+}
+
+/*-------------------------------------------------------------------------*/
+/*TABLET QUERIES*/
+@media (max-width : 1024px ) and (min-width : 768px) {
+    .label{
+        font-size: 4vw;
+    }
+    .inputBox{
+        width: 40%;
+        font-size: 3vw;
+    }
+ }  
+/*SMART PHONE QUERIES*/
+@media (max-width : 500px){
+    .inputWrapper{
+        margin: 2%;
+    }
+    .label{
+        font-size: 28px;
+        display: block;
+    }
+    .inputBox{
+        width: 80%;
+    }
+}
+@media(max-width : 380px) {
+    .inputWrapper{
+        margin: 3%;
+    }
+}
+@media(max-width : 330px){
+    .label{
+        font-size: 20px;
+    }
+}  
