@@ -28,8 +28,12 @@ const contactMain = document.querySelector("#contactMain");
 const signUpMain = document.querySelector("#signUpMain");
 const signInMain = document.querySelector("#signInMain");
 
+const logHeader = document.querySelector("#logNavigation");
+const outHeader = document.querySelector("#outNavigation");
+
 const logInNav = document.querySelector("#logIn");
 const signUpNav = document.querySelector("#signIn");
+const signOutNav = document.querySelector("#signOut");
 
 const submitSign = document.querySelectorAll(".submitButton");
 
@@ -40,6 +44,8 @@ const routeChange = (route) =>{
             contactMain.classList.add("hide");
             signUpMain.classList.add("hide");
             signInMain.classList.remove("hide");
+            outHeader.classList.add("hide");
+            logHeader.classList.remove("hide");
             break;
         case 'signUp' :
             contactMain.classList.add("hide");
@@ -50,6 +56,8 @@ const routeChange = (route) =>{
             signInMain.classList.add("hide");
             signUpMain.classList.add("hide");
             contactMain.classList.remove("hide");
+            outHeader.classList.remove("hide");
+            logHeader.classList.add("hide");
             break;
     }
 }
@@ -80,6 +88,7 @@ const changePageStyle = () => {
 addButton.addEventListener("click",displayContactForm);
 logInNav.addEventListener('click',()=>{routeChange('signIn')});
 signUpNav.addEventListener('click',()=>{routeChange('signUp')});
+signOutNav.addEventListener('click',()=>routeChange('signIn'));
 for (const btn of submitSign){
     btn.addEventListener("click",()=>{routeChange('contactList')});
 }
