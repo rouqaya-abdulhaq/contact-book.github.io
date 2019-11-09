@@ -1,0 +1,55 @@
+
+/*PERSON ICON*/
+.person-icon{
+    background: black;
+    position: inherit;
+    height:80%;
+    width: 70%;
+    border-radius:   50%/100px 100px 0 0;
+  }
+  .person-icon::before{
+    content: "";
+    background: black;
+    height: 60%;
+    width: 80%;
+    display: block;
+    position: inherit;
+    top: -65%;
+    left: 14%;
+    border-radius: 50%;
+  }
+  #icon{
+    position: absolute;
+    height: 60%;
+    width: 70%;
+    left: 25%;
+    top: 45%;
+  }
+/*-------------------------------------------------*/
+/*LOGO*/
+  #logo{
+    grid-area: logo;
+    height: 10vh;
+    width: 4vw;
+    border-radius: 15%;
+    padding-top: 1vh;
+    box-sizing:border-box;
+    position: relative;
+    overflow: hidden;
+    margin-left: 4%;
+    margin-top: 1%;
+    background: blanchedalmond;
+  }
+  
+  @media  (max-width: 1100px) {
+    #logo{
+      width: 7vw;
+    }
+  }
+  /* TABLET*/
+  @media (max-width : 1024px ) and (min-width : 768px) {
+    #logo{
+      width: 10vw;
+    }
+    
+  } 

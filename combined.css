@@ -8,7 +8,7 @@ html ,body{
   background: palevioletred;
   /* display: grid; */}
 
-header{
+/* header{
     display: grid;
     grid-area: header;
     grid-template-areas: "logo . navigation";
@@ -38,9 +38,9 @@ header{
       width: 1vw;
       border-radius: 30%;
       margin: 1.5vh -1vh;
-    }
+    } */
   
-    #icon{
+    /* #icon{
         position: absolute;
     }
   
@@ -65,7 +65,7 @@ header{
       left: 0.5em;
       margin-right: 1em; 
       border-radius: 50%;
-    }
+    } */
   
     .navButton{
       text-decoration: none;

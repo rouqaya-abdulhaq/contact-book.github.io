@@ -15,6 +15,7 @@
 header{
   grid-area: header;
   padding: 2vh;
+  background: rosybrown;
 }
 /*-----------------------------*/
 /*2- HEADER TYPES*/
