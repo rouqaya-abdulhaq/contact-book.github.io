@@ -1,4 +1,5 @@
 import {displayContactForm} from './events/contactForm';
+import './header.css';
 
 //Needs serious renaming
 /*synopsis:
@@ -37,6 +38,8 @@ const signOutNav = document.querySelector("#signOut");
 
 const submitSign = document.querySelectorAll(".submitButton");
 
+const header = document.querySelector("header");
+
 
 const routeChange = (route) =>{
     switch(route){
@@ -46,6 +49,8 @@ const routeChange = (route) =>{
             signInMain.classList.remove("hide");
             outHeader.classList.add("hide");
             logHeader.classList.remove("hide");
+            header.classList.remove("signOutHeader");
+            header.classList.add("signLogHeader");
             break;
         case 'signUp' :
             contactMain.classList.add("hide");
@@ -58,6 +63,8 @@ const routeChange = (route) =>{
             contactMain.classList.remove("hide");
             outHeader.classList.remove("hide");
             logHeader.classList.add("hide");
+            header.classList.remove("signLogHeader");
+            header.classList.add("signOutHeader");
             break;
     }
 }

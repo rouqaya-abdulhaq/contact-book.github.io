@@ -1,0 +1,105 @@
+*, *::before, *::after {box-sizing: border-box}
+/*----------------------------
+  STYLE TABLE :
+  1- HEADER GLOBAL SELECTORS
+  2- HEADER TYPES
+    2-1 SIGN/LOG HEADER
+    2-2 SIGN OUT HEADER
+  3- NAV BUTTONS
+  4- MEDIA QUERIES 
+    4-1 TABLET
+    4-2 SMART PHONES
+  ----------------------------*/
+
+/*1- HEADER GLOBAL SELECTORS*/
+header{
+  grid-area: header;
+  padding: 2vh;
+}
+/*-----------------------------*/
+/*2- HEADER TYPES*/
+/*2-1 SIGN/LOG HEADER*/
+.signLogHeader{
+  display: grid;
+  grid-template-columns: 20%  50%  30%;
+  grid-template-areas:
+               "logo . registartion";
+}
+
+.signLogButtons{
+  grid-area: registartion;
+  display: grid;
+  grid-template-columns: 45%  45%;
+  grid-gap: 1%;
+}
+/*-----------------------------*/
+/*2-2 SIGN OUT HEADER*/
+.signOutHeader{
+  display: grid;
+  grid-template-columns: 20%  60%  20%;
+  grid-template-areas:
+               "logo  . signOut";
+}
+
+.signOutButton{
+  grid-area: signOut;
+}
+/*-----------------------------*/
+
+/*3- NAV BUTTONS*/
+.navButton{
+  text-decoration: none;
+  border: none;
+  color: white;
+  font-weight: bolder;
+  text-align: center;
+  border-radius: 5%;
+  height: 7vh;
+  width: 10vw;
+  cursor: pointer;
+  padding: 0;
+  margin-top: 1%;
+  background: blanchedalmond;
+}
+.navButton:hover{
+  margin-top: 2%;
+  outline: none;
+}
+/*--------------------------------------------------------------*/
+/*4- MEDIA QUERIES*/
+/*4-1 TABLET*/
+@media (max-width : 1024px ) and (min-width : 768px) {
+  .signLogHeader{
+    grid-template-columns: 30% 20% 50%;
+  }
+  .signOutHeader{
+    grid-template-columns: 35% 30% 35%;
+  }
+  .navButton{
+    width: 20vw;
+    font-size: 1.5em;
+  }
+  
+}  
+@media (max-width : 767px) and (min-width : 501px){
+  .signLogHeader{
+    grid-template-columns: 30% 12% 58%;
+  }
+  .navButton{
+    width: 23vw;
+  }
+}
+/*------------------------------------------------*/
+/*4-2 SMART PHONES*/
+@media (max-width : 500px) and (min-width : 320px) {
+  .signLogHeader{
+    grid-template-columns: 30% 10% 60%;
+  }
+  .signOutHeader{
+    grid-template-columns: 30% 40% 30%;
+  }
+  .navButton{
+    width: 25vw;
+  }
+
+}
