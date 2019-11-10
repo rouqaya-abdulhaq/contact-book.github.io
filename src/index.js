@@ -1,6 +1,7 @@
 import {displayContactForm} from './events/contactForm';
 import './header.css';
 import './logo.css';
+import './footer.css';
 
 //Needs serious renaming
 /*synopsis:
