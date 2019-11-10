@@ -1,8 +1,17 @@
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
 .submitBtn{
     outline: none;
     border-radius: 10%;
     font-weight: bold;
+    margin: 4%;
 }
+
 /*validation : i want this to go red if all the inputs are not filled*/
 .submitBtn:focus , .submitBtn:hover{
     background: limegreen;
@@ -37,6 +46,11 @@
     margin-left: 2vw;
     font-size: 1.5vw; 
 }
+
+.submitBtn, .inputBox, .label{
+    display: block;
+}
+
 
 /*-------------------------------------------------------------------------*/
 /*TABLET QUERIES*/

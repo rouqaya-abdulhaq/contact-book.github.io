@@ -38,7 +38,7 @@ const logInNav = document.querySelector("#logIn");
 const signUpNav = document.querySelector("#signIn");
 const signOutNav = document.querySelector("#signOut");
 
-const submitSign = document.querySelectorAll(".submitButton");
+const submitSign = document.querySelectorAll(".submitBtn");
 
 const header = document.querySelector("header");
 
