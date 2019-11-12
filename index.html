@@ -2,7 +2,6 @@
 <html>
 <head>
 	<title>contact book</title>
-	<link rel="icon" href="data:,">
 </head>
 <body>
 
@@ -27,11 +26,11 @@
 		<form>
 			 <label class="label" id="emailLabel" for="email">email: </label>
 			 <input type="email" id="emailInputBox" 
-			 class="inputBox" title="email" required>
+			 class="inputBox" title="email" required autocomplete="off">
 
 			 <label class="label" id="passwordLabel" for="password" >password: </label>
 			 <input type="password" id="passwordInputBox" 
-			 class="inputBox" title="password" required>
+			 class="inputBox" title="password" required autocomplete="off">
 
 			 <button type="button" class="submitBtn">log in</button>
 		</form>
@@ -50,21 +49,21 @@
 				<label for="firstName">
 					First Name :<span class="req"> *</span>
 				 </label>
-				<input type="text" title="firstName" class="inputBox" name="firstName" required="on">
+				<input type="text" title="firstName" class="inputBox" name="firstName" required="on" autocomplete="off"/>
 			</div>
 			
 			<div class="field-wrap">
 				<label>
 					Last Name :<span class="req"> *</span>
 				</label>
-				<input type="text" class="inputBox" name="lastName" required="on">
+				<input type="text" class="inputBox" name="lastName" required="on" autocomplete="off"/>
 			</div>
 			
 			<div class="field-wrap">
 				<label>
 					Email Adress :<span class="req"> *</span>
 				</label>
-				<input type="email" class="inputBox" name="emailAdress" required="on">
+				<input type="email" class="inputBox" name="emailAdress" required="on" autocomplete="off"/>
 			</div>
 			
 			<div class="field-wrap">
