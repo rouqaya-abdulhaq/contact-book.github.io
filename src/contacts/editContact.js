@@ -20,10 +20,10 @@ const changeIndex = (parent,child) => {
 
 const onEdit = (targetedContact) =>{
     const newContactInfo = getContactInfo();
-    const contactName = getContactName(newContactInfo.firstName,newContactInfo.lastName);
+    const newContact = createContact(newContactInfo);
     EditContactData(editIndex,newContactInfo);
-    targetedContact.innerText = "";
-    createContact(contactName,targetedContact,newContactInfo);
+    targetedContact.parentNode.insertBefore(newContact,targetedContact);
+    targetedContact.parentNode.removeChild(targetedContact);
 }
 
 const getContactInfo = () =>{
@@ -36,7 +36,4 @@ const getContactInfo = () =>{
     return info;
 }
 
-//only for now once i fix the index proplem it will be passed and extracted from the db
-const getContactName = (firstName, lastName) =>{
-    return firstName + " " + lastName;
-}
+

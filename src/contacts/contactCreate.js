@@ -4,24 +4,26 @@ import {displayContactInfo} from './contactInfoDisplay';
 import {getIndexOfNode} from './contactUseful';
 import './styles/contactList.css';
 
-export const createContact = (name,contContainer,contactInfo) => {
-    let contactName = createContactName(name);
+export const createContact = (contactInfo) => {
+    let contactName = createContactName(contactInfo);
     contactName.addEventListener("click",()=>{displayContactInfo(contactInfo)});
-    addContactToContainer(contactName,contContainer);
+    const contContainer = addContactToContainer(contactName);
     return contContainer;
 }
 
-const createContactName = (name) => {
+const createContactName = (contactInfo) => {
     const contact = document.createElement("div");
-    contact.innerText = name; 
-    // contact.className = "contact";
+    contact.innerText = contactInfo.firstName + " " + contactInfo.lastName; 
     return contact;
 }
 
-const addContactToContainer = (contact ,container) =>{
+const addContactToContainer = (contact) =>{
+    const container = document.createElement("div");
+    container.className = "contact";
     container.appendChild(contact);
     container.appendChild(createEditBtn(onEditClick));
     container.appendChild(createDeleteBtn(container));
+    return container;
 }
 
 const createEditBtn = (onEdit) => {
