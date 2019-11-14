@@ -5,19 +5,19 @@ import {getIndexOfNode} from './contactUseful';
 import './styles/contactList.css';
 
 export const createContact = (contactInfo) => {
-    let contactName = createContactName(contactInfo);
-    contactName.addEventListener("click",()=>{displayContactInfo(contactInfo)});
-    const contContainer = addContactToContainer(contactName);
+    const contactName = createContactName(contactInfo);
+    const contContainer = createContactContainer(contactName);
     return contContainer;
 }
 
 const createContactName = (contactInfo) => {
     const contact = document.createElement("div");
     contact.innerText = contactInfo.firstName + " " + contactInfo.lastName; 
+    contact.addEventListener("click",()=>{displayContactInfo(contactInfo)});
     return contact;
 }
 
-const addContactToContainer = (contact) =>{
+const createContactContainer = (contact) =>{
     const container = document.createElement("div");
     container.className = "contact";
     container.appendChild(contact);
