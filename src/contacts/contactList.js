@@ -4,6 +4,7 @@ export const dataBase = [];
 
 export const addContactToDataBase = (contact) =>{
     dataBase.push(contact);
+    // console.log(dataBase);
 }
 
 export const addContactToList = (childNode) =>{
@@ -12,6 +13,7 @@ export const addContactToList = (childNode) =>{
 
 export const EditContactData = (index,newData) =>{
     dataBase[index] = newData;
+    // console.log(dataBase);
 }
 
 export const deleteContact = (contactNode,index) =>{
