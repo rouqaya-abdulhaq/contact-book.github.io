@@ -3,8 +3,8 @@ import {createContact} from "./contactCreate";
 import {displayEditForm} from "../events/contactForm";
 import {getIndexOfNode} from './contactUseful';
 
-//This page needs serious imrovments to be overlooked again once i connect to data base
-//or something else comes up
+//FIND A WAY TO UPDATE THE DOM IMMEDIATELY WHEN THE DATA BASE CHANGES  
+//WORKS FINE FOR NOW
 
 export const onEditClick = ( ) => {
     const targetedContact = event.target.parentNode;
@@ -15,14 +15,8 @@ export const onEditClick = ( ) => {
 const onEdit = (targetedContact) =>{
     const newContactInfo = getContactInfo();
     const newContact = createContact(newContactInfo);
-    targetedContact.parentNode.insertBefore(newContact, targetedContact);
-    targetedContact.parentNode.removeChild(targetedContact);
-    let index = getIndex(newContact);
-    EditContactData(index,newContactInfo);
-}
-
-const getIndex = (child) => {
-    return getIndexOfNode(child);
+    editContactDom(newContact,targetedContact);
+    editDataBase(newContact,newContactInfo);
 }
 
 const getContactInfo = () =>{
@@ -33,6 +27,15 @@ const getContactInfo = () =>{
         phoneNumber : document.querySelector("#phoneNumber").value 
     }
     return info;
+}
+
+const editContactDom = (newContact , oldContact) =>{
+    oldContact.parentNode.replaceChild(newContact,oldContact);
+}
+
+const editDataBase = (contactNode, contactInfo) =>{
+    let index = getIndexOfNode(contactNode);
+    EditContactData(index,contactInfo); 
 }
 
 
