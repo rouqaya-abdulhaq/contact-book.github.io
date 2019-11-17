@@ -8,7 +8,7 @@
     3-1 POPUPS DYNAMICS
 ----------------------*/
 /*1- CONTACT LIST OUTSIDE STRUCTURE*/
-.contactList{
+#contactMain{
     overflow-y: auto;
     display: flex;
     flex-direction: column;
@@ -18,14 +18,14 @@
 /*--------------------------------------------------------------*/
 /*2- CONTACT LIST INSIDE ELEMENTS*/
 /*2-1 DYNAMIC ELEMENTS*/
-.contactList .title{
+#contactMain .title{
     font-family: monospace;
     font-size: 2em;
     position: sticky;
     top: 1vh;
     margin : 2%;
 }
-.contactList .addButton{
+#contactMain .addButton{
     height: 3vh;
     width: 2vw;
     text-align: center;

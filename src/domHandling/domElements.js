@@ -2,8 +2,8 @@ import '../style.css';
 import '../contacts/styles/contactList.css';
 
 export const contactMain = document.querySelector("#contactMain");
-export const contactWrap = document.querySelector("#contactsList");
-contactWrap.className = "contactList";
+export const contactList = document.querySelector("#contactsList");
+contactList.className = "contactList";
 
 document.querySelector("body").className = "App"; 
 

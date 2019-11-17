@@ -1,5 +1,6 @@
 //until i connect to data base
-export const contactList = document.createElement("div");
+//NOT REALLY SURE IF I SHOULDE IMPORT SOMETHING HERE
+import {contactList} from '../domHandling/domElements';
 export const dataBase = [];
 
 export const addContactToDataBase = (contact) =>{

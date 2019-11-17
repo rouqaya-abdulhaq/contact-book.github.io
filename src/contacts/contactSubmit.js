@@ -1,14 +1,11 @@
-import {addContactToDataBase , contactList,
-    addContactToList} from './contactList';
+import {addContactToDataBase,addContactToList} from './contactList';
 import {createContact} from "./contactCreate";
-import {contactWrap} from '../domHandling/domElements';
 import './styles/contactList.css';
 
 export const onSubmit = () => {
-    const add = getContactInfo();
-    addContactToDataBase(add);
-    addContactToDom(add);
-    contactWrap.appendChild(contactList);
+    const Newcontact = getContactInfo();
+    addContactToDataBase(Newcontact);
+    addContactToDom(Newcontact);
 }
 
 const getContactInfo = () => {
