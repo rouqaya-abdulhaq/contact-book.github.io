@@ -24,10 +24,9 @@ import './footer.css';
 
 // TURNED TO A SINGLE PAGE NOT REALLY GLAD WITH THE WAY, IT SEEMS A BIT MISSY 
 
-
 const addButton = document.querySelector(".addButton");
 
-const contactMain = document.querySelector("#contactMain");
+const contactMain = document.querySelector("#displayCont");
 const signUpMain = document.querySelector("#signUpMain");
 const signInMain = document.querySelector("#signInMain");
 
