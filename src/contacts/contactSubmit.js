@@ -7,7 +7,7 @@ export const onSubmit = () => {
     addContactToDataBase(Newcontact);
     addContactToDom(Newcontact);
 }
-
+//repeated in editContact
 const getContactInfo = () => {
     const info = {
         firstName : document.querySelector("#firstName").value,

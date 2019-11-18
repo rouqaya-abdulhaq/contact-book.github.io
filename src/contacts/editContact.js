@@ -18,7 +18,7 @@ const onEdit = (targetedContact) =>{
     editContactDom(newContact,targetedContact);
     editDataBase(newContact,newContactInfo);
 }
-
+//repeated in contactSubmit
 const getContactInfo = () =>{
     const info = {
         firstName : document.querySelector("#firstName").value,

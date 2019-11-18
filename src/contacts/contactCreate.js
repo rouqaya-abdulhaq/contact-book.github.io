@@ -13,19 +13,18 @@ export const createContact = (contactInfo) => {
 const createContactName = (contactInfo) => {
     const contact = document.createElement("div");
     contact.innerText = contactInfo.firstName + " " + contactInfo.lastName; 
-    contact.addEventListener("click",()=>{displayContactInfo(contactInfo)});
+    contact.addEventListener("click",()=>{event.target.parentNode.appendChild(displayContactInfo(contactInfo))});
     return contact;
 }
 
 const createContactContainer = (contact) =>{
     const container = document.createElement("div");
     container.className = "contact";
-    container.appendChild(contact);
-    container.appendChild(createEditBtn(onEditClick));
-    container.appendChild(createDeleteBtn(container));
+    container.append(contact, createEditBtn(onEditClick), createDeleteBtn(container));
     return container;
 }
 
+//change the setAttribute calls either to a function or to object.assign
 const createEditBtn = (onEdit) => {
     let editImg = document.createElement("IMG");
     editImg.setAttribute("src","src/icon.png");
