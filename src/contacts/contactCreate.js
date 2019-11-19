@@ -1,6 +1,6 @@
 import {deleteContact} from './contactList';
 import {onEditClick} from './editContact';
-import {displayContactInfo} from './contactInfoDisplay';
+import {createInfoCard} from './contactInfoCard';
 import {getIndexOfNode} from './contactUseful';
 import './styles/contactList.css';
 
@@ -13,8 +13,13 @@ export const createContact = (contactInfo) => {
 const createContactName = (contactInfo) => {
     const contact = document.createElement("div");
     contact.innerText = contactInfo.firstName + " " + contactInfo.lastName; 
-    contact.addEventListener("click",()=>{event.target.parentNode.appendChild(displayContactInfo(contactInfo))});
+    contact.addEventListener("click",()=>{displayInfoCard(contactInfo, event.target.parentNode)});
     return contact;
+}
+
+const displayInfoCard = (contactInfo, contElem) =>{
+    const infoCard = createInfoCard(contactInfo);
+    contElem.appendChild(infoCard);
 }
 
 const createContactContainer = (contact) =>{
