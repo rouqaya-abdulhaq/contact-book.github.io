@@ -2,7 +2,7 @@ export const createInfoCard = (contactInfo) =>{
     const card = createInfoCardElement();
     const info = createInfo(contactInfo);
     const cancelBtn = createCancelBtn();
-    card.append(info,cancelBtn);
+    card.append(cancelBtn,info);
     return card;
 }
 
