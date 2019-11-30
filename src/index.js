@@ -1,4 +1,5 @@
 import {displayContactForm} from './events/contactForm';
+import {palette} from './palette/palette';
 import './header.css';
 import './logo.css';
 import './footer.css';
@@ -23,6 +24,8 @@ import './footer.css';
 
 
 // TURNED TO A SINGLE PAGE NOT REALLY GLAD WITH THE WAY, IT SEEMS A BIT MISSY 
+const classList = document.querySelectorAll(".paletteClass");
+
 
 const addButton = document.querySelector(".addButton");
 
@@ -86,7 +89,7 @@ const onDelete = () =>{
 }
 
 const onPalette = () =>{
-    //
+
 }
 
 const changePageStyle = () => {
@@ -100,3 +103,4 @@ signOutNav.addEventListener('click',()=>routeChange('signIn'));
 for (const btn of submitSign){
     btn.addEventListener("click",()=>{routeChange('contactList')});
 }
+palette(classList);
