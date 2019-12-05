@@ -5,7 +5,7 @@ export const contactMain = document.querySelector("#contactMain");
 export const contactList = document.querySelector("#contactsList");
 contactList.className = "contactList";
 
-document.querySelector("body").className = "App"; 
+document.querySelector("body").className = "default"; 
 
 
 

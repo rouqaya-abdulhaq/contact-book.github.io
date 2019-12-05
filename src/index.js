@@ -3,7 +3,7 @@ import {palette} from './palette/palette';
 import './header.css';
 import './logo.css';
 import './footer.css';
-
+import './paletteClasses.css';
 //Needs serious renaming
 /*synopsis:
    1- the user should sign up or log in and then be directed to the contact list
