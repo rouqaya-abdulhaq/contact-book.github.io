@@ -1,31 +1,91 @@
 .default {
-    background-color: rgb(118, 46, 146);
+    background: rgb(170, 27, 65);
 }
 
-.default header , .default main{
-    background-color: #ad80c2;
+.default header {
+    background:  rgb(232, 167, 102);
 }
+
+.default main{
+    background: rgb(219, 171, 122);
+    border-left-color: rgb(209, 160, 111);
+ }
 
 .default header nav button{
-    background-color: #cf98f3;
+    background: rgb(79, 50, 53);
+   -webkit-box-shadow: 0px 26px 0px 0px rgb(54, 20, 7);
+   -moz-box-shadow: 0px 26px 0px 0px rgba(54, 20, 7);
+   box-shadow: 0px 11px 0px 0px rgb(54, 20, 7);
 }
 
+.default .title{
+    background : rgb(210, 180, 140);
+ }
+
+.default #logo{
+    background: rgb(161, 44, 83);
+    -webkit-box-shadow: 2px 2px 0px 2px rgb(65, 6, 34,1);
+     -moz-box-shadow: 2px 2px 0px 2px rgba(65, 6, 34,1);
+     box-shadow: 2px 2px 0px 2px rgba(65, 6, 34,1);
+ }
+/*--------------------------------------------------------------------------*/
 .flowery{
-    background-color: #ce1d1d;
-}
-.flowery header , .flowery main{
-    background-color: #e07f87;
-}
-.flowery header nav button{
-    background-color: #f398dc;
+    background: rgb(252, 220, 209);
 }
 
+.flowery header{
+    background: rgb(235, 202, 203);
+}
+
+.flowery header nav button{
+    background: rgb(235, 187, 185);
+   -webkit-box-shadow: 0px 26px 0px 0px rgb(194, 154, 152,1);
+   -moz-box-shadow: 0px 26px 0px 0px rgba(194, 154, 152,1);
+   box-shadow: 0px 11px 0px 0px rgb(194, 154, 152,1);
+   color: black;
+}
+
+.flowery main{
+    background: rgb(244, 233, 229);
+    border-left-color: rgb(241, 209, 198);
+}
+
+.flowery .title{
+    background: rgb(248, 248, 246);
+}
+
+ .flowery #logo{
+    background: rgb(243, 197, 182);
+    -webkit-box-shadow: 2px 2px 0px 2px rgb(214, 184, 174,1);
+     -moz-box-shadow: 2px 2px 0px 2px rgba(214, 184, 174,1);
+     box-shadow: 2px 2px 0px 2px rgba(214, 184, 174,1);
+}
+/*--------------------------------------------------------------------*/
 .seaSide{
-    background-color: #1666c2;
+    background: rgb(90, 188, 185);
 }
-.seaSide header , .seaSide main{
-    background-color: #6e88fa;
+
+.seaSide header{
+    background: rgb(238, 203, 113);
 }
+
 .seaSide header nav button{
-    background-color: #98f3eb;
+    background: rgb(2, 28, 68);
+   -webkit-box-shadow: 0px 26px 0px 0px rgb(0, 9, 20,1);
+   -moz-box-shadow: 0px 26px 0px 0px rgba(0, 9, 20,1);
+   box-shadow: 0px 11px 0px 0px rgb(0, 9, 20,1);
 }
+
+.seaSide main{
+    background: rgb(130, 212, 187);
+    border-left-color: rgb(103, 212, 180);
+ }
+ .seaSide .title{
+    background: rgb(166, 244, 220);
+ }
+ .seaSide #logo{
+    background: rgb(90, 188, 185);
+    -webkit-box-shadow: 2px 2px 0px 2px rgb(57, 151, 148,1);
+     -moz-box-shadow: 2px 2px 0px 2px rgba(57, 151, 148,1);
+     box-shadow: 2px 2px 0px 2px rgba(57, 151, 148,1);
+ }
