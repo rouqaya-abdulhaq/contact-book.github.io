@@ -51,6 +51,9 @@ form{
     display: block;
 }
 
+.inputBox, .label, .submitBtn{
+    position: relative;
+}
 
 /*-------------------------------------------------------------------------*/
 /*TABLET QUERIES*/

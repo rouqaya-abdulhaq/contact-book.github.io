@@ -1,31 +1,31 @@
 .default {
-    background: rgb(118, 46, 146);
+    background-color: rgb(118, 46, 146);
 }
 
 .default header , .default main{
-    background: #ad80c2;
+    background-color: #ad80c2;
 }
 
 .default header nav button{
-    background: #cf98f3;
+    background-color: #cf98f3;
 }
 
 .flowery{
-    background: #ce1d1d;
+    background-color: #ce1d1d;
 }
 .flowery header , .flowery main{
-    background: #e07f87;
+    background-color: #e07f87;
 }
 .flowery header nav button{
-    background: #f398dc;
+    background-color: #f398dc;
 }
 
 .seaSide{
-    background: #1666c2;
+    background-color: #1666c2;
 }
 .seaSide header , .seaSide main{
-    background: #6e88fa;
+    background-color: #6e88fa;
 }
 .seaSide header nav button{
-    background: #98f3eb;
+    background-color: #98f3eb;
 }

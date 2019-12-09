@@ -32,6 +32,10 @@
     outline: none;
     margin : 2%;
 }
+
+#contactMain .addButton, #contactMain .title{
+    position: relative;
+}
 /*-----------------------*/
 /*2-2 CONTACTS*/
 .contact{
