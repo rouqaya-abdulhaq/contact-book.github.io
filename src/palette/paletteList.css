@@ -1,0 +1,23 @@
+.colorList{
+    position: fixed;
+    top: 35vh;
+    left : 4.5vw;
+    height: 40vh;
+    width: 15vw;
+    display: grid;
+    grid-template-columns: 49% 49%;
+    grid-auto-rows: 20%;
+    grid-gap: 2%;
+    overflow-y: auto;
+}
+
+.paletteClass{
+    background: whitesmoke;
+    text-align: center;
+    padding-top: 5%;
+    overflow-wrap: break-word;
+}
+
+.paletteClass:hover{
+    cursor: pointer;
+}

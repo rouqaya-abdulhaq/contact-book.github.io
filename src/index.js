@@ -4,6 +4,7 @@ import './header.css';
 import './logo.css';
 import './footer.css';
 import './paletteClasses.css';
+// import './palette/paletteList.css';
 //Needs serious renaming
 /*synopsis:
    1- the user should sign up or log in and then be directed to the contact list
@@ -25,7 +26,7 @@ import './paletteClasses.css';
 
 // TURNED TO A SINGLE PAGE NOT REALLY GLAD WITH THE WAY, IT SEEMS A BIT MISSY 
 const paletteClasses = document.querySelectorAll(".paletteClass");
-const paletteList = document.querySelector("#colorList");
+const paletteList = document.querySelector(".colorList");
 const paletteIcon = document.querySelector("#palette");
 
 const cancelBtn = document.querySelector('.cancelBtn');
@@ -83,7 +84,6 @@ const showPaletteList = () => {
 const cancel = (element) =>{
     element.classList.add("hide");
 }
-
 
 const onSignIn = () =>{
     //
