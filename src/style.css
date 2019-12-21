@@ -37,13 +37,19 @@ height: 65vh;
  -moz-box-shadow: 13px 5px 32px -19px rgba(0,0,0,1);
  box-shadow: 13px 5px 32px -19px rgba(0,0,0,1);
 }
-
+/*clean up the styling when imported from paletteList it overruns the hide class*/
 .colorList{
+   border: black dashed;
    position: fixed;
    top: 35vh;
    left : 4.5vw;
    height: 40vh;
    width: 15vw;
+}
+
+.colors{
+   height: 100%;
+   width: 100%;
    display: grid;
    grid-template-columns: 49% 49%;
    grid-auto-rows: 20%;
@@ -60,6 +66,13 @@ height: 65vh;
 
 .paletteClass:hover{
    cursor: pointer;
+}
+
+.cancelBtn{
+   margin-left: 45%;
+   margin-bottom: 4%;
+   outline: none;
+   font-size: 10%;
 }
 /*---------------------------------------------------------------------*/
 
