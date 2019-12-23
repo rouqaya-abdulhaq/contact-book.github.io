@@ -1,5 +1,6 @@
 import {displayContactForm} from './events/contactForm';
 import {showPaletteList} from './palette/palette';
+import {routeChange} from './tempRouting';
 import './header.css';
 import './logo.css';
 import './footer.css';
@@ -23,18 +24,10 @@ import './paletteClasses.css';
 
 
 
-// TURNED TO A SINGLE PAGE NOT REALLY GLAD WITH THE WAY, IT SEEMS A BIT MISSY 
 const paletteIcon = document.querySelector("#palette");
 
 
 const addButton = document.querySelector(".addButton");
-
-const contactMain = document.querySelector("#displayCont");
-const signUpMain = document.querySelector("#signUpMain");
-const signInMain = document.querySelector("#signInMain");
-
-const logHeader = document.querySelector("#logNavigation");
-const outHeader = document.querySelector("#outNavigation");
 
 const logInNav = document.querySelector("#logIn");
 const signUpNav = document.querySelector("#signIn");
@@ -42,36 +35,6 @@ const signOutNav = document.querySelector("#signOut");
 
 const submitSign = document.querySelectorAll(".submitBtn");
 
-const header = document.querySelector("header");
-
-
-const routeChange = (route) =>{
-    switch(route){
-        case 'signIn' :
-            contactMain.classList.add("hide");
-            signUpMain.classList.add("hide");
-            signInMain.classList.remove("hide");
-            outHeader.classList.add("hide");
-            logHeader.classList.remove("hide");
-            header.classList.remove("signOutHeader");
-            header.classList.add("signLogHeader");
-            break;
-        case 'signUp' :
-            contactMain.classList.add("hide");
-            signInMain.classList.add("hide");
-            signUpMain.classList.remove("hide");
-            break;
-        case 'contactList' :
-            signInMain.classList.add("hide");
-            signUpMain.classList.add("hide");
-            contactMain.classList.remove("hide");
-            outHeader.classList.remove("hide");
-            logHeader.classList.add("hide");
-            header.classList.remove("signLogHeader");
-            header.classList.add("signOutHeader");
-            break;
-    }
-}
 
 const onSignIn = () =>{
     //
