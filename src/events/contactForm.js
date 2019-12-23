@@ -1,6 +1,6 @@
 import {createContactForm} from "../form/formHandler";
 import {onSubmit} from '../contacts/contactSubmit';
-import {appendToMain} from '../domHandling/domChanges';
+import {appendToMain} from '../domHandling/mainEffects';
 
 
 export const displayContactForm = () => {

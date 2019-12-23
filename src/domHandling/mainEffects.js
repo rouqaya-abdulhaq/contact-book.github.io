@@ -1,5 +1,4 @@
-import {contactMain} from './domElements';
-
+const contactMain = document.querySelector("#contactMain");
 
 export const appendToMain = (elem) =>{
     contactMain.append(elem);
@@ -8,5 +7,3 @@ export const appendToMain = (elem) =>{
 export const removeFromMain = (elem) =>{
     contactMain.removeChild(elem);
 }
-
-// module.exports({removeForm});

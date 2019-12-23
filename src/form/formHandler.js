@@ -1,5 +1,5 @@
 import {createInput , createSubmitBtn, createCancelBtn} from './formDynamics';
-import {removeFromMain} from '../domHandling/domChanges';
+import {removeFromMain} from '../domHandling/mainEffects';
 import '../contacts/styles/contactList.css';
 import './styles/form.css';
 
