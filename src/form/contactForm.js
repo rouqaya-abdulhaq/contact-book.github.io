@@ -1,4 +1,4 @@
-import {createContactForm} from "../form/formHandler";
+import {createContactForm} from "./contFormCreator";
 import {onSubmit} from '../contacts/contactSubmit';
 import {appendToMain} from '../domHandling/mainEffects';
 

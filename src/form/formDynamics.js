@@ -41,10 +41,6 @@ const createInputBox = (id) => {
     return inputBox;
 }
 
-const addEventToInput = (input) =>{
-    input.addEventListener("change")
-}
-
 const createLabel = (className, value) => {
     const label = document.createElement("label");
     label.setAttribute("class" , className);

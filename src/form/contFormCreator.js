@@ -6,7 +6,6 @@ import './styles/form.css';
 export const  createContactForm = (onSubmit) => {
         const form = createForm("contactForm");
         const cancelBtn = createCancelBtn(()=>{removeFromMain(form)});
-        // cancelBtn.className = "cancelButton"
         const inputFields = createContactInputs();
         const submitBtn = createSubmitBtn("submit",()=>{submitPressed(onSubmit,form)});
         form.append(cancelBtn,inputFields,submitBtn);
@@ -36,14 +35,4 @@ const submitPressed = ( onSubmit,form) =>{
     onSubmit();
     removeFromMain(form);
 }
-//Later CREATE THE SIGN IN AND SIGN UP FORMS IN HERE AND NOT IN THE HTML PAGE
-    // handlesignInForm (){
-        
-    // }
-
-    // handlesignUpForm (){
-        
-    // }
-
-
 

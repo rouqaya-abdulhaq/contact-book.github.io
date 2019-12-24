@@ -1,6 +1,6 @@
 import {EditContactData} from './contactList';
 import {createContact} from "./contactCreate";
-import {displayEditForm} from "../events/contactForm";
+import {displayEditForm} from "../form/contactForm";
 import {getIndexOfNode ,getContactInfo} from './contactUseful';
 
 //FIND A WAY TO UPDATE THE DOM IMMEDIATELY WHEN THE DATA BASE CHANGES  
