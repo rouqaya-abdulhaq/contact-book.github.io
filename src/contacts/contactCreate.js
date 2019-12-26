@@ -32,7 +32,7 @@ const createContactContainer = (contact) =>{
 //change the setAttribute calls either to a function or to object.assign
 const createEditBtn = (onEdit) => {
     let editImg = document.createElement("IMG");
-    editImg.setAttribute("src","src/icon.png");
+    editImg.setAttribute("src","src/images/icon.png");
     editImg.setAttribute("alt","edit icon");
     editImg.setAttribute("class","contactButtons");
     editImg.addEventListener("click",onEdit)
