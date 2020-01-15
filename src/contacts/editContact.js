@@ -14,6 +14,26 @@ export const onEditClick = ( ) => {
 const onEdit = (targetedContact) =>{
     const newContactInfo = getContactInfo();
     const newContact = createContact(newContactInfo);
+    fetch('http://localhost:5000/contactEdit',{
+            method : 'PUT',
+            headers : {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body : JSON.stringify({
+                firstName : newContactInfo.firstName,
+                lastName : newContactInfo.lastName,
+                email : newContactInfo.email,
+                phoneNumber : newContactInfo.phoneNumber,
+                index : getIndexOfNode(targetedContact)
+            })
+            }).then((res)=>{
+                return res.json();
+            }).then((contact)=>{
+                console.log(contact);
+            }).catch((err)=>{
+                console.log(err);
+            });
     editContactDom(newContact,targetedContact);
     editDataBase(newContact,newContactInfo);
 }

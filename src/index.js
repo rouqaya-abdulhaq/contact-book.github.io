@@ -103,7 +103,7 @@ logInNav.addEventListener('click',()=>{routeChange('signIn')});
 signUpNav.addEventListener('click',()=>{routeChange('signUp')});
 signOutNav.addEventListener('click',()=>routeChange('signIn'));
 for (const btn of submitSign){
-    btn.addEventListener("click",onSignIn);
+    btn.addEventListener("click",onSignUp);
 }
 
 paletteIcon.addEventListener('click',showPaletteList);
