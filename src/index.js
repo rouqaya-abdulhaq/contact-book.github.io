@@ -1,6 +1,8 @@
 import {displayContactForm} from './form/contactForm';
 import {showPaletteList} from './palette/palette';
 import {routeChange} from './tempRouting';
+import {getNewUser} from './registration/signUp';
+import {getUserInfo} from './registration/signIn';
 import './stylesGlobal/header.css';
 import './stylesGlobal/logo.css';
 import './stylesGlobal/footer.css';
@@ -38,11 +40,49 @@ const submitSign = document.querySelectorAll(".submitBtn");
 
 
 const onSignIn = () =>{
-    //
+    const credintials = getUserInfo();
+    fetch("http://localhost:5000/signIn",{
+                    method : 'POST',
+                    headers : {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body : JSON.stringify(credintials)
+                }).then((res)=>{
+                    if(res.ok){
+                        return res.json();
+                    }else{
+                        return null;
+                    }
+                }).then((user)=>{
+                    if(user){
+                        console.log(user);
+                        routeChange('contactList')
+                    }else{
+                        console.log("user not found");
+                    }
+                }).catch((err)=>{
+                    //
+                })
 }
 
 const onSignUp = () =>{
-    //
+    const user = getNewUser();
+    fetch('http://localhost:5000/signUp',{
+        method : 'POST',
+        body : JSON.stringify(user),
+        headers : {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+        },
+    }).then((res)=>{
+      return  res.json();
+    }).then((data)=>{
+        console.log(data)
+    }).catch((err)=>{
+        console.log(err);
+    });
+    routeChange('contactList');
 }
 
  
@@ -63,7 +103,7 @@ logInNav.addEventListener('click',()=>{routeChange('signIn')});
 signUpNav.addEventListener('click',()=>{routeChange('signUp')});
 signOutNav.addEventListener('click',()=>routeChange('signIn'));
 for (const btn of submitSign){
-    btn.addEventListener("click",()=>{routeChange('contactList')});
+    btn.addEventListener("click",onSignIn);
 }
 
 paletteIcon.addEventListener('click',showPaletteList);
