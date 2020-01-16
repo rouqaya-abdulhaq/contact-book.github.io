@@ -1,5 +1,5 @@
 //until i connect to data base
-const contactList = document.querySelector("#contactsList");
+// const contactList = document.querySelector("#contactsList");
 export const dataBase = [];
 
 export const addContactToDataBase = (contact) =>{

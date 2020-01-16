@@ -38,6 +38,9 @@ const signOutNav = document.querySelector("#signOut");
 
 const submitSign = document.querySelectorAll(".submitBtn");
 
+const title = document.querySelector(".title");
+const contactList = document.querySelector("#contactsList")
+
 
 const onSignIn = () =>{
     const credintials = getUserInfo();
@@ -56,8 +59,15 @@ const onSignIn = () =>{
                     }
                 }).then((user)=>{
                     if(user){
-                        console.log(user);
+                        title.innerText = `${user.name}'s contacts`;
+                        const contacts = document.createElement("ul");
+                        user.contacts.map((contact)=>{
+                            const elem = document.createElement("li");
+                            elem.innerText = contact.firstName + " " + contact.lastName;
+                            contacts.appendChild(elem);
+                        });
                         routeChange('contactList')
+                        contactList.appendChild(contacts);
                     }else{
                         console.log("user not found");
                     }
@@ -78,7 +88,8 @@ const onSignUp = () =>{
     }).then((res)=>{
       return  res.json();
     }).then((data)=>{
-        console.log(data)
+        console.log(data);
+        title.innerText = `${data.name}'s contacts`;
     }).catch((err)=>{
         console.log(err);
     });
