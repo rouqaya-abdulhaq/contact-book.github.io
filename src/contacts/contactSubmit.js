@@ -28,7 +28,7 @@ export const onSubmit = () => {
     addContactToDom(Newcontact);
 }
 
-const addContactToDom = (contactInfo) => {
+export const addContactToDom = (contactInfo) => {
     const child = createContact(contactInfo);
     addContactToList(child);
 }
