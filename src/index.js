@@ -3,6 +3,7 @@ import {showPaletteList} from './palette/palette';
 import {routeChange} from './tempRouting';
 import {getNewUser} from './registration/signUp';
 import {getUserInfo} from './registration/signIn';
+import {addContactToDom} from './contacts/contactSubmit';
 import './stylesGlobal/header.css';
 import './stylesGlobal/logo.css';
 import './stylesGlobal/footer.css';
@@ -36,7 +37,8 @@ const logInNav = document.querySelector("#logIn");
 const signUpNav = document.querySelector("#signIn");
 const signOutNav = document.querySelector("#signOut");
 
-const submitSign = document.querySelectorAll(".submitBtn");
+const submitSign = document.querySelector("#subSign");
+const submitLog= document.querySelector("#subLog");
 
 const title = document.querySelector(".title");
 const contactList = document.querySelector("#contactsList")
@@ -61,11 +63,12 @@ const onSignIn = () =>{
                     if(user){
                         title.innerText = `${user.name}'s contacts`;
                         const contacts = document.createElement("ul");
-                        user.contacts.map((contact)=>{
-                            const elem = document.createElement("li");
-                            elem.innerText = contact.firstName + " " + contact.lastName;
-                            contacts.appendChild(elem);
-                        });
+                        if(user.contacts){
+                            for (let contact of user.contacts){
+                                console.log(contact);
+                                addContactToDom(contact);
+                            }
+                        }
                         routeChange('contactList')
                         contactList.appendChild(contacts);
                     }else{
@@ -113,8 +116,7 @@ addButton.addEventListener("click",displayContactForm);
 logInNav.addEventListener('click',()=>{routeChange('signIn')});
 signUpNav.addEventListener('click',()=>{routeChange('signUp')});
 signOutNav.addEventListener('click',()=>routeChange('signIn'));
-for (const btn of submitSign){
-    btn.addEventListener("click",onSignUp);
-}
+submitSign.addEventListener('click',onSignUp);
+submitLog.addEventListener('click',onSignIn);
 
 paletteIcon.addEventListener('click',showPaletteList);
