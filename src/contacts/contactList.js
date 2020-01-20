@@ -1,6 +1,5 @@
 //until i connect to data base
 const contactList = document.querySelector("#contactsList"); //TEMPORARY
-export const dataBase = [];
 
 export const addContactToDataBase = (contact) =>{
     dataBase.push(contact);
