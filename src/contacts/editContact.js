@@ -1,4 +1,3 @@
-import {EditContactData} from './contactList';
 import {createContact} from "./contactCreate";
 import {displayEditForm} from "../form/contactForm";
 import {getIndexOfNode ,getContactInfo} from './contactUseful';
@@ -13,7 +12,6 @@ export const onEditClick = ( ) => {
 
 const onEdit = (targetedContact) =>{
     const newContactInfo = getContactInfo();
-    const newContact = createContact(newContactInfo);
     fetch('http://localhost:5000/contactEdit',{
             method : 'PUT',
             headers : {
@@ -30,21 +28,17 @@ const onEdit = (targetedContact) =>{
             }).then((res)=>{
                 return res.json();
             }).then((contact)=>{
+                //UNTIL I CHANGE THE BACKEND SERVER TO SEND ONLY THE NEW CONTACT DATA
+                let index = getIndexOfNode(targetedContact);
+                const newContact = createContact(contact.contacts[index]);
+                editContactDom(newContact,targetedContact);
                 console.log(contact);
             }).catch((err)=>{
                 console.log(err);
             });
-    editContactDom(newContact,targetedContact);
-    editDataBase(newContact,newContactInfo);
 }
 
 const editContactDom = (newContact , oldContact) =>{
     oldContact.parentNode.replaceChild(newContact,oldContact);
 }
-
-const editDataBase = (contactNode, contactInfo) =>{
-    let index = getIndexOfNode(contactNode);
-    EditContactData(index,contactInfo); 
-}
-
 
