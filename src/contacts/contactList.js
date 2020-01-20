@@ -14,7 +14,7 @@ export const EditContactData = (index,newData) =>{
     dataBase[index] = newData;
 }
 
-export const deleteContact = (contactNode,index) =>{
+export const deleteContact = (index) =>{
     fetch('http://localhost:5000/contactDelete',{
             method : 'PUT',
             headers : {
@@ -28,10 +28,11 @@ export const deleteContact = (contactNode,index) =>{
                 return res.json();
             }).then((contact)=>{
                 console.log(contact);
+                if(contact){
+                    contactList.removeChild(contactList.childNodes[index]);
+                }
             }).catch((err)=>{
                 console.log(err);
             });
-    dataBase.splice(index,1);
-    contactList.removeChild(contactNode);
 }
 

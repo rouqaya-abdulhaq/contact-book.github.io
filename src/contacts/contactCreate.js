@@ -43,7 +43,7 @@ const createDeleteBtn = (contact) => {
     let deleteBtn = document.createElement("div");
     deleteBtn.innerText = " x ";
     deleteBtn.setAttribute("class","contactButtons");
-    deleteBtn.addEventListener("click",()=>deleteContact(contact,getIndexOfNode(contact)));
+    deleteBtn.addEventListener("click",()=>deleteContact(getIndexOfNode(contact)));
     return deleteBtn;
 }
 
