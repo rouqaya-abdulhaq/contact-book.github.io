@@ -1,4 +1,4 @@
-import {addContactToDataBase,addContactToList} from './contactList';
+import {addContactToList} from './contactList';
 import {createContact} from "./contactCreate";
 import {getContactInfo} from './contactUseful';
 import './styles/contactList.css';
@@ -19,13 +19,14 @@ export const onSubmit = () => {
             })
             }).then((res)=>{
                 return res.json();
-            }).then((contact)=>{
-                console.log(contact);
+            }).then((user)=>{
+                if (user){
+                    console.log(user);
+                    addContactToDom(user.contacts[user.contacts.length - 1]); 
+                }
             }).catch((err)=>{
                 console.log(err);
             });
-    addContactToDataBase(Newcontact);
-    addContactToDom(Newcontact);
 }
 
 export const addContactToDom = (contactInfo) => {
