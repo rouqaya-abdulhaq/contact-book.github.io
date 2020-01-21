@@ -28,9 +28,7 @@ const onEdit = (targetedContact) =>{
             }).then((res)=>{
                 return res.json();
             }).then((contact)=>{
-                //UNTIL I CHANGE THE BACKEND SERVER TO SEND ONLY THE NEW CONTACT DATA
-                let index = getIndexOfNode(targetedContact);
-                const newContact = createContact(contact.contacts[index]);
+                const newContact = createContact(contact);
                 editContactDom(newContact,targetedContact);
                 console.log(contact);
             }).catch((err)=>{
