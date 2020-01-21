@@ -19,10 +19,10 @@ export const onSubmit = () => {
             })
             }).then((res)=>{
                 return res.json();
-            }).then((user)=>{
-                if (user){
-                    console.log(user);
-                    addContactToDom(user.contacts[user.contacts.length - 1]); 
+            }).then((contact)=>{
+                if (contact){
+                    console.log(contact);
+                    addContactToDom(contact); 
                 }
             }).catch((err)=>{
                 console.log(err);
