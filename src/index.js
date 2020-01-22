@@ -1,8 +1,11 @@
 import {displayContactForm} from './form/contactForm';
 import {showPaletteList} from './palette/palette';
 import {routeChange} from './tempRouting';
+
+import {onSignOut} from './actions/registartion/onSignOut';
 import {onSignUp} from './actions/registartion/onSignUp';
 import {onSignIn} from './actions/registartion/signIn';
+
 import './stylesGlobal/header.css';
 import './stylesGlobal/logo.css';
 import './stylesGlobal/footer.css';
@@ -41,23 +44,12 @@ const submitLog= document.querySelector("#subLog");
 
 
 
- 
-const onDelete = () =>{
-    
-}
 
-const onPalette = () =>{
-
-}
-
-const changePageStyle = () => {
-    //
-}
 
 addButton.addEventListener("click",displayContactForm);
 logInNav.addEventListener('click',()=>{routeChange('signIn')});
 signUpNav.addEventListener('click',()=>{routeChange('signUp')});
-signOutNav.addEventListener('click',()=>routeChange('signIn'));
+signOutNav.addEventListener('click',onSignOut);
 submitSign.addEventListener('click',onSignUp);
 submitLog.addEventListener('click',onSignIn);
 
