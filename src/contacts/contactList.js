@@ -15,7 +15,7 @@ export const EditContactData = (index,newData) =>{
 
 export const deleteContact = (index) =>{
     fetch('http://localhost:5000/contactDelete',{
-            method : 'PUT',
+            method : 'DELETE',
             headers : {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
@@ -25,10 +25,9 @@ export const deleteContact = (index) =>{
             })
             }).then((res)=>{
                 return res.json();
-            }).then((contact)=>{
-                console.log(contact);
-                if(contact){
-                    contactList.removeChild(contactList.childNodes[index]);
+            }).then((contactIndex)=>{
+                if(contactIndex || contactIndex === 0){
+                    contactList.removeChild(contactList.childNodes[contactIndex]);
                 }
             }).catch((err)=>{
                 console.log(err);
