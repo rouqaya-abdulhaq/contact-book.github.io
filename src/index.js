@@ -1,7 +1,7 @@
 import {displayContactForm} from './form/contactForm';
 import {showPaletteList} from './palette/palette';
 import {routeChange} from './tempRouting';
-import {getNewUser} from './registration/signUp';
+import {onSignUp} from './actions/registartion/onSignUp';
 import {onSignIn} from './actions/registartion/signIn';
 import './stylesGlobal/header.css';
 import './stylesGlobal/logo.css';
@@ -39,30 +39,7 @@ const signOutNav = document.querySelector("#signOut");
 const submitSign = document.querySelector("#subSign");
 const submitLog= document.querySelector("#subLog");
 
-const title = document.querySelector(".title");
 
-
-
-
-const onSignUp = () =>{
-    const user = getNewUser();
-    fetch('http://localhost:5000/signUp',{
-        method : 'POST',
-        body : JSON.stringify(user),
-        headers : {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-        },
-    }).then((res)=>{
-      return  res.json();
-    }).then((data)=>{
-        console.log(data);
-        title.innerText = `${data.name}'s contacts`;
-    }).catch((err)=>{
-        console.log(err);
-    });
-    routeChange('contactList');
-}
 
  
 const onDelete = () =>{

@@ -2,8 +2,7 @@ import {getUserInfo} from '../../registration/signIn';
 import {addContactToDom} from '../../contacts/contactSubmit';
 import {routeChange} from '../../tempRouting'; //TEMPORARY
 
-const title = document.querySelector(".title");
-const contactList = document.querySelector("#contactsList");
+const title = document.querySelector(".title");//REPEATED IN ONSIGNUP
 
 export const onSignIn = () =>{
     const credintials = getUserInfo();
@@ -34,7 +33,7 @@ export const onSignIn = () =>{
                 })
 }
 
-const changeContactTitle = (name)=>{
+const changeContactTitle = (name)=>{ //REPEATED IN ONSIGNUP
     title.innerText = `${name}'s contacts`;
 }
 
