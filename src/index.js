@@ -2,8 +2,7 @@ import {displayContactForm} from './form/contactForm';
 import {showPaletteList} from './palette/palette';
 import {routeChange} from './tempRouting';
 import {getNewUser} from './registration/signUp';
-import {getUserInfo} from './registration/signIn';
-import {addContactToDom} from './contacts/contactSubmit';
+import {onSignIn} from './actions/registartion/signIn';
 import './stylesGlobal/header.css';
 import './stylesGlobal/logo.css';
 import './stylesGlobal/footer.css';
@@ -41,43 +40,9 @@ const submitSign = document.querySelector("#subSign");
 const submitLog= document.querySelector("#subLog");
 
 const title = document.querySelector(".title");
-const contactList = document.querySelector("#contactsList")
 
 
-const onSignIn = () =>{
-    const credintials = getUserInfo();
-    fetch("http://localhost:5000/signIn",{
-                    method : 'POST',
-                    headers : {
-                        'Accept': 'application/json',
-                        'Content-Type': 'application/json'
-                    },
-                    body : JSON.stringify(credintials)
-                }).then((res)=>{
-                    if(res.ok){
-                        return res.json();
-                    }else{
-                        return null;
-                    }
-                }).then((user)=>{
-                    if(user){
-                        title.innerText = `${user.name}'s contacts`;
-                        const contacts = document.createElement("ul");
-                        if(user.contacts){
-                            for (let contact of user.contacts){
-                                console.log(contact);
-                                addContactToDom(contact);
-                            }
-                        }
-                        routeChange('contactList')
-                        contactList.appendChild(contacts);
-                    }else{
-                        console.log("user not found");
-                    }
-                }).catch((err)=>{
-                    //
-                })
-}
+
 
 const onSignUp = () =>{
     const user = getNewUser();
