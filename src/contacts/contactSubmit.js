@@ -1,33 +1,7 @@
 import {addContactToList} from './contactList';
 import {createContact} from "./contactCreate";
-import {getContactInfo} from './contactUseful';
 import './styles/contactList.css';
 
-export const onSubmit = () => {
-    const Newcontact = getContactInfo();
-    fetch('http://localhost:5000/contactAdd',{
-            method : 'PUT',
-            headers : {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body : JSON.stringify({
-                firstName : Newcontact.firstName,
-                lastName : Newcontact.lastName,
-                email : Newcontact.email,
-                phoneNumber : Newcontact.phoneNumber
-            })
-            }).then((res)=>{
-                return res.json();
-            }).then((contact)=>{
-                if (contact){
-                    console.log(contact);
-                    addContactToDom(contact); 
-                }
-            }).catch((err)=>{
-                console.log(err);
-            });
-}
 
 export const addContactToDom = (contactInfo) => {
     const child = createContact(contactInfo);
