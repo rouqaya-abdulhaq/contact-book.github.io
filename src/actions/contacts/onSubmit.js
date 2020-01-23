@@ -19,7 +19,6 @@ export const onSubmit = () => {
                 return res.json();
             }).then((contact)=>{
                 if (contact){
-                    console.log(contact);
                     addContactToDom(contact); 
                 }
             }).catch((err)=>{
