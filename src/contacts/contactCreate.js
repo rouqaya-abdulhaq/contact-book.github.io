@@ -1,4 +1,4 @@
-import {deleteContact} from './contactList';
+import {onDelete} from '../actions/contacts/onDelete';
 import {onEditClick} from './editContact';
 import {createInfoCard} from './contactInfoCard';
 import {getIndexOfNode} from './contactUseful';
@@ -43,7 +43,7 @@ const createDeleteBtn = (contact) => {
     let deleteBtn = document.createElement("div");
     deleteBtn.innerText = " x ";
     deleteBtn.setAttribute("class","contactButtons");
-    deleteBtn.addEventListener("click",()=>deleteContact(getIndexOfNode(contact)));
+    deleteBtn.addEventListener("click",()=>onDelete(getIndexOfNode(contact)));
     return deleteBtn;
 }
 
