@@ -47,9 +47,11 @@ const submitLog= document.querySelector("#subLog");
 
 
 addButton.addEventListener("click",displayContactForm);
+
 logInNav.addEventListener('click',()=>{routeChange('signIn')});
 signUpNav.addEventListener('click',()=>{routeChange('signUp')});
 signOutNav.addEventListener('click',onSignOut);
+
 submitSign.addEventListener('click',onSignUp);
 submitLog.addEventListener('click',onSignIn);
 
