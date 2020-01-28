@@ -1,4 +1,4 @@
-import {displayContactForm} from './form/contactForm';
+import {displayContactForm} from './contacts/contactForm/contactForm';
 import {showPaletteList} from './palette/palette';
 import {routeChange} from './tempRouting';
 

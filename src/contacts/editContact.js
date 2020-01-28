@@ -1,4 +1,4 @@
-import {displayEditForm} from "../form/contactForm";
+import {displayEditForm} from "./contactForm/contactForm";
 import {onEdit} from '../actions/contacts/onEdit';
 
 

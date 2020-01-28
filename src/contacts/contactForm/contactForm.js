@@ -1,9 +1,21 @@
-import {createInput , createSubmitBtn, createCancelBtn} from './formDynamics';
-import {removeFromMain} from '../domHandling/mainEffects';
-import '../contacts/styles/contactList.css';
-import './styles/form.css';
+import {createInput , createSubmitBtn, createCancelBtn} from '../../form/formDynamics';
+import {onSubmit} from '../../actions/contacts/onSubmit';
+import '../styles/contactList.css';
+import '../../form/styles/form.css';
 
-export const  createContactForm = (onSubmit) => {
+const contactMain = document.querySelector("#contactMain");
+
+export const displayContactForm = () => {
+    const form = createContactForm(onSubmit);
+    appendToMain(form);
+}
+
+export const displayEditForm = (targetedContact , onEdit) =>{
+    const form = createContactForm(()=>onEdit(targetedContact));
+    contactMain.appendChild(form);
+}
+
+const  createContactForm = (onSubmit) => {
         const form = createForm("contactForm");
         const cancelBtn = createCancelBtn(()=>{removeFromMain(form)});
         const inputFields = createContactInputs();
@@ -36,3 +48,10 @@ const submitPressed = ( onSubmit,form) =>{
     removeFromMain(form);
 }
 
+const appendToMain = (elem) =>{
+    contactMain.append(elem);
+}
+
+const removeFromMain = (elem) =>{
+    contactMain.removeChild(elem);
+}
