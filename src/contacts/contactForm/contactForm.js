@@ -1,4 +1,4 @@
-import {createInput , createSubmitBtn, createCancelBtn} from '../../form/formDynamics';
+import {createInputs , createSubmitBtn, createCancelBtn} from '../../form/formDynamics';
 import {onSubmit} from '../../actions/contacts/onSubmit';
 import '../styles/contactList.css';
 import '../../form/styles/form.css';
@@ -25,14 +25,14 @@ const  createContactForm = (onSubmit) => {
 }
 
 const  createContactInputs = () => {
-    const inputfilds = document.createElement("div");
-    const firstNameInput = createInput("first name : ","firstName"); 
-    const lastNameInput = createInput("last name : ","lastName"); 
-    const emailInput = createInput("email : ", "email"); 
-    const phoneNumberInput = createInput("phone number : ", "phoneNumber");
-    inputfilds.append(firstNameInput,lastNameInput,
-        emailInput,phoneNumberInput);
-    return inputfilds; 
+    const inputVlues = {
+        "First Name" : "firstName",
+        "Last Name" : "lastName",
+        "Email" : "email",
+        "Phone Number" : "phoneNumber"
+    }
+    const inputfields = createInputs(inputVlues);
+    return inputfields; 
 }
 
 

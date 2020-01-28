@@ -1,6 +1,17 @@
 //the class names are hard coded for the time being i'll see if that works in the future
 import './styles/form.css';
 
+export const createInputs = (valueObject) =>{
+    //CHECK IF INPUT IS AN OBJECT
+    const inputFields = document.createElement("div");
+    if(valueObject){
+        for (const value in valueObject) {
+            inputFields.appendChild(createInput(value,valueObject[value]));
+        }  
+    }
+    return inputFields;
+}
+
 export const createInput = (labelValue, id) => {
     const wrapper = document.createElement("div");
     wrapper.setAttribute("class","inputWrapper");
