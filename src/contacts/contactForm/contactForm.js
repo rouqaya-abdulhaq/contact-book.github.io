@@ -1,5 +1,6 @@
-import {createInputs , createSubmitBtn, createCancelBtn} from '../../form/formDynamics';
+import {createInputs} from '../../form/formDynamics';
 import {onSubmit} from '../../actions/contacts/onSubmit';
+import {createCancelBtn,createSubmitBtn} from '../../UI/button/buttons';
 import '../styles/contactList.css';
 import '../../form/styles/form.css';
 
