@@ -1,8 +1,8 @@
 import {createInputs} from '../../UI/input/input';
 import {onSubmit} from '../../actions/contacts/onSubmit';
+import {createForm} from '../../UI/form/form'
 import {createCancelBtn,createSubmitBtn} from '../../UI/button/buttons';
 import '../styles/contactList.css';
-import '../styles/form.css';
 
 const contactMain = document.querySelector("#contactMain");
 
@@ -36,13 +36,6 @@ const  createContactInputs = () => {
     return inputfields; 
 }
 
-
-const createForm = (id) => {
-        const form = document.createElement("form");
-        form.setAttribute("id",id);
-        form.className = 'contactPopUps'
-        return form;
-}
 
 const submitPressed = ( onSubmit,form) =>{
     onSubmit();
