@@ -2,6 +2,7 @@ import {createInputs} from '../../UI/input/input';
 import {onSubmit} from '../../actions/contacts/onSubmit';
 import {createForm} from '../../UI/form/form'
 import {createCancelBtn,createSubmitBtn} from '../../UI/button/buttons';
+import {removeTargetParent} from '../../actions/domElements/removeElem';
 import '../styles/contactList.css';
 
 const contactMain = document.querySelector("#contactMain");
@@ -18,7 +19,7 @@ export const displayEditForm = (targetedContact , onEdit) =>{
 
 const  createContactForm = (onSubmit) => {
         const form = createForm("contactForm");
-        const cancelBtn = createCancelBtn(()=>{removeFromMain(form)});
+        const cancelBtn = createCancelBtn(removeTargetParent);
         const inputFields = createContactInputs();
         const submitBtn = createSubmitBtn("submit",()=>{submitPressed(onSubmit,form)});
         form.append(cancelBtn,inputFields,submitBtn);
