@@ -1,8 +1,8 @@
-import {createInputs} from '../../form/formDynamics';
+import {createInputs} from '../../UI/input/input';
 import {onSubmit} from '../../actions/contacts/onSubmit';
 import {createCancelBtn,createSubmitBtn} from '../../UI/button/buttons';
 import '../styles/contactList.css';
-import '../../form/styles/form.css';
+import '../styles/form.css';
 
 const contactMain = document.querySelector("#contactMain");
 
