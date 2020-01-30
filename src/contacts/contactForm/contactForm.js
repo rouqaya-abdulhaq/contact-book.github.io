@@ -35,7 +35,7 @@ const  createContactInputs = () => {
     const inputfields = createInputs(inputVlues);
     return inputfields; 
 }
-
+//FIND A WAY TO GET RID OF THIS
 const appendToMain = (elem) =>{
     contactMain.append(elem);
 }

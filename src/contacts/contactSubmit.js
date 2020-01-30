@@ -1,11 +1,11 @@
-import {addContactToList} from './contactList';
 import {createContact} from "./contactCreate";
 import './styles/contactList.css';
 
+const contactList = document.querySelector("#contactsList");
 
 export const addContactToDom = (contactInfo) => {
-    const child = createContact(contactInfo);
-    addContactToList(child);
+    const contact = createContact(contactInfo);
+    contactList.appendChild(contact);;
 }
 
 
