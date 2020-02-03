@@ -6,17 +6,16 @@ const title = document.querySelector(".title");//REPEATED IN ONSIGNUP
 
 export const onSignIn = () =>{
     const userInfo = getInfoById(['signInEmail','signInPassword']);
-    const credintials = {  
-        email : userInfo.signInEmail,
-        password : userInfo.signInPassword
-    }
     fetch("http://localhost:5000/signIn",{
                     method : 'POST',
                     headers : {
                         'Accept': 'application/json',
                         'Content-Type': 'application/json'
                     },
-                    body : JSON.stringify(credintials)
+                    body : JSON.stringify({
+                        email : userInfo.signInEmail,
+                        password : userInfo.signInPassword
+                    })
                 }).then((res)=>{
                     if(res.ok){
                         return res.json();
