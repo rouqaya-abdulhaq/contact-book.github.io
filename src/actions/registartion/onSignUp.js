@@ -1,5 +1,5 @@
 import {routeChange} from '../../tempRouting';
-import {getNewUser} from '../../registration/signUp';
+import {getInfoById} from '../../changeName/getInfo';
 
 //PERHAPS THERE IS A WAY TO EXTRACT THE FUNCTIONALITY OF ADMIITING 
 //A USER ONLOG OR SIGN THUS REDUCING CODE
@@ -7,7 +7,12 @@ import {getNewUser} from '../../registration/signUp';
 const title = document.querySelector(".title");// REPEATED IN ONSIGNIN
 
 export const onSignUp = () =>{
-    const user = getNewUser();
+    const userInfo = getInfoById(['firstName','lastName','email','password']);
+    const user = { //temporary until i fix server signUp info
+        name : userInfo.firstName + " " + userInfo.lastName,
+        email : userInfo.email,
+        password : userInfo.password
+    }
     fetch('http://localhost:5000/signUp',{
         method : 'POST',
         body : JSON.stringify(user),
