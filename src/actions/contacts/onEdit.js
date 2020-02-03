@@ -1,9 +1,10 @@
-import {getIndexOfNode ,getContactInfo} from '../../contacts/contactUseful';
+import {getIndexOfNode} from '../../contacts/contactUseful';
+import {getInfoById} from '../../changeName/getInfo';
 import {createContact} from "../../contacts/contactCreate";
 
 
 export const onEdit = (targetedContact) =>{
-    const newContactInfo = getContactInfo();
+    const newContactInfo = getInfoById(['firstName','lastName','email','phoneNumber']);
     fetch('http://localhost:5000/contactEdit',{
             method : 'PUT',
             headers : {
