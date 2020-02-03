@@ -1,11 +1,15 @@
-import {getUserInfo} from '../../registration/signIn';
 import {addContactToDom} from '../../contacts/contactSubmit';
+import {getInfoById} from '../../changeName/getInfo';
 import {routeChange} from '../../tempRouting'; //TEMPORARY
 
 const title = document.querySelector(".title");//REPEATED IN ONSIGNUP
 
 export const onSignIn = () =>{
-    const credintials = getUserInfo();
+    const userInfo = getInfoById(['emailInputBox','passwordInputBox']);
+    const credintials = {  
+        email : userInfo.emailInputBox,
+        password : userInfo.passwordInputBox
+    }
     fetch("http://localhost:5000/signIn",{
                     method : 'POST',
                     headers : {
