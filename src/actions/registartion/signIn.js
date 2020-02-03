@@ -5,10 +5,10 @@ import {routeChange} from '../../tempRouting'; //TEMPORARY
 const title = document.querySelector(".title");//REPEATED IN ONSIGNUP
 
 export const onSignIn = () =>{
-    const userInfo = getInfoById(['emailInputBox','passwordInputBox']);
+    const userInfo = getInfoById(['signInEmail','signInPassword']);
     const credintials = {  
-        email : userInfo.emailInputBox,
-        password : userInfo.passwordInputBox
+        email : userInfo.signInEmail,
+        password : userInfo.signInPassword
     }
     fetch("http://localhost:5000/signIn",{
                     method : 'POST',

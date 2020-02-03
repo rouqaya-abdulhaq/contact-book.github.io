@@ -27,10 +27,10 @@ const  createContactForm = (onSubmit) => {
 
 const  createContactInputs = () => {
     const inputVlues = {
-        "First Name" : "firstName",
-        "Last Name" : "lastName",
-        "Email" : "email",
-        "Phone Number" : "phoneNumber"
+        "First Name" : "contactFirstName",
+        "Last Name" : "contactLastName",
+        "Email" : "contactEmail",
+        "Phone Number" : "contactPhoneNumber"
     }
     const inputfields = createInputs(inputVlues);
     return inputfields; 

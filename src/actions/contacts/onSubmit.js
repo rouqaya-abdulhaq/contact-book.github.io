@@ -2,7 +2,8 @@ import {getInfoById} from '../../changeName/getInfo';
 import {addContactToDom} from '../../contacts/contactSubmit';
 
 export const onSubmit = () => {
-    const Newcontact = getInfoById(['firstName','lastName','email','phoneNumber']);
+    const newContact = getInfoById(['contactFirstName','contactLastName',
+    'contactEmail','contactPhoneNumber']);
     fetch('http://localhost:5000/contactAdd',{
             method : 'PUT',
             headers : {
@@ -10,10 +11,10 @@ export const onSubmit = () => {
                 'Content-Type': 'application/json'
             },
             body : JSON.stringify({
-                firstName : Newcontact.firstName,
-                lastName : Newcontact.lastName,
-                email : Newcontact.email,
-                phoneNumber : Newcontact.phoneNumber
+                firstName : newContact.contactFirstName,
+                lastName : newContact.contactLastName,
+                email : newContact.contactEmail,
+                phoneNumber : newContact.contactPhoneNumber
             })
             }).then((res)=>{
                 return res.json();

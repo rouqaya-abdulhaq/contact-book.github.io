@@ -7,11 +7,11 @@ import {getInfoById} from '../../changeName/getInfo';
 const title = document.querySelector(".title");// REPEATED IN ONSIGNIN
 
 export const onSignUp = () =>{
-    const userInfo = getInfoById(['firstName','lastName','email','password']);
-    const user = { //temporary until i fix server signUp info
-        name : userInfo.firstName + " " + userInfo.lastName,
-        email : userInfo.email,
-        password : userInfo.password
+    const userInfo = getInfoById(['signUpFirstName','signUpLastName','signUpEmail','signUpPassword']);
+    const user = { 
+        name : userInfo.signUpFirstName + " " + userInfo.signUpLastName,
+        email : userInfo.signUpEmail,
+        password : userInfo.signUpPassword
     }
     fetch('http://localhost:5000/signUp',{
         method : 'POST',

@@ -4,7 +4,8 @@ import {createContact} from "../../contacts/contactCreate";
 
 
 export const onEdit = (targetedContact) =>{
-    const newContactInfo = getInfoById(['firstName','lastName','email','phoneNumber']);
+    const newContactInfo = getInfoById(['contactFirstName','contactLastName',
+    'contactEmail','contactPhoneNumber']);
     fetch('http://localhost:5000/contactEdit',{
             method : 'PUT',
             headers : {
@@ -12,10 +13,10 @@ export const onEdit = (targetedContact) =>{
                 'Content-Type': 'application/json'
             },
             body : JSON.stringify({
-                firstName : newContactInfo.firstName,
-                lastName : newContactInfo.lastName,
-                email : newContactInfo.email,
-                phoneNumber : newContactInfo.phoneNumber,
+                firstName : newContactInfo.contactFirstName,
+                lastName : newContactInfo.contactLastName,
+                email : newContactInfo.contactEmail,
+                phoneNumber : newContactInfo.contactPhoneNumber,
                 index : getIndexOfNode(targetedContact)
             })
             }).then((res)=>{
