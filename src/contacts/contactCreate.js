@@ -1,7 +1,7 @@
 import {onDelete} from '../actions/contacts/onDelete';
 import {onEditClick} from './editContact';
 import {createInfoCard} from './contactInfoCard';
-import {getIndexOfNode} from './contactUseful';
+import {getIndexOfNode} from '../utilities/getInfo';
 import './styles/contactList.css';
 
 export const createContact = (contactInfo) => {

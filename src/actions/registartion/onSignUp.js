@@ -1,6 +1,6 @@
 import {routeChange} from '../../tempRouting';
-import {getInfoById} from '../../changeName/getInfo';
-import {admitUser} from '../../changeName/admitUser';
+import {getInfoById} from '../../utilities/getInfo';
+import {admitUser} from '../../utilities/admitUser';
 
 export const onSignUp = () =>{
     const userInfo = getInfoById(['signUpFirstName','signUpLastName','signUpEmail','signUpPassword']);

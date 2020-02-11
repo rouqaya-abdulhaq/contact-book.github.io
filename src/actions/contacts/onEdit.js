@@ -1,5 +1,5 @@
-import {getIndexOfNode} from '../../contacts/contactUseful';
-import {getInfoById} from '../../changeName/getInfo';
+import {getIndexOfNode} from '../../changeName/getInfo';
+import {getInfoById} from '../../utilities/getInfo';
 import {createContact} from "../../contacts/contactCreate";
 
 

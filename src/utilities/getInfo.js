@@ -6,3 +6,7 @@ export const getInfoById = (reqInfoArr) =>{ //THE OBJECT PROPERTY HAS THE SAME N
     }
     return info;
 }
+
+export const getIndexOfNode = (element) =>{
+    return Array.prototype.indexOf.call(element.parentNode.children,element);
+}

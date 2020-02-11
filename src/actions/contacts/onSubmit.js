@@ -1,4 +1,4 @@
-import {getInfoById} from '../../changeName/getInfo';
+import {getInfoById} from '../../utilities/getInfo';
 import {addContactToDom} from '../../contacts/contactSubmit';
 
 export const onSubmit = () => {

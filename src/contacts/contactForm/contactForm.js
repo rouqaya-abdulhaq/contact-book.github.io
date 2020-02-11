@@ -8,7 +8,7 @@ const contactMain = document.querySelector("#contactMain");
 
 export const displayContactForm = () => {
     const form = createContactForm(onSubmit);
-    appendToMain(form);
+    appendToContactMain(form);
 }
 
 export const displayEditForm = (targetedContact , onEdit) =>{
@@ -35,8 +35,8 @@ const  createContactInputs = () => {
     const inputfields = createInputs(inputVlues);
     return inputfields; 
 }
-//FIND A WAY TO GET RID OF THIS
-const appendToMain = (elem) =>{
+
+const appendToContactMain = (elem) =>{
     contactMain.append(elem);
 }
 
