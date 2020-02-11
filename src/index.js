@@ -4,7 +4,7 @@ import {routeChange} from './tempRouting';
 
 import {onSignOut} from './actions/registartion/onSignOut';
 import {onSignUp} from './actions/registartion/onSignUp';
-import {onSignIn} from './actions/registartion/signIn';
+import {onSignIn} from './actions/registartion/onSignIn';
 
 import './stylesGlobal/header.css';
 import './stylesGlobal/logo.css';

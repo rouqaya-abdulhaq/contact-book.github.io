@@ -1,10 +1,6 @@
 import {routeChange} from '../../tempRouting';
 import {getInfoById} from '../../changeName/getInfo';
-
-//PERHAPS THERE IS A WAY TO EXTRACT THE FUNCTIONALITY OF ADMIITING 
-//A USER ONLOG OR SIGN THUS REDUCING CODE
-
-const title = document.querySelector(".title");// REPEATED IN ONSIGNIN
+import {admitUser} from '../../changeName/admitUser';
 
 export const onSignUp = () =>{
     const userInfo = getInfoById(['signUpFirstName','signUpLastName','signUpEmail','signUpPassword']);
@@ -23,13 +19,10 @@ export const onSignUp = () =>{
       return  res.json();
     }).then((user)=>{
         console.log(user);
-        changeContactTitle(user.name);
+        admitUser(user);
     }).catch((err)=>{
         console.log(err);
     });
     routeChange('contactList');
 }
 
-const changeContactTitle = (name)=>{ //REPEATED IN ONSIGNIN
-    title.innerText = `${name}'s contacts`;
-}

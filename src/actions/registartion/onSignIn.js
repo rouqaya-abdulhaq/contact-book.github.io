@@ -1,8 +1,7 @@
-import {addContactToDom} from '../../contacts/contactSubmit';
 import {getInfoById} from '../../changeName/getInfo';
+import {admitUser} from '../../changeName/admitUser';
 import {routeChange} from '../../tempRouting'; //TEMPORARY
 
-const title = document.querySelector(".title");//REPEATED IN ONSIGNUP
 
 export const onSignIn = () =>{
     const userInfo = getInfoById(['signInEmail','signInPassword']);
@@ -24,9 +23,7 @@ export const onSignIn = () =>{
                     }
                 }).then((user)=>{
                     if(user){
-                        //RENAME
-                        changeContactTitle(user.name);
-                        createContactList(user.contacts);
+                        admitUser(user);
                         routeChange('contactList')
                     }else{
                         console.log("user not found");
@@ -36,14 +33,3 @@ export const onSignIn = () =>{
                 })
 }
 
-const changeContactTitle = (name)=>{ //REPEATED IN ONSIGNUP
-    title.innerText = `${name}'s contacts`;
-}
-
-const createContactList = (contacts) =>{
-    if(contacts){
-        for (let contact of contacts){
-            addContactToDom(contact);
-        }
-    }
-}
