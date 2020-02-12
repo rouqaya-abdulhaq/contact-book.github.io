@@ -1,4 +1,4 @@
-import {getIndexOfNode} from '../../changeName/getInfo';
+import {getIndexOfNode} from '../../utilities/getInfo';
 import {getInfoById} from '../../utilities/getInfo';
 import {createContact} from "../../contacts/contactCreate";
 
