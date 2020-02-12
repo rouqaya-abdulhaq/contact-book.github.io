@@ -1,0 +1,7 @@
+.contactPopUps{
+    position: fixed;
+    width: 40vw;
+    left : 33vw;
+    top: 28vh;
+    border-radius: 3%;
+}

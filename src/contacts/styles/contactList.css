@@ -3,9 +3,6 @@
   1- CONTACT LIST OUTSIDE STRUCTURE
   2- CONTACT LIST INSIDE ELEMENTS
     2-1 DYNAMIC ELEMENTS
-    2-2 CONTACTS
-  3- CONTACT POPUPS
-    3-1 POPUPS DYNAMICS
 ----------------------*/
 /*1- CONTACT LIST OUTSIDE STRUCTURE*/
 #contactMain{
@@ -36,36 +33,4 @@
 #contactMain .addButton, #contactMain .title{
     position: relative;
 }
-/*-----------------------*/
-/*2-2 CONTACTS*/
-.contact{
-    display: flex;
-    justify-content: center;
-    margin-top: 3%;
-}
-/*the margin for the edit is not really showing*/
-.contactButtons{
-    margin-left: 2.5%;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-    font-size: 20px;
-    height: 3.5vh;
-    width: auto;
-}
-/*--------------------------------------------------------------*/
-/*3- CONTACT POPUPS */
-.contactPopUps{
-    position: fixed;
-    width: 40vw;
-    left : 33vw;
-    top: 28vh;
-    border-radius: 3%;
-}
-/*-----------------------*/
-/*3-1 POPUPS DYNAMICS*/
-.cancelButton{
-    outline: none;
-    font-size: 10%;
-}
-/*--------------------------------------------------------------*/
+

@@ -1,0 +1,17 @@
+/*CONTACTS*/
+.contact{
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+}
+
+.contactButtons{
+    margin-left: 2.5%;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 20px;
+    height: 3.5vh;
+    width: auto;
+}
+/*--------------------------------------------------------------*/
