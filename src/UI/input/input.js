@@ -1,4 +1,7 @@
 import './input.css';
+/*AN OBJECT CONTAINING THE INPUT TYPE, VALUE AND ID SHOULD BE PASSED WHERE EACH 
+INPUT WILL BE VALIDATED BY THE VALIDATEiNPUT AND IF THAT TURNS TRUE A VALID CALSS WILL BE
+TOGGELED IF NOT INVALID CLASS WILL */
 
 export const createInputs = (valueObject) =>{
     //CHECK IF INPUT IS AN OBJECT
@@ -14,12 +17,18 @@ export const createInputs = (valueObject) =>{
 export const createInput = (labelValue, id) => {
     const wrapper = document.createElement("div");
     wrapper.setAttribute("class","inputWrapper");
-    const inputBox = createInputBox(id);
+    const inputBox = inputTest(id);
     const label = createLabel("label", labelValue);
     label.setAttribute("class","label");
     wrapper.appendChild(label);
     wrapper.appendChild(inputBox);
     return wrapper;
+}
+
+const inputTest = (input) => {
+    const inputBox = createInputBox(input); 
+    inputBox.addEventListener("input",()=>console.log(inputBox.value));
+    return inputBox;
 }
 
 //i'm gettting the info by the id not really sure if this is the best idea
