@@ -28,8 +28,35 @@ export const createInput = (inputObj) => {
 
 const inputTest = (id, type) => {
     const inputBox = createInputBox(id); 
-    inputBox.addEventListener("input",()=>console.log(validateInput({value : inputBox.value, type : type})));
+    inputBox.addEventListener("input",()=>{ 
+        const valid =validateInput({value : inputBox.value, type : type});
+        toggleClasses(valid,inputBox);
+    }
+    );
     return inputBox;
+}
+
+const toggleClasses = (isValid , inputBox) =>{
+    switch(isValid){
+        case true :
+            if(!inputBox.classList.contains("rightCredintials")){
+                if(inputBox.classList.contains("wrongCredintials")){
+                     inputBox.classList.replace("wrongCredintials","rightCredintials");
+                }else{
+                    inputBox.classList.add("rightCredintials");
+                }
+            }
+            break;
+        case false :  
+            if(!inputBox.classList.contains("wrongCredintials")){
+                if(inputBox.classList.contains("rightCredintials")){
+                        inputBox.classList.replace("rightCredintials","wrongCredintials");
+                }else{
+                    inputBox.classList.add("wrongCredintials");
+                }
+            }
+            break;
+    }
 }
 
 //i'm gettting the info by the id not really sure if this is the best idea
