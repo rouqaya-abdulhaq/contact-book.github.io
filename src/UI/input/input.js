@@ -18,7 +18,7 @@ export const createInputs = (valueObject) =>{
 export const createInput = (inputObj) => {
     const wrapper = document.createElement("div");
     wrapper.setAttribute("class","inputWrapper");
-    const inputBox = inputTest(inputObj.id,inputObj.type);
+    const inputBox = inputCreate(inputObj.id,inputObj.type);
     const label = createLabel("label", inputObj.label);
     label.setAttribute("class","label");
     wrapper.appendChild(label);
@@ -26,7 +26,7 @@ export const createInput = (inputObj) => {
     return wrapper;
 }
 
-const inputTest = (id, type) => {
+const inputCreate = (id, type) => {
     const inputBox = createInputBox(id); 
     inputBox.addEventListener("input",()=>{ 
         const valid =validateInput({value : inputBox.value, type : type});
