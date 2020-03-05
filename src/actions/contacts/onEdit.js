@@ -1,17 +1,14 @@
 import {getIndexOfNode} from '../../utilities/getInfo';
 import {getInfoById} from '../../utilities/getInfo';
 import {createContact} from "../../contacts/contactCreate";
-import {validateInput} from "../../utilities/validateInput";
+import {validateContactForm} from "../../utilities/validateForm";
 
 
 export const onEdit = (targetedContact) =>{
     const newContactInfo = getInfoById(['contactFirstName','contactLastName',
     'contactEmail','contactPhoneNumber']);
-    const validFirstName =  validateInput({value : newContactInfo.contactFirstName , type : "name"});
-    const validlastName =  validateInput({value : newContactInfo.contactLastName , type : "name"});
-    const validEmail=  validateInput({value : newContactInfo.contactEmail , type : "email"});
-    const validPhoneNumber=  validateInput({value : newContactInfo.contactPhoneNumber , type : "phoneNumber"});
-    if(validFirstName && validlastName && validEmail && validPhoneNumber){
+    const validEdit = validateContactForm(newContactInfo);
+    if(validEdit){
         fetch('http://localhost:5000/contactEdit',{
             method : 'PUT',
             headers : {
