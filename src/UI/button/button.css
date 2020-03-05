@@ -7,9 +7,9 @@
     position: relative;
 }
 
-/*validation : i want this to go red if all the inputs are not filled*/
-.submitBtn:focus , .submitBtn:hover{
-    background: limegreen;
+.invalidSubmit{
+    background: rgb(230, 34, 20);
+    color: rgb(202, 202, 202);
 }
 
 /*TABLET QUERIES*/

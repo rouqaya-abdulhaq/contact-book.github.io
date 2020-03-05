@@ -5,7 +5,9 @@ import {validateContactForm} from '../../utilities/validateForm';
 export const onSubmit = () => {
     const newContact = getInfoById(['contactFirstName','contactLastName',
     'contactEmail','contactPhoneNumber']);
+
     const validSubmit = validateContactForm(newContact);
+    
     if(validSubmit){
         fetch('http://localhost:5000/contactAdd',{
             method : 'PUT',
@@ -23,14 +25,15 @@ export const onSubmit = () => {
                 return res.json();
             }).then((contact)=>{
                 if (contact){
-                    addContactToDom(contact); 
+                    addContactToDom(contact);
                 }
             }).catch((err)=>{
                 console.log(err);
             });
+            return true;
     }else{
         console.log("wrong data");
-        return null;
+        return false;
     }
 }
 

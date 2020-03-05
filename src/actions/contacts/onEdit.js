@@ -7,7 +7,9 @@ import {validateContactForm} from "../../utilities/validateForm";
 export const onEdit = (targetedContact) =>{
     const newContactInfo = getInfoById(['contactFirstName','contactLastName',
     'contactEmail','contactPhoneNumber']);
+
     const validEdit = validateContactForm(newContactInfo);
+    
     if(validEdit){
         fetch('http://localhost:5000/contactEdit',{
             method : 'PUT',
@@ -30,9 +32,10 @@ export const onEdit = (targetedContact) =>{
             }).catch((err)=>{
                 console.log(err);
             });
+            return true;
     }else{
         console.log("wrong data");
-        return null;
+        return false;
     }
 }
 
