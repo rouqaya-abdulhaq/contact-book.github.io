@@ -6,6 +6,29 @@ import '../styles/contactForm.css';
 
 const contactMain = document.querySelector("#contactMain");
 
+export const Form = {
+    contactFirstName : {
+        value : "",
+        isValid : true,
+        hasChanged : false,
+    },
+    contactLastName : {
+        value : "",
+        isValid : true,
+        hasChanged : false,
+    },
+    contactEmail : {
+        value : "",
+        isValid : true,
+        hasChanged : false,
+    },
+    contactPhoneNumber : {
+        value : "",
+        isValid : true,
+        hasChanged : false,
+    }
+}
+
 export const displayContactForm = () => {
     const form = createContactForm(onSubmit);
     appendToContactMain(form);
@@ -19,8 +42,9 @@ export const displayEditForm = (targetedContact , onEdit) =>{
 const  createContactForm = (onSubmit) => {
         const form = createForm("contactForm","contactPopUps");
         const cancelBtn = createCancelBtn();
+        const submitBtn = createSubmitBtn("submit",()=>{ console.log(Form) 
+            onSubmit()});
         const inputFields = createContactInputs();
-        const submitBtn = createSubmitBtn("submit",onSubmit);
         form.append(cancelBtn,inputFields,submitBtn);
         return form;
 }
@@ -48,7 +72,7 @@ const  createContactInputs = () => {
             type : "phoneNumber"
         },
     }
-    const inputfields = createInputs(inputValues);
+    const inputfields = createInputs(inputValues,Form);
     return inputfields; 
 }
 

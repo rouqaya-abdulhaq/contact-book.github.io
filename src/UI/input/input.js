@@ -4,21 +4,21 @@ import {validateInput} from '../../utilities/validateInput';
 INPUT WILL BE VALIDATED BY THE VALIDATEiNPUT AND IF THAT TURNS TRUE A VALID CALSS WILL BE
 TOGGELED IF NOT INVALID CLASS WILL */
 
-export const createInputs = (valueObject) =>{
+export const createInputs = (valueObject,form) =>{
     //CHECK IF INPUT IS AN OBJECT
     const inputFields = document.createElement("div");
     if(valueObject){
         for (const value in valueObject) {
-            inputFields.appendChild(createInput(valueObject[value]));
+            inputFields.appendChild(createInput(valueObject[value],form));
         }  
     }
     return inputFields;
 }
 
-export const createInput = (inputObj) => {
+export const createInput = (inputObj,form) => {
     const wrapper = document.createElement("div");
     wrapper.setAttribute("class","inputWrapper");
-    const inputBox = inputCreate(inputObj.id,inputObj.type);
+    const inputBox = inputCreate(inputObj.id,inputObj.type,form);
     const label = createLabel("label", inputObj.label);
     label.setAttribute("class","label");
     wrapper.appendChild(label);
@@ -26,10 +26,13 @@ export const createInput = (inputObj) => {
     return wrapper;
 }
 
-const inputCreate = (id, type) => {
+const inputCreate = (id, type,form) => {
     const inputBox = createInputBox(id); 
-    inputBox.addEventListener("input",()=>{ 
-        const valid =validateInput({value : inputBox.value, type : type});
+    inputBox.addEventListener("input",()=>{
+        form[id].value = inputBox.value;
+        const valid = validateInput({value : inputBox.value, type : type});
+        form[id].isValid = valid;
+        form[id].hasChanged = true;
         toggleClasses(valid,inputBox);
     }
     );
