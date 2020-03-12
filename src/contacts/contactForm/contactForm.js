@@ -38,13 +38,24 @@ export const displayEditForm = (targetedContact , onEdit) =>{
     const form = createContactForm(()=>onEdit(targetedContact));
     contactMain.appendChild(form);
 }
-
+//Needs cleaning up
 const  createContactForm = (onSubmit) => {
         const form = createForm("contactForm","contactPopUps");
         const cancelBtn = createCancelBtn();
         const submitBtn = createSubmitBtn("submit",()=>{ console.log(Form) 
-            onSubmit()});
+            onSubmit(Form)});
         const inputFields = createContactInputs();
+        for(let input of inputFields.childNodes){
+            input.addEventListener("input",()=>{
+                for(let field in Form){
+                    if(Form[field].hasChanged && !Form[field].isValid){
+                        submitBtn.classList.contains("invalidSubmit")? null : submitBtn.classList.add("invalidSubmit");
+                        break;
+                    }
+                    submitBtn.classList.contains("invalidSubmit")? submitBtn.classList.remove("invalidSubmit") : null;
+                }
+            })
+        }
         form.append(cancelBtn,inputFields,submitBtn);
         return form;
 }

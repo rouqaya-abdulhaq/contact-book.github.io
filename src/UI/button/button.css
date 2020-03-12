@@ -7,9 +7,14 @@
     position: relative;
 }
 
+.submitBtn :hover,.submitBtn:focus{
+    background: lawngreen;
+    color: black;
+}
+
 .invalidSubmit{
-    background: rgb(230, 34, 20);
-    color: rgb(202, 202, 202);
+    background: rgb(230, 34, 20) !important; 
+    color: rgb(202, 202, 202) !important;
 }
 
 /*TABLET QUERIES*/
