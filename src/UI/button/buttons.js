@@ -6,12 +6,9 @@ export const createSubmitBtn = (value,func) => {
     btn.setAttribute("class","submitBtn")
     btn.value = value;
     btn.addEventListener("click",(event)=>{
-        const submitDone = func();
-        if(submitDone){
+        if(func()){
             removeTargetParent(event); 
-        }else{
-            btn.classList.contains("invalidSubmit") ? null : btn.classList.add("invalidSubmit");
-        } 
+        }
     });
     return btn;
 }

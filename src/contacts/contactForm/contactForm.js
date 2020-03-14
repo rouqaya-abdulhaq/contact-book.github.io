@@ -42,8 +42,10 @@ export const displayEditForm = (targetedContact , onEdit) =>{
 const  createContactForm = (onSubmit) => {
         const form = createForm("contactForm","contactPopUps");
         const cancelBtn = createCancelBtn();
-        const submitBtn = createSubmitBtn("submit",()=>{ console.log(Form) 
-            onSubmit(Form)});
+        const submitBtn = createSubmitBtn("submit",()=>{
+            if(onSubmit(Form)){
+                return true;
+            }});
         const inputFields = createContactInputs();
         for(let input of inputFields.childNodes){
             input.addEventListener("input",()=>{

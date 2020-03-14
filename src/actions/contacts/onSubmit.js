@@ -1,14 +1,12 @@
-import {getInfoById} from '../../utilities/getInfo';
 import {addContactToDom} from '../../contacts/contactSubmit';
-import {validateContactForm} from '../../utilities/validateForm';
 
-export const onSubmit = () => {
-    const newContact = getInfoById(['contactFirstName','contactLastName',
-    'contactEmail','contactPhoneNumber']);
+export const onSubmit = (info) => {
+    const validFirstName = info.contactFirstName.isValid && info.contactFirstName.hasChanged;
+    const validLastName = info.contactLastName.isValid && info.contactLastName.hasChanged;
+    const validEmail = info.contactEmail.isValid && info.contactEmail.hasChanged;
+    const validPhoneNumber= info.contactPhoneNumber.isValid && info.contactPhoneNumber.hasChanged;
 
-    const validSubmit = validateContactForm(newContact);
-    
-    if(validSubmit){
+    if(validFirstName && validLastName && validEmail && validPhoneNumber){
         fetch('http://localhost:5000/contactAdd',{
             method : 'PUT',
             headers : {
@@ -16,10 +14,10 @@ export const onSubmit = () => {
                 'Content-Type': 'application/json'
             },
             body : JSON.stringify({
-                firstName : newContact.contactFirstName,
-                lastName : newContact.contactLastName,
-                email : newContact.contactEmail,
-                phoneNumber : newContact.contactPhoneNumber
+                firstName : info.contactFirstName.value,
+                lastName : info.contactLastName.value,
+                email : info.contactEmail.value,
+                phoneNumber : info.contactPhoneNumber.value
             })
             }).then((res)=>{
                 return res.json();
@@ -30,9 +28,10 @@ export const onSubmit = () => {
             }).catch((err)=>{
                 console.log(err);
             });
-            return true;
+        return true;
     }else{
         console.log("wrong data");
+        event.target.classList.contains("invalidSubmit") ? null : event.target.classList.add("invalidSubmit")
         return false;
     }
 }
