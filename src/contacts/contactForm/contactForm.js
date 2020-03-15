@@ -28,15 +28,7 @@ const  createContactForm = (onSubmit) => {
             }});
         const inputFields = createContactInputs(formTemplate);
         for(let input of inputFields.childNodes){
-            input.addEventListener("input",()=>{
-                for(let field in formTemplate){
-                    if(formTemplate[field].hasChanged && !formTemplate[field].isValid){
-                        submitBtn.classList.contains("invalidSubmit")? null : submitBtn.classList.add("invalidSubmit");
-                        break;
-                    }
-                    submitBtn.classList.contains("invalidSubmit")? submitBtn.classList.remove("invalidSubmit") : null;
-                }
-            })
+            input.addEventListener("input",()=>{onInput(formTemplate,submitBtn);})
         }
         form.append(cancelBtn,inputFields,submitBtn);
         return form;
@@ -67,6 +59,16 @@ const  createContactInputs = (formTemplate) => {
     }
     const inputfields = createInputs(inputValues,formTemplate);
     return inputfields; 
+}
+
+const onInput = (formTemplate,submitBtn) =>{
+    for(let field in formTemplate){
+        if(formTemplate[field].hasChanged && !formTemplate[field].isValid){
+            submitBtn.classList.contains("invalidSubmit")? null : submitBtn.classList.add("invalidSubmit");
+            break;
+        }
+        submitBtn.classList.contains("invalidSubmit")? submitBtn.classList.remove("invalidSubmit") : null;
+    }
 }
 
 const appendToContactMain = (elem) =>{
