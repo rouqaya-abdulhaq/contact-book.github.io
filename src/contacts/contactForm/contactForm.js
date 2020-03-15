@@ -2,32 +2,10 @@ import {createInputs} from '../../UI/input/input';
 import {onSubmit} from '../../actions/contacts/onSubmit';
 import {createForm} from '../../UI/form/form'
 import {createCancelBtn,createSubmitBtn} from '../../UI/button/buttons';
+import {Form} from './formTemplate';
 import '../styles/contactForm.css';
 
 const contactMain = document.querySelector("#contactMain");
-
-export const Form = {
-    contactFirstName : {
-        value : "",
-        isValid : true,
-        hasChanged : false,
-    },
-    contactLastName : {
-        value : "",
-        isValid : true,
-        hasChanged : false,
-    },
-    contactEmail : {
-        value : "",
-        isValid : true,
-        hasChanged : false,
-    },
-    contactPhoneNumber : {
-        value : "",
-        isValid : true,
-        hasChanged : false,
-    }
-}
 
 export const displayContactForm = () => {
     const form = createContactForm(onSubmit);
@@ -40,17 +18,19 @@ export const displayEditForm = (targetedContact , onEdit) =>{
 }
 //Needs cleaning up
 const  createContactForm = (onSubmit) => {
+        const formTemplate = JSON.parse(JSON.stringify(Form));
         const form = createForm("contactForm","contactPopUps");
         const cancelBtn = createCancelBtn();
         const submitBtn = createSubmitBtn("submit",()=>{
-            if(onSubmit(Form)){
+            if(onSubmit(formTemplate)){
+
                 return true;
             }});
-        const inputFields = createContactInputs();
+        const inputFields = createContactInputs(formTemplate);
         for(let input of inputFields.childNodes){
             input.addEventListener("input",()=>{
-                for(let field in Form){
-                    if(Form[field].hasChanged && !Form[field].isValid){
+                for(let field in formTemplate){
+                    if(formTemplate[field].hasChanged && !formTemplate[field].isValid){
                         submitBtn.classList.contains("invalidSubmit")? null : submitBtn.classList.add("invalidSubmit");
                         break;
                     }
@@ -62,7 +42,7 @@ const  createContactForm = (onSubmit) => {
         return form;
 }
 
-const  createContactInputs = () => {
+const  createContactInputs = (formTemplate) => {
     const inputValues = {
         firstName : {
             id : "contactFirstName",
@@ -85,7 +65,7 @@ const  createContactInputs = () => {
             type : "phoneNumber"
         },
     }
-    const inputfields = createInputs(inputValues,Form);
+    const inputfields = createInputs(inputValues,formTemplate);
     return inputfields; 
 }
 
