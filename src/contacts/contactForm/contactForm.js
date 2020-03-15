@@ -13,9 +13,10 @@ export const displayContactForm = () => {
 }
 
 export const displayEditForm = (targetedContact , onEdit) =>{
-    const form = createContactForm(()=>onEdit(targetedContact));
+    const form = createContactForm((formTemp)=>onEdit(targetedContact,formTemp));
     contactMain.appendChild(form);
 }
+
 //Needs cleaning up
 const  createContactForm = (onSubmit) => {
         const formTemplate = JSON.parse(JSON.stringify(Form));
@@ -23,7 +24,6 @@ const  createContactForm = (onSubmit) => {
         const cancelBtn = createCancelBtn();
         const submitBtn = createSubmitBtn("submit",()=>{
             if(onSubmit(formTemplate)){
-
                 return true;
             }});
         const inputFields = createContactInputs(formTemplate);
