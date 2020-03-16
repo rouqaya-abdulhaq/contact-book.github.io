@@ -1,8 +1,6 @@
 import './input.css';
 import {validateInput} from '../../utilities/validateInput';
-/*AN OBJECT CONTAINING THE INPUT TYPE, VALUE AND ID SHOULD BE PASSED WHERE EACH 
-INPUT WILL BE VALIDATED BY THE VALIDATEiNPUT AND IF THAT TURNS TRUE A VALID CALSS WILL BE
-TOGGELED IF NOT INVALID CLASS WILL */
+
 
 export const createInputs = (valueObject,form) =>{
     //CHECK IF INPUT IS AN OBJECT
@@ -18,25 +16,28 @@ export const createInputs = (valueObject,form) =>{
 export const createInput = (inputObj,form) => {
     const wrapper = document.createElement("div");
     wrapper.setAttribute("class","inputWrapper");
-    const inputBox = inputCreate(inputObj.id,inputObj.type,form);
-    const label = createLabel("label", inputObj.label);
-    label.setAttribute("class","label");
-    wrapper.appendChild(label);
-    wrapper.appendChild(inputBox);
+    const label = createLabel(inputObj.label);
+    const inputBox = createInputBox(inputObj.id,inputObj.type,form);
+    wrapper.append(label,inputBox);
     return wrapper;
 }
 
-const inputCreate = (id, type,form) => {
-    const inputBox = createInputBox(id); 
-    inputBox.addEventListener("input",()=>{
-        form[id].value = inputBox.value;
-        const valid = validateInput({value : inputBox.value, type : type});
-        form[id].isValid = valid;
-        form[id].hasChanged = true;
-        toggleClasses(valid,inputBox);
-    }
-    );
+
+const createInputBox = (id,type,form) => {
+    const inputBox = document.createElement("input");
+    inputBox.setAttribute("id" , id);                                                
+    inputBox.setAttribute("class" , "inputBox");
+    inputBox.addEventListener("input",()=>{onInput({element : inputBox, id : id,
+    type : type},form)});
     return inputBox;
+}
+
+const onInput = (input,form) =>{
+    form[input.id].value = input.element.value;
+        const valid = validateInput({value : input.element.value, type : input.type});
+        form[input.id].isValid = valid;
+        form[input.id].hasChanged = true;
+        toggleClasses(valid,input.element);
 }
 
 const toggleClasses = (isValid , inputBox) =>{
@@ -62,17 +63,10 @@ const toggleClasses = (isValid , inputBox) =>{
     }
 }
 
-//i'm gettting the info by the id not really sure if this is the best idea
-const createInputBox = (id) => {
-    const inputBox = document.createElement("input");
-    inputBox.setAttribute("id" , id);                                                
-    inputBox.setAttribute("class" , "inputBox");
-    return inputBox;
-}
 
-const createLabel = (className, value) => {
+const createLabel = (value) => {
     const label = document.createElement("label");
-    label.setAttribute("class" , className);
+    label.setAttribute("class" , "label");
     label.innerText = value;
     return label;
 }
