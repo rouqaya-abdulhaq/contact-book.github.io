@@ -1,6 +1,6 @@
 import {getIndexOfNode} from '../../utilities/getInfo';
 import {createContact} from "../../contacts/contactCreate";
-import {validateContact} from '../../utilities/validateContact';
+import {validateContact} from '../../utilities/validation/validation';
 import {submitBtnToAlert} from '../domElements/buttonManipulation';
 
 

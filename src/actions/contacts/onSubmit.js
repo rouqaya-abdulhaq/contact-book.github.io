@@ -1,5 +1,5 @@
 import {addContactToDom} from '../../contacts/contactSubmit';
-import {validateContact} from '../../utilities/validateContact';
+import {validateContact} from '../../utilities/validation/validation';
 import {submitBtnToAlert} from '../domElements/buttonManipulation';
 
 export const onSubmit = (contactInfo) => {

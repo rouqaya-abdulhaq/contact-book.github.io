@@ -1,5 +1,5 @@
 import './input.css';
-import {validateInput} from '../../utilities/validateInput';
+import {validateInput} from '../../utilities/validation/validation';
 
 
 export const createInputs = (valueObject,form) =>{
