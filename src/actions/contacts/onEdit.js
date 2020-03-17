@@ -4,9 +4,18 @@ import {validateContact} from '../../utilities/validateContact';
 
 
 export const onEdit = (targetedContact,newContactInfo) =>{
-
     if(validateContact(newContactInfo)){
-        fetch('http://localhost:5000/contactEdit',{
+        editUser(targetedContact,newContactInfo);
+        return true;
+    }else{
+        console.log("wrong data");
+        submitBtnToAlert(event);
+        return false;
+    }
+}
+
+const editUser = (targetedContact, newContactInfo) =>{
+    fetch('http://localhost:5000/contactEdit',{
             method : 'PUT',
             headers : {
                 'Accept': 'application/json',
@@ -23,18 +32,16 @@ export const onEdit = (targetedContact,newContactInfo) =>{
                 return res.json();
             }).then((contact)=>{
                 const newContact = createContact(contact);
-                editContactList(newContact,targetedContact);
+                editContactList(targetedContact, newContact);
             }).catch((err)=>{
                 console.log(err);
             });
-            return true;
-    }else{
-        console.log("wrong data");
-        event.target.classList.contains("invalidSubmit") ? null : event.target.classList.add("invalidSubmit")
-        return false;
-    }
 }
 
-const editContactList = (newContact , oldContact) =>{
+const editContactList = (oldContact ,newContact) =>{
     oldContact.parentNode.replaceChild(newContact,oldContact);
+}
+
+const submitBtnToAlert = (event) =>{
+    event.target.classList.contains("invalidSubmit") ? null : event.target.classList.add("invalidSubmit")
 }
