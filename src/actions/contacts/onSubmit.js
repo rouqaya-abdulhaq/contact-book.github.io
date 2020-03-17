@@ -1,5 +1,6 @@
 import {addContactToDom} from '../../contacts/contactSubmit';
 import {validateContact} from '../../utilities/validateContact';
+import {submitBtnToAlert} from '../domElements/buttonManipulation';
 
 export const onSubmit = (contactInfo) => {
     if(validateContact(contactInfo)){
@@ -34,8 +35,4 @@ const addContact = (contactInfo) =>{
             }).catch((err)=>{
                 console.log(err);
             });
-}
-
-const submitBtnToAlert = (event) =>{
-    event.target.classList.contains("invalidSubmit") ? null : event.target.classList.add("invalidSubmit")
 }

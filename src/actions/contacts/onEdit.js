@@ -1,6 +1,7 @@
 import {getIndexOfNode} from '../../utilities/getInfo';
 import {createContact} from "../../contacts/contactCreate";
 import {validateContact} from '../../utilities/validateContact';
+import {submitBtnToAlert} from '../domElements/buttonManipulation';
 
 
 export const onEdit = (targetedContact,newContactInfo) =>{
@@ -40,8 +41,4 @@ const editContact = (targetedContact, newContactInfo) =>{
 
 const editContactList = (oldContact ,newContact) =>{
     oldContact.parentNode.replaceChild(newContact,oldContact);
-}
-
-const submitBtnToAlert = (event) =>{
-    event.target.classList.contains("invalidSubmit") ? null : event.target.classList.add("invalidSubmit")
 }
