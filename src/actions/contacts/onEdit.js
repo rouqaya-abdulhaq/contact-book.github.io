@@ -1,15 +1,11 @@
 import {getIndexOfNode} from '../../utilities/getInfo';
 import {createContact} from "../../contacts/contactCreate";
+import {validateContact} from '../../utilities/validateContact';
 
 
 export const onEdit = (targetedContact,newContactInfo) =>{
 
-    const validFirstName = newContactInfo.contactFirstName.isValid && newContactInfo.contactFirstName.hasChanged;
-    const validLastName = newContactInfo.contactLastName.isValid && newContactInfo.contactLastName.hasChanged;
-    const validEmail = newContactInfo.contactEmail.isValid && newContactInfo.contactEmail.hasChanged;
-    const validPhoneNumber= newContactInfo.contactPhoneNumber.isValid && newContactInfo.contactPhoneNumber.hasChanged;
-
-    if(validFirstName && validLastName && validEmail && validPhoneNumber){
+    if(validateContact(newContactInfo)){
         fetch('http://localhost:5000/contactEdit',{
             method : 'PUT',
             headers : {

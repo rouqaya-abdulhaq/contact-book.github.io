@@ -1,12 +1,9 @@
 import {addContactToDom} from '../../contacts/contactSubmit';
+import {validateContact} from '../../utilities/validateContact';
 
 export const onSubmit = (info) => {
-    const validFirstName = info.contactFirstName.isValid && info.contactFirstName.hasChanged;
-    const validLastName = info.contactLastName.isValid && info.contactLastName.hasChanged;
-    const validEmail = info.contactEmail.isValid && info.contactEmail.hasChanged;
-    const validPhoneNumber= info.contactPhoneNumber.isValid && info.contactPhoneNumber.hasChanged;
 
-    if(validFirstName && validLastName && validEmail && validPhoneNumber){
+    if(validateContact(info)){
         fetch('http://localhost:5000/contactAdd',{
             method : 'PUT',
             headers : {
