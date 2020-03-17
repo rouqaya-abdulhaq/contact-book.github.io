@@ -1,20 +1,29 @@
 import {addContactToDom} from '../../contacts/contactSubmit';
 import {validateContact} from '../../utilities/validateContact';
 
-export const onSubmit = (info) => {
+export const onSubmit = (contactInfo) => {
+    if(validateContact(contactInfo)){
+        addContact(contactInfo);
+        return true;
+    }else{
+        console.log("wrong data");
+        submitBtnToAlert(event);
+        return false;
+    }
+}
 
-    if(validateContact(info)){
-        fetch('http://localhost:5000/contactAdd',{
+const addContact = (contactInfo) =>{
+    fetch('http://localhost:5000/contactAdd',{
             method : 'PUT',
             headers : {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
             body : JSON.stringify({
-                firstName : info.contactFirstName.value,
-                lastName : info.contactLastName.value,
-                email : info.contactEmail.value,
-                phoneNumber : info.contactPhoneNumber.value
+                firstName : contactInfo.contactFirstName.value,
+                lastName : contactInfo.contactLastName.value,
+                email : contactInfo.contactEmail.value,
+                phoneNumber : contactInfo.contactPhoneNumber.value
             })
             }).then((res)=>{
                 return res.json();
@@ -25,13 +34,8 @@ export const onSubmit = (info) => {
             }).catch((err)=>{
                 console.log(err);
             });
-        return true;
-    }else{
-        console.log("wrong data");
-        event.target.classList.contains("invalidSubmit") ? null : event.target.classList.add("invalidSubmit")
-        return false;
-    }
 }
 
-
-
+const submitBtnToAlert = (event) =>{
+    event.target.classList.contains("invalidSubmit") ? null : event.target.classList.add("invalidSubmit")
+}

@@ -5,7 +5,7 @@ import {validateContact} from '../../utilities/validateContact';
 
 export const onEdit = (targetedContact,newContactInfo) =>{
     if(validateContact(newContactInfo)){
-        editUser(targetedContact,newContactInfo);
+        editContact(targetedContact,newContactInfo);
         return true;
     }else{
         console.log("wrong data");
@@ -14,7 +14,7 @@ export const onEdit = (targetedContact,newContactInfo) =>{
     }
 }
 
-const editUser = (targetedContact, newContactInfo) =>{
+const editContact = (targetedContact, newContactInfo) =>{
     fetch('http://localhost:5000/contactEdit',{
             method : 'PUT',
             headers : {
