@@ -3,7 +3,7 @@ import {showPaletteList} from './palette/palette';
 import {routeChange} from './tempRouting';
 
 import {onSignOut} from './actions/registartion/onSignOut';
-import {onSignUp} from './actions/registartion/onSignUp';
+import {appendSignUpForm} from './registration/signUp/signUpForm';
 import {onSignIn} from './actions/registartion/onSignIn';
 
 import './stylesGlobal/header.css';
@@ -39,7 +39,7 @@ const logInNav = document.querySelector("#logIn");
 const signUpNav = document.querySelector("#signIn");
 const signOutNav = document.querySelector("#signOut");
 
-const submitSign = document.querySelector("#subSign");
+// const submitSign = document.querySelector("#subSign");
 const submitLog= document.querySelector("#subLog");
 
 
@@ -49,10 +49,12 @@ const submitLog= document.querySelector("#subLog");
 addButton.addEventListener("click",displayContactForm);
 
 logInNav.addEventListener('click',()=>{routeChange('signIn')});
-signUpNav.addEventListener('click',()=>{routeChange('signUp')});
+signUpNav.addEventListener('click',()=>{
+    appendSignUpForm();
+    routeChange('signUp')
+});
 signOutNav.addEventListener('click',onSignOut);
 
-submitSign.addEventListener('click',onSignUp);
 submitLog.addEventListener('click',onSignIn);
 
 paletteIcon.addEventListener('click',showPaletteList);
