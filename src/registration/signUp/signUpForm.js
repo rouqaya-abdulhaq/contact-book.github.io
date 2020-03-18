@@ -39,7 +39,7 @@ export const appendSignUpForm = () =>{
 const createSignUpForm = () =>{
     const formTemplate = JSON.parse(JSON.stringify(Form));
     const form = createForm("signUpForm","signUpForm");
-    const submitBtn = createSubmitBtn("SIGN UP",()=>{if(onSignUp()) return true});
+    const submitBtn = createSubmitBtn("SIGN UP",()=>{if(onSignUp(formTemplate)) return true});
     const inputFields = createInputFields(formTemplate,submitBtn);
     form.append(inputFields,submitBtn);
     return form;
