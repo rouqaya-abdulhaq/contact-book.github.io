@@ -4,7 +4,7 @@ import {routeChange} from './tempRouting';
 
 import {onSignOut} from './actions/registartion/onSignOut';
 import {appendSignUpForm} from './registration/signUp/signUpForm';
-import {onSignIn} from './actions/registartion/onSignIn';
+import {appendSignInForm} from './registration/signIn/signInForm';
 
 import './stylesGlobal/header.css';
 import './stylesGlobal/logo.css';
@@ -39,22 +39,18 @@ const logInNav = document.querySelector("#logIn");
 const signUpNav = document.querySelector("#signIn");
 const signOutNav = document.querySelector("#signOut");
 
-// const submitSign = document.querySelector("#subSign");
-const submitLog= document.querySelector("#subLog");
 
-
-
-
+appendSignInForm();
 
 addButton.addEventListener("click",displayContactForm);
 
-logInNav.addEventListener('click',()=>{routeChange('signIn')});
+logInNav.addEventListener('click',()=>{
+    appendSignInForm();
+    routeChange('signIn')
+});
 signUpNav.addEventListener('click',()=>{
     appendSignUpForm();
     routeChange('signUp')
 });
 signOutNav.addEventListener('click',onSignOut);
-
-submitLog.addEventListener('click',onSignIn);
-
 paletteIcon.addEventListener('click',showPaletteList);
