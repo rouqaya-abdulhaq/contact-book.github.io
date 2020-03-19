@@ -6,3 +6,10 @@ export const validateSignUp = (userInfo) => {
 
     return validFirstName && validLastName && validEmail && validPassword;
 }
+
+export const validateSignIn = (userInfo) => {
+    const validEmail = userInfo.signInEmail.isValid && userInfo.signInEmail.hasChanged;
+    const validPassword= userInfo.signInPassword.isValid && userInfo.signInPassword.hasChanged;
+
+    return  validEmail && validPassword;
+}
