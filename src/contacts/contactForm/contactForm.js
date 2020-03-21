@@ -41,13 +41,13 @@ export const displayEditForm = (targetedContact , onEdit) =>{
 }
 //EXTRCAT CREATING A GENERAL FORM FUNCTIONALITY
 const  createContactForm = (onSubmit) => {
-        const formTemplate = JSON.parse(JSON.stringify(Form));
-        const form = createForm("contactForm","contactPopUps");
-        const cancelBtn = createCancelBtn();
-        const submitBtn = createSubmitBtn("submit",()=>{if(onSubmit(formTemplate)) return true;});
-        const inputFields = createContactInputs(formTemplate,submitBtn);
-        form.append(cancelBtn,inputFields,submitBtn);
-        return form;
+    const formTemplate = JSON.parse(JSON.stringify(Form));
+    const form = createForm("contactForm","contactPopUps");
+    const cancelBtn = createCancelBtn();
+    const submitBtn = createSubmitBtn("submit",()=>{if(onSubmit(formTemplate)) return true;});
+    const inputFields = createContactInputs(formTemplate,submitBtn);
+    form.append(cancelBtn,inputFields,submitBtn);
+    return form;
 }
 
 const  createContactInputs = (formTemplate,submitBtn) => {
