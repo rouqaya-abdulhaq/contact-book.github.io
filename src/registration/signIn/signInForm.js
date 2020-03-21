@@ -20,9 +20,11 @@ const inputValues = {
 }
 
 export const appendSignInForm = () =>{
-    if(!signInMain.querySelector("#signInForm")){
-        const signInForm = createSignInForm();
-        signInMain.appendChild(signInForm);
+    const signInForm = createSignInForm();
+    if(signInMain.querySelector("#signInForm")){
+        signInMain.replaceChild(signInForm,signInMain.querySelector("#signInForm"))
+    }else{
+        signInMain.appendChild(signInForm)
     }
 }
 

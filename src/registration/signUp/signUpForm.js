@@ -30,8 +30,10 @@ const inputValues = {
 }
 
 export const appendSignUpForm = () =>{
-    if(!signUpMain.querySelector("#signUpForm")){
-        const signUpForm = createSignUpForm();
+    const signUpForm = createSignUpForm();
+    if(signUpMain.querySelector("#signUpForm")){
+        signUpMain.replaceChild(signUpForm,signUpMain.querySelector("#signUpForm"));
+    }else{
         signUpMain.appendChild(signUpForm);
     }
 }
