@@ -1,7 +1,10 @@
 .contactPopUps{
     position: fixed;
+    height: 40vh;
     width: 40vw;
     left : 33vw;
     top: 28vh;
     border-radius: 3%;
+    background: blanchedalmond;
+    border: dashed black;
 }
