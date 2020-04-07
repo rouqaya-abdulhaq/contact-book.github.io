@@ -3,6 +3,7 @@ const paletteClasses = document.querySelectorAll(".paletteClass");
 const paletteList = document.querySelector(".colorList");
 const cancelBtn = document.querySelector('.cancelBtn');
 
+import './paletteList.css';
 
 export const showPaletteList = () => {
   palette(paletteClasses);

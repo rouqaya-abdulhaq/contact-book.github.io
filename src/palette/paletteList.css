@@ -1,30 +1,36 @@
 .colorList{
-    border: black dashed;
-    position: fixed;
-    top: 35vh;
-    left : 4.5vw;
-    height: 40vh;
-    width: 15vw;
- }
+   border: black dashed;
+   position: fixed;
+   top: 35vh;
+   left : 4.5vw;
+   height: 40vh;
+   width: 15vw;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding-top: 1vh;
+}
  
- .colors{
-    height: 100%;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 49% 49%;
-    grid-auto-rows: 20%;
-    grid-gap: 2%;
-    overflow-y: auto;
- }
+.colors{
+   height: 100%;
+   width: 100%;
+   display: grid;
+   grid-template-columns: 49% 49%;
+   grid-auto-rows: 20%;
+   grid-gap: 2%;
+   overflow-y: auto;
+   margin-top: 1vh;
+   overflow-y: scroll; 
+}
+
+.paletteClass{
+   background: whitesmoke;
+   text-align: center;
+   padding-top: 5%;
+   overflow-wrap: break-word;
+}
  
- .paletteClass{
-    background: whitesmoke;
-    text-align: center;
-    padding-top: 5%;
-    overflow-wrap: break-word;
- }
- 
- .paletteClass:hover{
-    cursor: pointer;
- }
+.paletteClass:hover{
+   cursor: pointer;
+}
  
