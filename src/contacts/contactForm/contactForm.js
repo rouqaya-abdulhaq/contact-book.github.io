@@ -10,22 +10,22 @@ const contactMain = document.querySelector("#contactMain");
 const inputValues = {
     firstName : {
         id : "contactFirstName",
-        label : "First Name",
+        label : "First Name : ",
         type : "name"
     },
     lastName : {
         id : "contactLastName",
-        label : "Last Name",
+        label : "Last Name : ",
         type : "name"
     },
     Email : {
         id : "contactEmail",
-        label : "Email",
+        label : "Email : ",
         type : "email"
     },
     phoneNumber : {
         id : "contactPhoneNumber",
-        label : "Phone Number",
+        label : "Phone Number : ",
         type : "phoneNumber"
     },
 }
