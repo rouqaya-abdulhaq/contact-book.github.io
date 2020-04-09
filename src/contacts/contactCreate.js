@@ -2,7 +2,7 @@ import {onDelete} from '../actions/contacts/onDelete';
 import {onEditClick} from './editContact';
 import {createInfoCard} from './contactInfoCard';
 import {getIndexOfNode} from '../utilities/getInfo';
-import './styles/contact.css';
+import './styles/contactCreate.css';
 
 export const createContact = (contactInfo) => {
     const contactName = createContactName(contactInfo);

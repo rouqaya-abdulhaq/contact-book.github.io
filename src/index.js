@@ -11,7 +11,7 @@ import './stylesGlobal/logo.css';
 import './stylesGlobal/footer.css';
 import './stylesGlobal/paletteClasses.css';
 import './stylesGlobal/style.css';
-import './contacts/styles/contactList.css';
+import './stylesGlobal/contactList.css';
 //Needs serious renaming
 /*synopsis:
    1- the user should sign up or log in and then be directed to the contact list
