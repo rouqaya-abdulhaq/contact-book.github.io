@@ -59,7 +59,6 @@ const  createContactInputs = (formTemplate,submitBtn) => {
 }
 
 const onInput = (formTemplate,submitBtn) =>{
-    console.log(formTemplate);
     for(let field in formTemplate){
         if(formTemplate[field].hasChanged && !formTemplate[field].isValid){
             submitBtn.classList.contains("invalidSubmit")? null : submitBtn.classList.add("invalidSubmit");

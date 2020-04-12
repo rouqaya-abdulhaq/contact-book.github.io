@@ -1,9 +1,9 @@
-.colorList{
+.palettePopUp{
    border: black dashed;
    position: fixed;
    top: 35vh;
    left : 4.5vw;
-   height: 40vh;
+   height: 50vh;
    width: 15vw;
    display: flex;
    flex-direction: column;
@@ -11,7 +11,7 @@
    padding-top: 1vh;
 }
  
-.colors{
+.blockList{
    height: 100%;
    width: 100%;
    display: grid;
@@ -20,17 +20,13 @@
    grid-gap: 2%;
    overflow-y: auto;
    margin-top: 1vh;
-   overflow-y: scroll; 
 }
 
-.paletteClass{
+.paletteBlock{
    background: whitesmoke;
    text-align: center;
    padding-top: 5%;
    overflow-wrap: break-word;
-}
- 
-.paletteClass:hover{
    cursor: pointer;
 }
- 
+  
