@@ -3,9 +3,13 @@ import {onSubmit} from '../../actions/contacts/onSubmit';
 import {createForm} from '../../UI/form/form'
 import {createCancelBtn,createSubmitBtn} from '../../UI/button/buttons';
 import {Form} from './formTemplate';
-import '../styles/contactForm.css';
+import '../styles/contactPopUp.css';
 
 const contactMain = document.querySelector("#contactMain");
+
+const formId = "contactForm";
+const formClass = "contactPopUps";
+
 
 const inputValues = {
     firstName : {
@@ -42,7 +46,7 @@ export const displayEditForm = (targetedContact , onEdit) =>{
 //EXTRCAT CREATING A GENERAL FORM FUNCTIONALITY
 const  createContactForm = (onSubmit) => {
     const formTemplate = JSON.parse(JSON.stringify(Form));
-    const form = createForm("contactForm","contactPopUps");
+    const form = createForm(formId,formClass);
     const cancelBtn = createCancelBtn();
     const submitBtn = createSubmitBtn("submit",()=>{if(onSubmit(formTemplate)) return true;});
     const inputFields = createContactInputs(formTemplate,submitBtn);

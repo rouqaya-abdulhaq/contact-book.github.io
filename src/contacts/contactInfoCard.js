@@ -1,3 +1,6 @@
+import './styles/contactPopUp.css';
+import {createCancelBtn} from '../UI/button/buttons';
+
 export const createInfoCard = (contactInfo) =>{
     const card = createCardElement();
     const info = createInfo(contactInfo);
@@ -15,7 +18,6 @@ const createCardElement = () =>{
 const createInfo = (contactInfo) =>{
     const infoObj = contactInfoObj(contactInfo)
     const infoWrap = document.createElement("div");
-    infoWrap.setAttribute("id","infoWrap");
     assignInfoToElems(infoObj,infoWrap);
     return infoWrap;
 }
@@ -58,16 +60,4 @@ const createSingleInfoElement = (info) =>{
 
 const formatInfoInnerTxt = (label,value) =>{
     return label + " : " + value + " ";
-}
-
-const createCancelBtn = () =>{
-    const cancelBtn = document.createElement("button");
-    cancelBtn.innerText = " X ";
-    cancelBtn.setAttribute("class","cancelBtn");
-    cancelBtn.addEventListener("click",()=>removeCard(event.target.parentNode));
-    return cancelBtn;
-}
-
-const removeCard = (card) =>{
-    card.classList.add("hide");
 }
