@@ -3,8 +3,9 @@ const paletteClasses = document.querySelectorAll(".paletteBlock");
 const paletteList = document.querySelector(".palettePopUp");
 const cancelBtn = document.querySelector('.cancelBtn');
 
-import './paletteList.css';
-
+import './styles/paletteList.css';
+//CONSIDER REMOVING ELEMENTS FROM INDEX.HTML AND CREATING 
+//THE STYLE LIST AND REMOVING IT FROM DOM.
 export const showPaletteList = () => {
   palette(paletteClasses);
   paletteList.classList.remove("hide");

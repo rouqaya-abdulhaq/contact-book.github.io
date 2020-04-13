@@ -1,0 +1,74 @@
+/*STYLE TABLE
+   1- GENERAL
+   2- MEDIA QUERIES
+      2-1 COMBINED
+      2-2 TABLET
+      2-3 SMART PHONES*/
+/*1- GENERAL*/
+.palettePopUp{
+   border: black dashed;
+   position: fixed;
+   top: 35vh;
+   left : 4.5vw;
+   height: 50vh;
+   width: 15vw;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding-top: 1vh;
+}
+ 
+.blockList{
+   height: 100%;
+   width: 100%;
+   display: grid;
+   grid-template-columns: 49% 49%;
+   grid-auto-rows: 20%;
+   grid-gap: 2%;
+   overflow-y: auto;
+   margin-top: 1vh;
+}
+
+.paletteBlock{
+   background: whitesmoke;
+   text-align: center;
+   padding-top: 5%;
+   overflow-wrap: break-word;
+   cursor: pointer;
+}
+
+/*----------------------------------------------*/
+/*2- MEDIA QUERIES*/
+/*2-1 COMBINED*/
+@media(max-width : 1024px){
+   .palettePopUp{
+       left: 7vw;
+   }
+   .blockList{
+       width: 40vw;
+   }
+}
+/*------------------------------------------------*/
+/*2-2 TABLET*/
+@media (max-width : 1024px ) and (min-width : 768px) {
+   .paletteBlock{
+       font-size: 3vw;
+   }
+}  
+/*------------------------------------------------*/
+/*2-3 SMART PHONES*/
+
+@media (max-width : 380px){
+    .palettePopUp{
+        top : 30vh;
+    }
+   .blockList{
+       height: 50vh;
+   }
+}
+
+@media (max-width : 500px) and (min-width : 385px) {
+   .palettePopUp{
+       top: 38vh;
+   }
+}

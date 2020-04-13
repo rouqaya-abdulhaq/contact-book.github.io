@@ -29,43 +29,13 @@ font-family: "Comic Sans MS", cursive, sans-serif;
 body main{
 grid-area: main;
 height: 65vh;
- width: 20vw;
- text-align: center;
- border-left: ridge 0.5vw ;
- border-radius: 3%;
- -webkit-box-shadow: 13px 5px 32px -19px rgba(0,0,0,1);
- -moz-box-shadow: 13px 5px 32px -19px rgba(0,0,0,1);
- box-shadow: 13px 5px 32px -19px rgba(0,0,0,1);
-}
-/*clean up the styling when imported from paletteList it overruns the hide class*/
-.colorList{
-   border: black dashed;
-   position: fixed;
-   top: 35vh;
-   left : 4.5vw;
-   height: 40vh;
-   width: 15vw;
-}
-
-.colors{
-   height: 100%;
-   width: 100%;
-   display: grid;
-   grid-template-columns: 49% 49%;
-   grid-auto-rows: 20%;
-   grid-gap: 2%;
-   overflow-y: auto;
-}
-
-.paletteClass{
-   background: whitesmoke;
-   text-align: center;
-   padding-top: 5%;
-   overflow-wrap: break-word;
-}
-
-.paletteClass:hover{
-   cursor: pointer;
+width: 20vw;
+text-align: center;
+border-left: ridge 0.5vw ;
+border-radius: 3%;
+-webkit-box-shadow: 13px 5px 32px -19px rgba(0,0,0,1);
+-moz-box-shadow: 13px 5px 32px -19px rgba(0,0,0,1);
+box-shadow: 13px 5px 32px -19px rgba(0,0,0,1);
 }
 
 /*---------------------------------------------------------------------*/
@@ -82,12 +52,12 @@ height: 65vh;
 
 /*3- MEDIA QUERIES*/
 @media (max-width : 900px ) {
-main{
-   width : 30VW ;
-}
+   main{
+      width : 30VW ;
+   }
 }  
 @media (max-width : 600px ) {
-main{
-   width : 35VW ;
-}
+   main{
+      width : 35VW ;
+   }
 }

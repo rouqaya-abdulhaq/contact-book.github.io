@@ -1,0 +1,36 @@
+/*-------------------------
+    STYLE TABLE :
+    1- PALETTE INTERFACE
+    2- MEDIA QUERIES
+        2-1 TABLET
+        2-3 SMART PHONES*/
+/*1- PALETTE INTERFACE*/
+.paletteIcon{
+    grid-area: palette;
+    margin-left: 2%;
+}
+.paletteIcon img{
+    width: 3vw;
+    height: auto;
+    cursor: pointer;
+}
+/*----------------------------------------------*/
+/*2- MEDIA QUERIES*/
+/*2-1 TABLET*/
+@media (max-width : 1024px ) and (min-width : 768px) {
+    .paletteIcon img{
+        margin-top: 35%;
+        margin-left: 25%;
+        width: 8vw;   
+    }
+}
+/*------------------------------------------------*/
+/*2-2 SMART PHONES*/
+
+@media (max-width : 500px) and (min-width : 320px) {
+.paletteIcon img{
+    margin-top: 55%;
+    margin-left: 25%;  
+    width: 8vw;    
+  }
+}  
