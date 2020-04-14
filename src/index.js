@@ -34,7 +34,7 @@ import './stylesGlobal/paletteClasses.css';
 
 
 
-const paletteIcon = document.querySelector("#palette");
+const paletteIcon = document.querySelector("#paletteIcon");
 
 
 const addButton = document.querySelector(".addButton");

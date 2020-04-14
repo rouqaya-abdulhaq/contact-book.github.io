@@ -3,7 +3,7 @@ import {createCancelBtn} from '../UI/button/buttons';
 import './styles/paletteList.css';
 
 const body = document.querySelector("body");
-const paletteArea = document.querySelector(".paletteIcon");
+const paletteArea = document.querySelector(".paletteArea");
 
 const paletteStyleClasses = ["default","flowery","seaSide"];
 
@@ -29,11 +29,15 @@ const createPalettePopUp = () =>{
 const createBlockList = () =>{
   const blockList = document.createElement('div');
   blockList.setAttribute("class","blockList");
+  appendStyleBlockToList(blockList);
+  return blockList;
+}
+
+const appendStyleBlockToList = (blockList) =>{
   for (let styleClass of paletteStyleClasses){
     const styleBlock = createPaletteBlock(styleClass);
     blockList.appendChild(styleBlock);
   }
-  return blockList;
 }
 
 const createPaletteBlock = (styleValue) =>{

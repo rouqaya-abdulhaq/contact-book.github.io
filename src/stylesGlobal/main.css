@@ -10,6 +10,16 @@ body main{
     box-shadow: 13px 5px 32px -19px rgba(0,0,0,1);
 }
 
+/*2- DISPLAY CLASSES*/
+/*USED FOR TEMP ROUTING*/
+.hide{
+   display: none;
+}
+
+.show{
+   display : block;
+} 
+
 /*3- MEDIA QUERIES*/
 @media (max-width : 900px ) {
     main{
