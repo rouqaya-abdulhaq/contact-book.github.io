@@ -8,7 +8,6 @@ html ,body{
 STYLE TABLE :
 1- GLOBAL SELECTORS
 2- DISPLAY CLASSES
-3- MEDIA QUERIES  
 /*-------------------
   1- GLOBAL SELECTORS
   -------------------*/
@@ -26,18 +25,6 @@ grid-template-areas: "header header header"
 font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
-body main{
-grid-area: main;
-height: 65vh;
-width: 20vw;
-text-align: center;
-border-left: ridge 0.5vw ;
-border-radius: 3%;
--webkit-box-shadow: 13px 5px 32px -19px rgba(0,0,0,1);
--moz-box-shadow: 13px 5px 32px -19px rgba(0,0,0,1);
-box-shadow: 13px 5px 32px -19px rgba(0,0,0,1);
-}
-
 /*---------------------------------------------------------------------*/
 
 /*2- DISPLAY CLASSES*/
@@ -49,15 +36,3 @@ box-shadow: 13px 5px 32px -19px rgba(0,0,0,1);
    display : block;
 }
 /*---------------------------------------------------------------------*/
-
-/*3- MEDIA QUERIES*/
-@media (max-width : 900px ) {
-   main{
-      width : 30VW ;
-   }
-}  
-@media (max-width : 600px ) {
-   main{
-      width : 35VW ;
-   }
-}
