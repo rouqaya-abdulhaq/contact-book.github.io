@@ -6,14 +6,15 @@ import {onSignOut} from './actions/registartion/onSignOut';
 import {appendSignUpForm} from './registration/signUp/signUpForm';
 import {appendSignInForm} from './registration/signIn/signInForm';
 
-import './stylesGlobal/header.css';
-import './stylesGlobal/logo.css';
-import './stylesGlobal/footer.css';
-import './stylesGlobal/paletteClasses.css';
 import './stylesGlobal/style.css';
-import './stylesGlobal/contactList.css';
-import './stylesGlobal/palette.css';
+import './stylesGlobal/header.css';
 import './stylesGlobal/main.css';
+import './stylesGlobal/footer.css';
+import './stylesGlobal/contactList.css';
+import './stylesGlobal/logo.css';
+import './stylesGlobal/palette.css';
+import './stylesGlobal/paletteClasses.css';
+
 //Needs serious renaming
 /*synopsis:
    1- the user should sign up or log in and then be directed to the contact list
