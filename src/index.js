@@ -1,5 +1,5 @@
 import {displayContactForm} from './contacts/contactForm/contactForm';
-import {showPaletteList} from './palette/palette';
+import {appendPaletteList} from './palette/palette';
 import {routeChange} from './tempRouting';
 
 import {onSignOut} from './actions/registartion/onSignOut';
@@ -57,4 +57,4 @@ signUpNav.addEventListener('click',()=>{
     routeChange('signUp')
 });
 signOutNav.addEventListener('click',onSignOut);
-paletteIcon.addEventListener('click',showPaletteList);
+paletteIcon.addEventListener('click',appendPaletteList);
