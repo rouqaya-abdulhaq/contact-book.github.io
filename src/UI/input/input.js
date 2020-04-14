@@ -1,5 +1,6 @@
-import './input.css';
 import {validateInput} from '../../utilities/validation/validation';
+
+import './input.css';
 
 
 export const createInputs = (valueObject,form) =>{
@@ -14,12 +15,12 @@ export const createInputs = (valueObject,form) =>{
 }
 
 export const createInput = (inputObj,form) => {
-    const wrapper = document.createElement("div");
-    wrapper.setAttribute("class","inputWrapper");
+    const inputAndLabel = document.createElement("div");
+    inputAndLabel.setAttribute("class","inputAndLabel");
     const label = createLabel(inputObj.label);
     const inputBox = createInputBox(inputObj.id,inputObj.type,form);
-    wrapper.append(label,inputBox);
-    return wrapper;
+    inputAndLabel.append(label,inputBox);
+    return inputAndLabel;
 }
 
 

@@ -12,6 +12,11 @@
     color: rgb(202, 202, 202) !important;
 }
 
+.cancelBtn{
+    outline: none;
+    font-size: 10%;
+}
+
 /*TABLET QUERIES*/
 /*TABLET*/
 @media (max-width : 1024px ) and (min-width : 768px) {
@@ -20,10 +25,4 @@
         height: 4vh;
         font-size: 3vw;
     }
- }
-
-
-.cancelBtn{
-    outline: none;
-    font-size: 10%;
  }

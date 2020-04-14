@@ -1,4 +1,4 @@
-.inputWrapper{
+.inputAndLabel{
     margin: 5%;
 }
 .inputBox{
@@ -44,7 +44,7 @@
  }  
 /*SMART PHONE QUERIES*/
 @media (max-width : 500px){
-    .inputWrapper{
+    .inputAndLabel{
         margin: 2%;
     }
     .label{
@@ -56,7 +56,7 @@
     }
 }
 @media(max-width : 380px) {
-    .inputWrapper{
+    .inputAndLabel{
         margin: 3%;
     }
 }
