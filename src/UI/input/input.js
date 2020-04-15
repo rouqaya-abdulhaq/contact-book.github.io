@@ -3,12 +3,11 @@ import {validateInput} from '../../utilities/validation/validation';
 import './input.css';
 
 
-export const createInputs = (valueObject,form) =>{
-    //CHECK IF INPUT IS AN OBJECT
+export const createInputs = (inputValueObject,form) =>{
     const inputFields = document.createElement("div");
-    if(valueObject){
-        for (const value in valueObject) {
-            inputFields.appendChild(createInput(valueObject[value],form));
+    if(isObject(inputValueObject)){
+        for (const value in inputValueObject) {
+            inputFields.appendChild(createInput(inputValueObject[value],form));
         }  
     }
     return inputFields;
@@ -23,6 +22,10 @@ export const createInput = (inputObj,form) => {
     return inputAndLabel;
 }
 
+const isObject = (argument) =>{
+    return typeof argument === 'object' && argument !== null && typeof argument !== 'function';
+}
+
 
 const createInputBox = (id,type,form) => {
     const inputBox = document.createElement("input");
@@ -35,32 +38,40 @@ const createInputBox = (id,type,form) => {
 
 const onInput = (input,form) =>{
     form[input.id].value = input.element.value;
-        const valid = validateInput({value : input.element.value, type : input.type});
-        form[input.id].isValid = valid;
+        const isValid = validateInput({value : input.element.value, type : input.type});
+        form[input.id].isValid = isValid;
         form[input.id].hasChanged = true;
-        toggleClasses(valid,input.element);
+        toggleValidationClasses(isValid,input.element);
 }
 
-const toggleClasses = (isValid , inputBox) =>{
+const toggleValidationClasses = (isValid , inputBox) =>{
     switch(isValid){
-        case true :
-            if(!inputBox.classList.contains("rightCredintials")){
-                if(inputBox.classList.contains("wrongCredintials")){
-                     inputBox.classList.replace("wrongCredintials","rightCredintials");
-                }else{
-                    inputBox.classList.add("rightCredintials");
-                }
-            }
+        case true : 
+            toggleRightCredintialsClass(inputBox);
             break;
         case false :  
-            if(!inputBox.classList.contains("wrongCredintials")){
-                if(inputBox.classList.contains("rightCredintials")){
-                        inputBox.classList.replace("rightCredintials","wrongCredintials");
-                }else{
-                    inputBox.classList.add("wrongCredintials");
-                }
-            }
+            toggleWrongCredintialsClass(inputBox);
             break;
+    }
+}
+
+const toggleRightCredintialsClass = (inputBox) =>{
+    if(!inputBox.classList.contains("rightCredintials")){
+        if(inputBox.classList.contains("wrongCredintials")){
+             inputBox.classList.replace("wrongCredintials","rightCredintials");
+        }else{
+            inputBox.classList.add("rightCredintials");
+        }
+    }
+}
+
+const toggleWrongCredintialsClass = (inputBox) =>{
+    if(!inputBox.classList.contains("wrongCredintials")){
+        if(inputBox.classList.contains("rightCredintials")){
+                inputBox.classList.replace("rightCredintials","wrongCredintials");
+        }else{
+            inputBox.classList.add("wrongCredintials");
+        }
     }
 }
 
