@@ -1,14 +1,9 @@
-import {createInputs} from '../../UI/input/input';
 import {onSubmit} from '../../actions/contacts/onSubmit';
 import {createForm} from '../../UI/form/form'
-import {createCancelBtn,createSubmitBtn} from '../../UI/button/buttons';
 import {Form} from './formTemplate';
 import '../styles/contactPopUp.css';
 
 const contactMain = document.querySelector("#contactMain");
-
-const formId = "contactForm";
-const formClass = "contactPopUps";
 
 
 const inputValues = {
@@ -34,42 +29,19 @@ const inputValues = {
     },
 }
 
+const formMetaData = {
+    formId : "contactForm",
+    formClass : "contactPopUps"
+}
+
 export const displayContactForm = () => {
-    const form = createContactForm(onSubmit);
+    const form = createForm(Form,formMetaData,onSubmit,inputValues);
     appendToContactMain(form);
 }
 
 export const displayEditForm = (targetedContact , onEdit) =>{
-    const form = createContactForm((formTemp)=>onEdit(targetedContact,formTemp));
+    const form = createForm(Form,formMetaData,(formTemp)=>onEdit(targetedContact,formTemp),inputValues);
     contactMain.appendChild(form);
-}
-//EXTRCAT CREATING A GENERAL FORM FUNCTIONALITY
-const  createContactForm = (onSubmit) => {
-    const formTemplate = JSON.parse(JSON.stringify(Form));
-    const form = createForm(formId,formClass);
-    const cancelBtn = createCancelBtn();
-    const submitBtn = createSubmitBtn("submit",()=>{if(onSubmit(formTemplate)) return true;});
-    const inputFields = createContactInputs(formTemplate,submitBtn);
-    form.append(cancelBtn,inputFields,submitBtn);
-    return form;
-}
-
-const  createContactInputs = (formTemplate,submitBtn) => {
-    const inputFields = createInputs(inputValues,formTemplate);
-    for(let input of inputFields.childNodes){
-        input.addEventListener("input",()=>{onInput(formTemplate,submitBtn);})
-    }
-    return inputFields; 
-}
-
-const onInput = (formTemplate,submitBtn) =>{
-    for(let field in formTemplate){
-        if(formTemplate[field].hasChanged && !formTemplate[field].isValid){
-            submitBtn.classList.contains("invalidSubmit")? null : submitBtn.classList.add("invalidSubmit");
-            break;
-        }
-        submitBtn.classList.contains("invalidSubmit")? submitBtn.classList.remove("invalidSubmit") : null;
-    }
 }
 
 const appendToContactMain = (elem) =>{
