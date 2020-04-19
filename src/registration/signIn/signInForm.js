@@ -1,6 +1,7 @@
 import {createForm} from '../../UI/form/form';
 import {onSignIn} from '../../actions/registartion/onSignIn';
 import {Form} from './formTemplate';
+import './signInForm.css';
 
 const signInMain = document.querySelector("#signInMain");
 
