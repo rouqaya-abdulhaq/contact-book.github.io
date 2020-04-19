@@ -1,14 +1,13 @@
-import './form.css';
-import {createCancelBtn,createSubmitBtn} from '../button/buttons';
+import {createSubmitBtn} from '../button/buttons';
 import {createInputs} from '../input/input';
+import './form.css';
 
 export const createForm = (formStorage, metaData,onSubmit, inputValues) =>{  
     const formTemplate = JSON.parse(JSON.stringify(formStorage));
     const form = createFormElement(metaData.formId,metaData.formClass);
-    const cancelBtn = createCancelBtn();
     const submitBtn = createSubmitBtn("submit",()=>{if(onSubmit(formTemplate)) return true;});
     const inputFields = createInputsWithEventHandler(formTemplate,submitBtn,inputValues);
-    form.append(cancelBtn,inputFields,submitBtn);
+    form.append(inputFields,submitBtn);
     return form;
 }
 
@@ -22,12 +21,12 @@ const createFormElement = (id, styleClass) => {
 const  createInputsWithEventHandler = (formTemplate,submitBtn,inputValues) => {
     const inputFields = createInputs(inputValues,formTemplate);
     for(let input of inputFields.childNodes){
-        input.addEventListener("input",()=>{onInput(formTemplate,submitBtn);})
+        input.addEventListener("input",()=>{formValidationCheck(formTemplate,submitBtn);})
     }
     return inputFields; 
 }
 
-const onInput = (formTemplate,submitBtn) =>{
+const formValidationCheck = (formTemplate,submitBtn) =>{
     for(let field in formTemplate){
         if(formTemplate[field].hasChanged && !formTemplate[field].isValid){
             submitBtn.classList.contains("invalidSubmit")? null : submitBtn.classList.add("invalidSubmit");

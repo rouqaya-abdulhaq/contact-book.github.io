@@ -2,8 +2,6 @@ import {createForm} from '../../UI/form/form';
 import {onSignUp} from '../../actions/registartion/onSignUp';
 import {Form} from './formTemplate';
 
-import './signUpForm.css';
-
 const signUpMain = document.querySelector("#signUpMain");
 
 const inputValues = {

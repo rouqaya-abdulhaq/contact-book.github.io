@@ -1,5 +1,6 @@
 import {onSubmit} from '../../actions/contacts/onSubmit';
-import {createForm} from '../../UI/form/form'
+import {createForm} from '../../UI/form/form';
+import {createCancelBtn} from '../../UI/button/buttons';
 import {Form} from './formTemplate';
 import '../styles/contactPopUp.css';
 
@@ -36,12 +37,19 @@ const formMetaData = {
 
 export const displayContactForm = () => {
     const form = createForm(Form,formMetaData,onSubmit,inputValues);
+    addCancelBtnToForm(form);
     appendToContactMain(form);
 }
 
 export const displayEditForm = (targetedContact , onEdit) =>{
     const form = createForm(Form,formMetaData,(formTemp)=>onEdit(targetedContact,formTemp),inputValues);
+    addCancelBtnToForm(form);
     contactMain.appendChild(form);
+}
+
+const addCancelBtnToForm = (formElement) =>{
+    const cancelBtn = createCancelBtn();
+    formElement.insertBefore(cancelBtn,formElement.firstChild);
 }
 
 const appendToContactMain = (elem) =>{
