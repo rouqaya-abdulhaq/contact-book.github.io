@@ -6,7 +6,7 @@ const title = document.querySelector(".title");
 
 export const onSignOut = () =>{
     contactList.innerHTML = "";
-    title.innerText = "";//MAYBE I DON'T NEED THIS 
+    title.innerText = "";
     appendSignInForm();
     routeChange('signIn');
 }

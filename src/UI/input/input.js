@@ -1,4 +1,5 @@
 import {validateInput} from '../../utilities/validation/validation';
+import {isObject} from '../../utilities/typeCheck';
 
 import './input.css';
 
@@ -21,11 +22,6 @@ export const createInput = (inputObj,form) => {
     inputAndLabel.append(label,inputBox);
     return inputAndLabel;
 }
-
-const isObject = (argument) =>{
-    return typeof argument === 'object' && argument !== null && typeof argument !== 'function';
-}
-
 
 const createInputBox = (id,type,form) => {
     const inputBox = document.createElement("input");

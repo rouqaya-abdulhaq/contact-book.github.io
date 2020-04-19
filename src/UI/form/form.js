@@ -1,14 +1,17 @@
 import {createSubmitBtn} from '../button/buttons';
 import {createInputs} from '../input/input';
+import {isObject,isFunction} from '../../utilities/typeCheck';
 import './form.css';
 
-export const createForm = (formStorage, metaData,onSubmit, inputValues) =>{  
-    const formTemplate = JSON.parse(JSON.stringify(formStorage));
-    const form = createFormElement(metaData.formId,metaData.formClass);
-    const submitBtn = createSubmitBtn("submit",()=>{if(onSubmit(formTemplate)) return true;});
-    const inputFields = createInputsWithEventHandler(formTemplate,submitBtn,inputValues);
-    form.append(inputFields,submitBtn);
-    return form;
+export const createForm = (formStorage, metaData,onSubmit, inputValues) =>{
+    if(isObject(formStorage) && isObject(metaData) && isFunction(onSubmit) && isObject(inputValues)){  
+        const formTemplate = JSON.parse(JSON.stringify(formStorage));
+        const form = createFormElement(metaData.formId,metaData.formClass);
+        const submitBtn = createSubmitBtn("submit",()=>{if(onSubmit(formTemplate)) return true;});
+        const inputFields = createInputsWithEventHandler(formTemplate,submitBtn,inputValues);
+        form.append(inputFields,submitBtn);
+        return form;
+    }
 }
 
 const createFormElement = (id, styleClass) => {
