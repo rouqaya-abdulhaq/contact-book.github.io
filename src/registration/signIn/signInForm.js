@@ -1,5 +1,5 @@
 import {createForm} from '../../UI/form/form';
-import {onSignIn} from '../../actions/registartion/onSignIn';
+import {onSignIn} from '../../actions/registartion/registrationActions';
 import {Form} from './formTemplate';
 
 const signInMain = document.querySelector("#signInMain");

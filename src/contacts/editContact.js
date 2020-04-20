@@ -1,5 +1,5 @@
 import {displayEditForm} from "./contactForm/contactForm";
-import {onEdit} from '../actions/contacts/onEdit';
+import {onEdit} from '../actions/contacts/contactsActions';
 
 
 

@@ -2,7 +2,7 @@ import {displayContactForm} from './contacts/contactForm/contactForm';
 import {appendPaletteList} from './palette/palette';
 import {routeChange} from './tempRouting';
 
-import {onSignOut} from './actions/registartion/onSignOut';
+import {onSignOut} from './actions/registartion/registrationActions';
 import {appendSignUpForm} from './registration/signUp/signUpForm';
 import {appendSignInForm} from './registration/signIn/signInForm';
 

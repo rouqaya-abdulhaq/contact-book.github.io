@@ -1,4 +1,4 @@
-import {onSubmit} from '../../actions/contacts/onSubmit';
+import {onSubmit} from '../../actions/contacts/contactsActions';
 import {createForm} from '../../UI/form/form';
 import {createCancelBtn} from '../../UI/button/buttons';
 import {Form} from './formTemplate';

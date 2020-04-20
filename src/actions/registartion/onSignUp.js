@@ -30,7 +30,6 @@ const signUser = (userInfo) =>{
         }).then((res)=>{
         return  res.json();
         }).then((user)=>{
-            console.log(user);
             admitUser(user);
         }).catch((err)=>{
             console.log(err);

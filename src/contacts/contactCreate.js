@@ -1,4 +1,4 @@
-import {onDelete} from '../actions/contacts/onDelete';
+import {onDelete} from '../actions/contacts/contactsActions';
 import {onEditClick} from './editContact';
 import {createInfoCard} from './contactInfoCard';
 import {getIndexOfNode} from '../utilities/getInfo';
