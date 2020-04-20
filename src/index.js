@@ -32,21 +32,16 @@ import './stylesGlobal/paletteClasses.css';
     5-if the delete button is pressed the user will be warned if he is sure about the delete
         6-the color palette should be able to change the page's style at any point of the programm*/
 
-
-
-const paletteIcon = document.querySelector("#paletteIcon");
-
-
-const addButton = document.querySelector(".addButton");
-
 const logInNav = document.querySelector("#logIn");
 const signUpNav = document.querySelector("#signIn");
 const signOutNav = document.querySelector("#signOut");
 
+const addContactButton = document.querySelector(".addButton");
+
+const paletteIcon = document.querySelector("#paletteIcon");
+
 
 appendSignInForm();
-
-addButton.addEventListener("click",displayContactForm);
 
 logInNav.addEventListener('click',()=>{
     appendSignInForm();
@@ -57,4 +52,7 @@ signUpNav.addEventListener('click',()=>{
     routeChange('signUp')
 });
 signOutNav.addEventListener('click',onSignOut);
+
 paletteIcon.addEventListener('click',appendPaletteList);
+
+addContactButton.addEventListener("click",displayContactForm);
