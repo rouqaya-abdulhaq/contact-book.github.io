@@ -1,10 +1,10 @@
 import {routeChange} from '../../tempRouting';
 import {admitUser} from '../../utilities/admitUser';
-import {validateSignUp} from '../../utilities/validation/validateRegistration';
+import {validateSignUpForm} from '../../utilities/validation/validation';
 import {submitBtnToAlert} from '../domElements/buttonManipulation';
 
 export const onSignUp = (userInfo) =>{
-    if(validateSignUp(userInfo)){
+    if(validateSignUpForm(userInfo)){
         signUser(userInfo);
         routeChange('contactList');
         return true;

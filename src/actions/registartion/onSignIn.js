@@ -1,11 +1,11 @@
-import {validateSignIn} from '../../utilities/validation/validateRegistration';
+import {validateSignInForm} from '../../utilities/validation/validation';
 import {admitUser} from '../../utilities/admitUser';
 import {submitBtnToAlert} from '../domElements/buttonManipulation';
 import {routeChange} from '../../tempRouting'; //TEMPORARY
 
 
 export const onSignIn = (userInfo) =>{
-    if(validateSignIn(userInfo)){
+    if(validateSignInForm(userInfo)){
         signUser(userInfo);
         return true;
     }else{
