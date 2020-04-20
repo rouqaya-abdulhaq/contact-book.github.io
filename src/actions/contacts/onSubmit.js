@@ -1,6 +1,6 @@
-import {addContactToDom} from '../../contacts/contactSubmit';
 import {validateContact} from '../../utilities/validation/validation';
 import {submitBtnToAlert} from '../domElements/buttonManipulation';
+import {addContactToDom} from '../domElements/addToDom';
 
 export const onSubmit = (contactInfo) => {
     if(validateContact(contactInfo)){

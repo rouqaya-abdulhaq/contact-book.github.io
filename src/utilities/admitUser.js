@@ -1,4 +1,4 @@
-import {addContactToDom} from '../contacts/contactSubmit';
+import {addContactToDom} from '../actions/domElements/addToDom';
 
 
 const title = document.querySelector(".title");
