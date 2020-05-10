@@ -1,5 +1,5 @@
 import {routeChange} from '../../tempRouting';
-import {admitUser} from '../../utilities/admitUser';
+import {updateUser} from '../../registration/admitUser';
 import {validateSignUpForm} from '../../utilities/validation/validation';
 import {submitBtnToAlert} from '../domElements/buttonManipulation';
 
@@ -19,7 +19,8 @@ const signUser = (userInfo) =>{
     fetch('http://localhost:5000/signUp',{
         method : 'POST',
         body : JSON.stringify({ 
-            name : userInfo.signUpFirstName.value + " " + userInfo.signUpLastName.value,
+            firstName : userInfo.signUpFirstName.value,
+            lastName : userInfo.signUpLastName.value,
             email : userInfo.signUpEmail.value,
             password : userInfo.signUpPassword.value
         }),
@@ -28,9 +29,9 @@ const signUser = (userInfo) =>{
             'Content-Type': 'application/json',
         },
         }).then((res)=>{
-        return  res.json();
+            return  res.json();
         }).then((user)=>{
-            admitUser(user);
+            updateUser(user);
         }).catch((err)=>{
             console.log(err);
         });

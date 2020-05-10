@@ -1,5 +1,5 @@
 import {validateSignInForm} from '../../utilities/validation/validation';
-import {admitUser} from '../../utilities/admitUser';
+import {updateUser} from '../../registration/admitUser';
 import {submitBtnToAlert} from '../domElements/buttonManipulation';
 import {routeChange} from '../../tempRouting'; //TEMPORARY
 
@@ -34,7 +34,7 @@ const signUser = (userInfo) =>{
         }
     }).then((user)=>{
         if(user){
-            admitUser(user);
+            updateUser(user);
             routeChange('contactList')
         }else{
             console.log("user not found");
