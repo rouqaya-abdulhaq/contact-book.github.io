@@ -12,7 +12,6 @@ const  user = {
 export const updateUser = (userInfo) =>{
     user.userName = userInfo.user_first_name;
     user.userId = userInfo.user_id;
-    console.log(user);
     admitUser();
 }
 
@@ -35,8 +34,7 @@ const fetchContacts = (id) =>{
     }).then((res)=>{
         return res.json();
     }).then((contacts)=>{
-        console.log(contacts);
-        // createContactList(contacts);
+        createContactList(contacts);
     }).catch((err)=>{
         console.log(err);
     })
@@ -45,7 +43,15 @@ const fetchContacts = (id) =>{
 const createContactList = (contacts) =>{
     if(contacts){
         for (let contact of contacts){
-            addContactToDom(contact);
+            const contactToAdd = {
+                firstName : contact.contact_first_name,
+                lastName : contact.contact_last_name,
+                email : contact.contact_email,
+                phoneNumber : contact.contact_phone_number,
+                contactId : contact.contact_id,
+            }
+            user.contacts.push(contactToAdd);
+            addContactToDom(contactToAdd);
         }
     }
 }
