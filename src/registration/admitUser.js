@@ -9,6 +9,8 @@ const  user = {
     contacts : []
 }
 
+export let userInfoCopy = {};
+
 export const updateUser = (userInfo) =>{
     user.userName = userInfo.user_first_name;
     user.userId = userInfo.user_id;
@@ -18,6 +20,7 @@ export const updateUser = (userInfo) =>{
 const admitUser = () =>{
     changeContactTitle(user.userName);
     fetchContacts(user.userId);
+    userInfo = JSON.parse(JSON.stringify(user));
 }
 
 const changeContactTitle = (name)=>{ 
@@ -43,15 +46,8 @@ const fetchContacts = (id) =>{
 const createContactList = (contacts) =>{
     if(contacts){
         for (let contact of contacts){
-            const contactToAdd = {
-                firstName : contact.contact_first_name,
-                lastName : contact.contact_last_name,
-                email : contact.contact_email,
-                phoneNumber : contact.contact_phone_number,
-                contactId : contact.contact_id,
-            }
-            user.contacts.push(contactToAdd);
-            addContactToDom(contactToAdd);
+            user.contacts.push(contact);
+            addContactToDom(contact);
         }
     }
 }

@@ -1,6 +1,7 @@
 import {validateContact} from '../../utilities/validation/validation';
 import {submitBtnToAlert} from '../domElements/buttonManipulation';
 import {addContactToDom} from '../domElements/addToDom';
+import {userInfoCopy} from '../../registration/admitUser';
 
 export const onSubmit = (contactInfo) => {
     if(validateContact(contactInfo)){
@@ -21,6 +22,7 @@ const addContact = (contactInfo) =>{
                 'Content-Type': 'application/json'
             },
             body : JSON.stringify({
+                userId : userInfoCopy.userId,
                 firstName : contactInfo.contactFirstName.value,
                 lastName : contactInfo.contactLastName.value,
                 email : contactInfo.contactEmail.value,
