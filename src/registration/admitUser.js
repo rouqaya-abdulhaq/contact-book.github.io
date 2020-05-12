@@ -20,7 +20,7 @@ export const updateUser = (userInfo) =>{
 const admitUser = () =>{
     changeContactTitle(user.userName);
     fetchContacts(user.userId);
-    userInfo = JSON.parse(JSON.stringify(user));
+    userInfoCopy = JSON.parse(JSON.stringify(user));
 }
 
 const changeContactTitle = (name)=>{ 

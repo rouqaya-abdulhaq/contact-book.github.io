@@ -7,7 +7,8 @@ export const addContactToDom = (contactInfo) => {
         firstName : contactInfo.contact_first_name,
         lastName : contactInfo.contact_last_name,
         email : contactInfo.contact_email,
-        phoneNumber : contactInfo.contact_phone_number
+        phoneNumber : contactInfo.contact_phone_number,
+        id : contactInfo.contact_id,
     }
     const contact = createContact(contactInfoExtract);
     contactList.appendChild(contact);;

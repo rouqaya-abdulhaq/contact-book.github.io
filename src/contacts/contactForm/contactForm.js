@@ -41,8 +41,8 @@ export const displayContactForm = () => {
     appendToContactMain(form);
 }
 
-export const displayEditForm = (targetedContact , onEdit) =>{
-    const form = createForm(Form,formMetaData,(formTemp)=>onEdit(targetedContact,formTemp),inputValues);
+export const displayEditForm = (targetedContact , onEdit,contactId) =>{
+    const form = createForm(Form,formMetaData,(formTemp)=>onEdit(targetedContact,formTemp,contactId),inputValues);
     addCancelBtnToForm(form);
     contactMain.appendChild(form);
 }

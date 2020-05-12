@@ -6,7 +6,7 @@ import './styles/contactCreate.css';
 
 export const createContact = (contactInfo) => {
     const contactName = createContactName(contactInfo);
-    const contContainer = createContactContainer(contactName);
+    const contContainer = createContactContainer(contactName,contactInfo.id);
     return contContainer;
 }
 
@@ -22,10 +22,10 @@ const displayInfoCard = (contactInfo, contElem) =>{
     contElem.appendChild(infoCard);
 }
 
-const createContactContainer = (contact) =>{
+const createContactContainer = (contact,contactId) =>{
     const container = document.createElement("div");
     container.className = "contact";
-    container.append(contact, createEditBtn(onEditClick), createDeleteBtn(container));
+    container.append(contact, createEditBtn(()=>onEditClick(contactId)), createDeleteBtn(container));
     return container;
 }
 
