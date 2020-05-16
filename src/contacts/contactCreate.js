@@ -25,7 +25,7 @@ const displayInfoCard = (contactInfo, contElem) =>{
 const createContactContainer = (contact,contactId) =>{
     const container = document.createElement("div");
     container.className = "contact";
-    container.append(contact, createEditBtn(()=>onEditClick(contactId)), createDeleteBtn(container));
+    container.append(contact, createEditBtn(()=>onEditClick(contactId)), createDeleteBtn(container,contactId));
     return container;
 }
 
@@ -39,11 +39,11 @@ const createEditBtn = (onEdit) => {
     return editImg; 
 }
 
-const createDeleteBtn = (contact) => {
+const createDeleteBtn = (contact,contactId) => {
     let deleteBtn = document.createElement("div");
     deleteBtn.innerText = " x ";
     deleteBtn.setAttribute("class","contactButtons");
-    deleteBtn.addEventListener("click",()=>onDelete(getIndexOfNode(contact)));
+    deleteBtn.addEventListener("click",()=>onDelete(getIndexOfNode(contact),contactId));
     return deleteBtn;
 }
 

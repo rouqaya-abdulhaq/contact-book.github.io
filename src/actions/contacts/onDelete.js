@@ -1,6 +1,6 @@
 const contactList = document.querySelector("#contactsList"); //TEMPORARY
 
-export const onDelete = (index) =>{
+export const onDelete = (index,id) =>{
     fetch('http://localhost:5000/contactDelete',{
             method : 'DELETE',
             headers : {
@@ -8,13 +8,11 @@ export const onDelete = (index) =>{
                 'Content-Type': 'application/json'
             },
             body : JSON.stringify({
-                index : index
+                id : id
             })
             }).then((res)=>{
-                return res.json();
-            }).then((contactIndex)=>{
-                if(contactIndex || contactIndex === 0){
-                    contactList.removeChild(contactList.childNodes[contactIndex]);
+                if(res.status === 204){
+                    contactList.removeChild(contactList.childNodes[index]);
                 }
             }).catch((err)=>{
                 console.log(err);
