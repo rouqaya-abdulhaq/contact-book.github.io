@@ -1,5 +1,5 @@
 import {routeChange} from '../../tempRouting';
-import {updateUser} from '../../registration/admitUser';
+import {updateUser} from '../../registration/user';
 import {validateSignUpForm} from '../../utilities/validation/validation';
 import {submitBtnToAlert} from '../domElements/buttonManipulation';
 

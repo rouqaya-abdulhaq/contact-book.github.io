@@ -1,5 +1,5 @@
 import {validateSignInForm} from '../../utilities/validation/validation';
-import {updateUser} from '../../registration/admitUser';
+import {updateUser} from '../../registration/user';
 import {submitBtnToAlert} from '../domElements/buttonManipulation';
 import {routeChange} from '../../tempRouting'; //TEMPORARY
 

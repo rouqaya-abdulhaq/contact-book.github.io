@@ -1,15 +1,10 @@
 import {createContact} from "../../contacts/contactCreate";
+import {extractContact} from '../../utilities/extract';
 
 const contactList = document.querySelector("#contactsList");
 
 export const addContactToDom = (contactInfo) => {
-    const contactInfoExtract = {
-        firstName : contactInfo.contact_first_name,
-        lastName : contactInfo.contact_last_name,
-        email : contactInfo.contact_email,
-        phoneNumber : contactInfo.contact_phone_number,
-        id : contactInfo.contact_id,
-    }
+    const contactInfoExtract = extractContact(contactInfo);
     const contact = createContact(contactInfoExtract);
     contactList.appendChild(contact);;
 }

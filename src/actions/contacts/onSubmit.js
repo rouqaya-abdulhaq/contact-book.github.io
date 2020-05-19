@@ -1,7 +1,8 @@
 import {validateContact} from '../../utilities/validation/validation';
 import {submitBtnToAlert} from '../domElements/buttonManipulation';
 import {addContactToDom} from '../domElements/addToDom';
-import {userInfoCopy} from '../../registration/admitUser';
+import {userInfoCopy} from '../../registration/user';
+import {extractContactValues} from '../../utilities/extract';
 
 export const onSubmit = (contactInfo) => {
     if(validateContact(contactInfo)){
@@ -15,19 +16,15 @@ export const onSubmit = (contactInfo) => {
 }
 
 const addContact = (contactInfo) =>{
+    const extractedContact = extractContactValues(contactInfo);
+    extractedContact.userId = userInfoCopy.userId;
     fetch('http://localhost:5000/contactAdd',{
             method : 'PUT',
             headers : {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-            body : JSON.stringify({
-                userId : userInfoCopy.userId,
-                firstName : contactInfo.contactFirstName.value,
-                lastName : contactInfo.contactLastName.value,
-                email : contactInfo.contactEmail.value,
-                phoneNumber : contactInfo.contactPhoneNumber.value
-            })
+            body : JSON.stringify(extractedContact)
             }).then((res)=>{
                 return res.json();
             }).then((contact)=>{
