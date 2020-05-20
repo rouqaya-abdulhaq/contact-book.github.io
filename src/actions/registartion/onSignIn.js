@@ -1,8 +1,6 @@
 import {validateSignInForm} from '../../utilities/validation/validation';
-import {updateUser} from '../../registration/user';
+import {userAdmittionHandler} from '../../utilities/admittion';
 import {submitBtnToAlert} from '../domElements/buttonManipulation';
-import {routeChange} from '../../tempRouting'; //TEMPORARY
-
 
 export const onSignIn = (userInfo) =>{
     if(validateSignInForm(userInfo)){
@@ -33,14 +31,8 @@ const signUser = (userInfo) =>{
             return null;
         }
     }).then((user)=>{
-        if(user){
-            updateUser(user);
-            routeChange('contactList')
-        }else{
-            console.log("user not found");
-        }
+        userAdmittionHandler(user,"user has not been sent from server");
     }).catch((err)=>{
         //
     })
 }
-

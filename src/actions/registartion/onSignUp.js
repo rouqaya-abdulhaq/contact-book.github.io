@@ -1,12 +1,10 @@
-import {routeChange} from '../../tempRouting';
-import {updateUser} from '../../registration/user';
+import {userAdmittionHandler} from '../../utilities/admittion';
 import {validateSignUpForm} from '../../utilities/validation/validation';
 import {submitBtnToAlert} from '../domElements/buttonManipulation';
 
 export const onSignUp = (userInfo) =>{
     if(validateSignUpForm(userInfo)){
         signUser(userInfo);
-        routeChange('contactList');
         return true;
     }else{
         console.log("wrong data");
@@ -31,9 +29,8 @@ const signUser = (userInfo) =>{
         }).then((res)=>{
             return  res.json();
         }).then((user)=>{
-            updateUser(user);
+            userAdmittionHandler(user,"user has not been registered");
         }).catch((err)=>{
             console.log(err);
         });
 }
-
