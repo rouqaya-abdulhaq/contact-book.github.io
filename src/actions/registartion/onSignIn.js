@@ -1,6 +1,7 @@
 import {validateSignInForm} from '../../utilities/validation/validation';
 import {userAdmittionHandler} from '../../utilities/admittion';
 import {submitBtnToAlert} from '../domElements/buttonManipulation';
+import {displayErrScreen} from '../../errHandler/errHandler';
 
 export const onSignIn = (userInfo) =>{
     if(validateSignInForm(userInfo)){
@@ -33,6 +34,6 @@ const signUser = (userInfo) =>{
     }).then((user)=>{
         userAdmittionHandler(user,"user has not been sent from server");
     }).catch((err)=>{
-        //
+        displayErrScreen("could not log in");
     })
 }

@@ -1,6 +1,6 @@
 import './modal.css';
 
-export const addModal = () =>{
+export const createModal = () =>{
     const modal = document.createElement('div');
     modal.className = "modal";
     return modal
