@@ -21,6 +21,14 @@ export const createCancelBtn = () => {
     return btn;
 }
 
+export const createRefreshBtn = () =>{
+    const btn = createBtn();
+    btn.setAttribute("class","refreshBtn");
+    btn.value = "REFRESH";
+    btn.addEventListener("click",()=>{window.location.reload();});
+    return btn;
+}
+
 const createBtn = () =>{
     const btn = document.createElement("input");
     btn.setAttribute("type" , "button");

@@ -17,6 +17,15 @@
     font-size: 10%;
 }
 
+.refreshBtn{
+    width: fit-content;
+    font-size: larger;
+    outline: none;
+    border-radius: 10%;
+    font-weight: bold;
+    background: darkgray;
+}
+
 /*TABLET QUERIES*/
 /*TABLET*/
 @media (max-width : 1024px ) and (min-width : 768px) {
