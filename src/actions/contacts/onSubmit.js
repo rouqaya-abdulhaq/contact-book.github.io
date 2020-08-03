@@ -3,6 +3,7 @@ import {submitBtnToAlert} from '../domElements/buttonManipulation';
 import {addContactToDom} from '../domElements/addToDom';
 import {userInfoCopy} from '../../registration/user';
 import {extractContactValues} from '../../utilities/extract';
+import {displayErrScreen} from '../../errHandler/errHandler';
 
 export const onSubmit = (contactInfo) => {
     if(validateContact(contactInfo)){
@@ -32,6 +33,6 @@ const addContact = (contactInfo) =>{
                     addContactToDom(contact);
                 }
             }).catch((err)=>{
-                console.log(err);
+                displayErrScreen("could not submit contact");
             });
 }

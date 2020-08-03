@@ -1,13 +1,13 @@
 import {userAdmittionHandler} from '../../utilities/admittion';
 import {validateSignUpForm} from '../../utilities/validation/validation';
 import {submitBtnToAlert} from '../domElements/buttonManipulation';
+import {displayErrScreen} from '../../errHandler/errHandler';
 
 export const onSignUp = (userInfo) =>{
     if(validateSignUpForm(userInfo)){
         signUser(userInfo);
         return true;
     }else{
-        console.log("wrong data");
         submitBtnToAlert(event);
         return false;
     }
@@ -31,6 +31,6 @@ const signUser = (userInfo) =>{
         }).then((user)=>{
             userAdmittionHandler(user,"user has not been registered");
         }).catch((err)=>{
-            console.log(err);
+            displayErrScreen("could not register user");
         });
 }

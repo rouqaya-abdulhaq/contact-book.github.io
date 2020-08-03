@@ -1,4 +1,5 @@
 const contactList = document.querySelector("#contactsList"); //TEMPORARY
+import {displayErrScreen} from '../../errHandler/errHandler';
 
 export const onDelete = (index,id) =>{
     fetch('http://localhost:5000/contactDelete',{
@@ -13,8 +14,10 @@ export const onDelete = (index,id) =>{
             }).then((res)=>{
                 if(res.status === 204){
                     contactList.removeChild(contactList.childNodes[index]);
+                }else{
+                    displayErrScreen("could not delete contact");
                 }
             }).catch((err)=>{
-                console.log(err);
+                displayErrScreen("server error, could not delete contact");
             });
 }

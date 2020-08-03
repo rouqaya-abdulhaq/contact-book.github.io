@@ -2,13 +2,13 @@ import {createContact} from "../../contacts/contactCreate";
 import {validateContact} from '../../utilities/validation/validation';
 import {submitBtnToAlert} from '../domElements/buttonManipulation';
 import {extractContact,extractContactValues} from '../../utilities/extract';
+import {displayErrScreen} from '../../errHandler/errHandler';
 
 export const onEdit = (targetedContact,newContactInfo,contactId) =>{
     if(validateContact(newContactInfo)){
         editContact(targetedContact,newContactInfo,contactId);
         return true;
     }else{
-        console.log("wrong data");
         submitBtnToAlert(event);
         return false;
     }
@@ -31,7 +31,7 @@ const editContact = (targetedContact, newContactInfo,contactId) =>{
                 const newContact = createContact(extractedContactInfo);
                 editContactList(targetedContact, newContact);
             }).catch((err)=>{
-                console.log(err);
+                displayErrScreen("could not edit contact");
             });
 }
 
