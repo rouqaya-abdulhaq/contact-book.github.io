@@ -1,6 +1,8 @@
 import {createCancelBtn} from '../UI/button/buttons';
 
 import './styles/paletteList.css';
+import {userInfoCopy} from '../registration/user';
+import {updateStyle} from '../actions/style/style';
 
 const body = document.querySelector("body");
 const paletteArea = document.querySelector(".paletteArea");
@@ -51,4 +53,11 @@ const createPaletteBlock = (styleValue) =>{
 const onChangeStyle = (styleValue) =>{
   body.className = "";
   body.classList.add(styleValue);
+  updateStyleInDB(styleValue);
+}
+
+const updateStyleInDB = (style) =>{
+  if(userInfoCopy.userId){
+    updateStyle(style , userInfoCopy.userId, "token");
+  }
 }
