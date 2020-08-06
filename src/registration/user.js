@@ -1,12 +1,14 @@
 import {addContactToDom} from '../actions/domElements/addToDom';
 
 const title = document.querySelector(".title");
+const body = document.querySelector('body');
 
 
 let user = {
     userName : "",
     userId : 0,
-    contacts : []
+    contacts : [],
+    style : "default"
 }
 
 const initialUserState = {
@@ -21,6 +23,7 @@ export const updateUser = (userInfo) =>{
     if(userInfo){
         user.userName = userInfo.user_first_name;
         user.userId = userInfo.user_id;
+        user.style = userInfo.style;
         admitUser();
     }else{
         user = JSON.parse(JSON.stringify(initialUserState));
@@ -30,6 +33,7 @@ export const updateUser = (userInfo) =>{
 const admitUser = () =>{
     changeContactTitle(user.userName);
     fetchContacts(user.userId);
+    body.setAttribute("class",user.style);
     userInfoCopy = JSON.parse(JSON.stringify(user));
 }
 
