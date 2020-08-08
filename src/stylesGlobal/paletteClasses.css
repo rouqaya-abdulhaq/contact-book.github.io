@@ -1,38 +1,45 @@
 /*PALETTE STYLE CLASSES
     1- DEFAULT
     2- FLOWERY
-    3- SEA SIDE*/
+    3- SEA SIDE
+    4- oranges
+    5- vintage
+    6- winter
+    7- jungle
+    8- pastel
+    9- fire
+    10- gold*/
 
 /*1- DEFAULT*/
 .default ,.default .submitBtn, .default .colorList{
-    background: rgb(170, 27, 65);
+    background: #faf5ef;
 }
 
 .default header, .default .contactPopUps {
-    background:  rgb(232, 167, 102);
+    background:  #d7d1c9;
 }
 
-.default main{
-    background: rgb(219, 171, 122);
-    border-left-color: rgb(209, 160, 111);
+.default main, .default input::-webkit-auto-fill{
+    background: #99b19c;
+    border-left-color: #849b87;
  }
 
 .default header nav button{
-    background: rgb(79, 50, 53);
-   -webkit-box-shadow: 0px 26px 0px 0px rgb(54, 20, 7);
-   -moz-box-shadow: 0px 26px 0px 0px rgba(54, 20, 7);
-   box-shadow: 0px 11px 0px 0px rgb(54, 20, 7);
+    background: #672f2f;
+    -webkit-box-shadow: 0px 26px 0px 0px #4b2222;
+    -moz-box-shadow: 0px 26px 0px 0px #4b2222;
+    box-shadow: 0px 11px 0px 0px #4b2222;
 }
 
 .default .title{
-    background : rgb(210, 180, 140);
+    background : #849b87;
  }
 
 .default #logo{
-    background: rgb(161, 44, 83);
-    -webkit-box-shadow: 2px 2px 0px 2px rgb(65, 6, 34,1);
-     -moz-box-shadow: 2px 2px 0px 2px rgba(65, 6, 34,1);
-     box-shadow: 2px 2px 0px 2px rgba(65, 6, 34,1);
+    background: #672f2f;
+    -webkit-box-shadow: 2px 2px 0px 2px #4b2222;
+    -moz-box-shadow: 2px 2px 0px 2px #4b2222;
+    box-shadow: 2px 2px 0px 2px #4b2222;
  }
 /*-----------------------------------------------------------------------------------*/
 /*2- FLOWERY*/
@@ -46,13 +53,13 @@
 
 .flowery header nav button{
     background: rgb(235, 187, 185);
-   -webkit-box-shadow: 0px 26px 0px 0px rgb(194, 154, 152,1);
-   -moz-box-shadow: 0px 26px 0px 0px rgba(194, 154, 152,1);
-   box-shadow: 0px 11px 0px 0px rgb(194, 154, 152,1);
-   color: black;
+    -webkit-box-shadow: 0px 26px 0px 0px rgb(194, 154, 152,1);
+    -moz-box-shadow: 0px 26px 0px 0px rgba(194, 154, 152,1);
+    box-shadow: 0px 11px 0px 0px rgb(194, 154, 152,1);
+    color: black;
 }
 
-.flowery main{
+.flowery main, .flowery input::-webkit-auto-fill{
     background: rgb(244, 233, 229);
     border-left-color: rgb(241, 209, 198);
 }
@@ -64,8 +71,8 @@
  .flowery #logo{
     background: rgb(243, 197, 182);
     -webkit-box-shadow: 2px 2px 0px 2px rgb(214, 184, 174,1);
-     -moz-box-shadow: 2px 2px 0px 2px rgba(214, 184, 174,1);
-     box-shadow: 2px 2px 0px 2px rgba(214, 184, 174,1);
+    -moz-box-shadow: 2px 2px 0px 2px rgba(214, 184, 174,1);
+    box-shadow: 2px 2px 0px 2px rgba(214, 184, 174,1);
 }
 /*------------------------------------------------------------------------------------*/
 /*SEA SIDE*/
@@ -79,12 +86,12 @@
 
 .seaSide header nav button{
     background: rgb(2, 28, 68);
-   -webkit-box-shadow: 0px 26px 0px 0px rgb(0, 9, 20,1);
-   -moz-box-shadow: 0px 26px 0px 0px rgba(0, 9, 20,1);
-   box-shadow: 0px 11px 0px 0px rgb(0, 9, 20,1);
+    -webkit-box-shadow: 0px 26px 0px 0px rgb(0, 9, 20,1);
+    -moz-box-shadow: 0px 26px 0px 0px rgba(0, 9, 20,1);
+    box-shadow: 0px 11px 0px 0px rgb(0, 9, 20,1);
 }
 
-.seaSide main{
+.seaSide main, .seaSide input::-webkit-auto-fill{
     background: rgb(130, 212, 187);
     border-left-color: rgb(103, 212, 180);
 }
@@ -98,11 +105,219 @@
     box-shadow: 2px 2px 0px 2px rgba(57, 151, 148,1);
 }
 /*-------------------------------------------------------------------------------------*/
+/*oranges*/
+.oranges, .oranges .submitBtn, .oranges .colorList{
+    background: #ffeadb;
+}
+
+.oranges header, .oranges .contactPopUps{
+    background: #f7c5a8;
+}
+
+.oranges header nav button{
+    background: #679b9b;
+    -webkit-box-shadow: 0px 26px 0px 0px rgba(84, 131, 131,1);
+    -moz-box-shadow: 0px 26px 0px 0px rgba(84, 131, 131,1);
+    box-shadow: 0px 11px 0px 0px rgba(84, 131, 131,1);
+}
+
+.oranges main, .oranges input::-webkit-auto-fill{
+    background: #ff9a76;
+    border-left-color: #f78860;
+}
+.oranges .title{
+    background: #f78860;
+}
+.oranges #logo{
+    background: #679b9b;
+    -webkit-box-shadow: 2px 2px 0px 2px rgba(91, 156, 156,1);
+    -moz-box-shadow: 2px 2px 0px 2px rgba(91, 156, 156,1);
+    box-shadow: 2px 2px 0px 2px rgba(91, 156, 156,1);
+}
+/*-------------------------------------------------------------------------------------*/
+/*vintage*/
+.vintage, .vintage .submitBtn, .vintage .colorList{
+    background: #7d5e2a;
+}
+
+.vintage header, .vintage .contactPopUps{
+    background: #9dc6a7;
+}
+
+.vintage header nav button{
+    background: #231903;
+    -webkit-box-shadow: 0px 26px 0px 0px rgba(27, 19, 1,1);
+    -moz-box-shadow: 0px 26px 0px 0px rgba(27, 19, 1,1);
+    box-shadow: 0px 11px 0px 0px rgba(27, 19, 1,1);
+}
+
+.vintage main, .vintage input::-webkit-auto-fill{
+    background: #d1f5d3;
+    border-left-color: #bff7c1;
+}
+.vintage .title{
+    background: #bff7c1;
+}
+.vintage #logo{
+    background: #d1f5d3;
+    -webkit-box-shadow: 2px 2px 0px 2px rgba(166, 250, 169,1);
+    -moz-box-shadow: 2px 2px 0px 2px rgba(166, 250, 169,1);
+    box-shadow: 2px 2px 0px 2px rgba(166, 250, 169,1);
+}
+/*-------------------------------------------------------------------------------------*/
+/*winter*/
+.winter, .winter .submitBtn, .winter .colorList{
+    background: #204051;
+}
+
+.winter header, .winter .contactPopUps{
+    background: #84a9ac;
+}
+
+.winter header nav button{
+    background: #3b6978;
+    -webkit-box-shadow: 0px 26px 0px 0px #2d515e;
+    -moz-box-shadow: 0px 26px 0px 0px #2d515e;
+    box-shadow: 0px 11px 0px 0px #2d515e;
+}
+
+.winter main, .winter input::-webkit-auto-fill{
+    background: #cae8d5;
+    border-left-color: #acc5b5;
+}
+.winter .title{
+    background: #acc5b5;
+}
+.winter #logo{
+    background: #3b6978;
+    -webkit-box-shadow: 2px 2px 0px 2px #2d515e;
+    -moz-box-shadow: 2px 2px 0px 2px #2d515e;
+    box-shadow: 2px 2px 0px 2px #2d515e;
+}
+/*-------------------------------------------------------------------------------------*/
+/*jungle*/
+.jungle, .jungle .submitBtn, .jungle .colorList{
+    background: #96bb7c;
+}
+
+.jungle header, .jungle .contactPopUps{
+    background: #d6efc7;
+}
+
+.jungle header nav button{
+    background: #184d47;
+    -webkit-box-shadow: 0px 26px 0px 0px #133d38;
+    -moz-box-shadow: 0px 26px 0px 0px #133d38;
+    box-shadow: 0px 11px 0px 0px #133d38;
+}
+
+.jungle main, .jungle input::-webkit-auto-fill{
+    background: #eebb4d;
+    border-left-color: #d6a947;
+}
+.jungle .title{
+    background: #d6a947;
+}
+.jungle #logo{
+    background: #184d47;
+    -webkit-box-shadow: 2px 2px 0px 2px #133d38;
+    -moz-box-shadow: 2px 2px 0px 2px #133d38;
+    box-shadow: 2px 2px 0px 2px #133d38;
+}
+/*-------------------------------------------------------------------------------------*/
+/*pastel*/
+.pastel, .pastel .submitBtn, .pastel .colorList{
+    background: #e5cfe5;
+}
+
+.pastel header, .pastel .contactPopUps{
+    background: #f6def6;
+}
+
+.pastel header nav button{
+    background: #cff6cf;
+    -webkit-box-shadow: 0px 26px 0px 0px #b2dab2;
+    -moz-box-shadow: 0px 26px 0px 0px #b2dab2;
+    box-shadow: 0px 11px 0px 0px #b2dab2;
+    color: black;
+}
+
+.pastel main, .pastel input::-webkit-auto-fill{
+    background: #cfe5cf;
+    border-left-color: #accaac;
+}
+.pastel .title{
+    background: #accaac;
+}
+.pastel #logo{
+    background: #cff6cf;
+    -webkit-box-shadow: 2px 2px 0px 2px #b2dab2;
+    -moz-box-shadow: 2px 2px 0px 2px #b2dab2;
+    box-shadow: 2px 2px 0px 2px #b2dab2;
+}
+/*-------------------------------------------------------------------------------------*/
+/*fire*/
+.fire, .fire .submitBtn, .fire .colorList{
+    background: #2f2519;
+}
+
+.fire header, .fire .contactPopUps{
+    background: #fa7d09;
+}
+
+.fire header nav button{
+    background: #2f2519;
+    -webkit-box-shadow: 0px 26px 0px 0px #1f1811;
+    -moz-box-shadow: 0px 26px 0px 0px #1f1811;
+    box-shadow: 0px 11px 0px 0px #1f1811;
+}
+
+.fire main, .fire input::-webkit-auto-fill{
+    background: #ff4301;
+    border-left-color: #e63f02;
+}
+.fire .title{
+    background: #e63f02;
+}
+.fire #logo{
+    background: #2f2519;
+    -webkit-box-shadow: 2px 2px 0px 2px #1f1811;
+    -moz-box-shadow: 2px 2px 0px 2px #1f1811;
+    box-shadow: 2px 2px 0px 2px #1f1811;
+}
+/*-------------------------------------------------------------------------------------*/
+/*gold*/
+.gold, .gold .submitBtn, .gold .colorList{
+    background: #e0ab5b;
+}
+
+.gold header, .gold .contactPopUps{
+    background: #94784c;
+}
+
+.gold header nav button{
+    background: #6e4c41;
+    -webkit-box-shadow: 0px 26px 0px 0px #583d34;
+    -moz-box-shadow: 0px 26px 0px 0px #583d34;
+    box-shadow: 0px 11px 0px 0px #583d34;
+}
+
+.gold main, .gold input::-webkit-auto-fill{
+    background: #ffe76a;
+    border-left-color: #e2cc5c;
+}
+.gold .title{
+    background: #e2cc5c;
+}
+.gold #logo{
+    background: #6e4c41;
+    --webkit-box-shadow: 2px 2px 0px 2px #583d34;
+    -moz-box-shadow: 2px 2px 0px 2px #583d34;
+    box-shadow: 2px 2px 0px 2px #583d34;
+}
+/*-------------------------------------------------------------------------------------*/
 /*TEMPORARY*/
 .submitBtn:hover , .submitBtn:focus{
     background: green;
 }
  
-.vintage{
-    background: firebrick;
-}

@@ -7,7 +7,8 @@ import {updateStyle} from '../actions/style/style';
 const body = document.querySelector("body");
 const paletteArea = document.querySelector(".paletteArea");
 
-const paletteStyleClasses = ["default","flowery","seaSide","vintage"];
+const paletteStyleClasses = ["default","flowery","seaSide","oranges","vintage",
+                            "winter","jungle","pastel","fire","gold"];
 
 export const appendPaletteList = () =>{
   const paletteList = createPaletteList();
