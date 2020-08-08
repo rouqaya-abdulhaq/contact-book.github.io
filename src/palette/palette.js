@@ -59,6 +59,6 @@ const onChangeStyle = (styleValue) =>{
 
 const updateStyleInDB = (style) =>{
   if(userInfoCopy.userId){
-    updateStyle(style , userInfoCopy.userId, "token");
+    updateStyle(style , userInfoCopy.userId, userInfoCopy.token);
   }
 }
