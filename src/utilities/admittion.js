@@ -4,8 +4,7 @@ import {displayErrScreen} from '../errHandler/errHandler';
 
 export const userAdmittionHandler = (user,msg) =>{
     if(user){
-        console.log(user);
-        updateUser(user.user);
+        updateUser(user);
         routeChange('contactList'); 
     }else{
         displayErrScreen(msg);

@@ -8,7 +8,8 @@ let user = {
     userName : "",
     userId : 0,
     contacts : [],
-    style : "default"
+    style : "default",
+    token : "",
 }
 
 const initialUserState = {
@@ -21,9 +22,10 @@ export let userInfoCopy = {};
 
 export const updateUser = (userInfo) =>{
     if(userInfo){
-        user.userName = userInfo.user_first_name;
-        user.userId = userInfo.user_id;
-        user.style = userInfo.style;
+        user.userName = userInfo.user.user_first_name;
+        user.userId = userInfo.user.user_id;
+        user.style = userInfo.user.style;
+        user.token = userInfo.data.accessToken;
         admitUser();
     }else{
         user = JSON.parse(JSON.stringify(initialUserState));
