@@ -24,7 +24,7 @@ export const updateUser = (userInfo) =>{
     if(userInfo){
         user.userName = userInfo.user.user_first_name;
         user.userId = userInfo.user.user_id;
-        user.style = userInfo.user.style;
+        user.style = userInfo.user.style || "default";
         user.token = userInfo.data.accessToken;
         admitUser();
     }else{
