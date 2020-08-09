@@ -3,6 +3,7 @@ import {validateContact} from '../../utilities/validation/validation';
 import {submitBtnToAlert} from '../domElements/buttonManipulation';
 import {extractContact,extractContactValues} from '../../utilities/extract';
 import {displayErrScreen} from '../../errHandler/errHandler';
+import {userInfoCopy} from '../../registration/user';
 
 export const onEdit = (targetedContact,newContactInfo,contactId) =>{
     if(validateContact(newContactInfo)){
@@ -21,7 +22,8 @@ const editContact = (targetedContact, newContactInfo,contactId) =>{
             method : 'PUT',
             headers : {
                 'Accept': 'application/json',
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                "x-access-token" : userInfoCopy.token
             },
             body : JSON.stringify(contact)
             }).then((res)=>{

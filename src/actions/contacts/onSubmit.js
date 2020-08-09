@@ -23,7 +23,8 @@ const addContact = (contactInfo) =>{
             method : 'PUT',
             headers : {
                 'Accept': 'application/json',
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                "x-access-token" : userInfoCopy.token
             },
             body : JSON.stringify(extractedContact)
             }).then((res)=>{
