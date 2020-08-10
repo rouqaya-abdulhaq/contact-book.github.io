@@ -1,11 +1,11 @@
 import {updateUser} from '../registration/user';
-import {routeChange} from '../tempRouting';
+import {pageChange} from '../switchPage';
 import {displayErrScreen} from '../errHandler/errHandler';
 
 export const userAdmittionHandler = (user,msg) =>{
     if(user){
         updateUser(user);
-        routeChange('contactList'); 
+        pageChange('contactList'); 
     }else{
         displayErrScreen(msg);
     }

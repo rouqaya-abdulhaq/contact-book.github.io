@@ -1,4 +1,4 @@
-import {routeChange} from '../../tempRouting';
+import {pageChange} from '../../switchPage';
 import {appendSignInForm} from '../../registration/signIn/signInForm';
 import {updateUser} from '../../registration/user';
 
@@ -24,5 +24,5 @@ const changeStyleToDefault = () =>{
 
 const goToSignIn = () =>{
     appendSignInForm();
-    routeChange('signIn');
+    pageChange('signIn');
 }

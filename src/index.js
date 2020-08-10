@@ -1,6 +1,6 @@
 import {displayContactForm} from './contacts/contactForm/contactForm';
 import {appendPaletteList} from './palette/palette';
-import {routeChange} from './tempRouting';
+import {pageChange} from './switchPage';
 
 import {onSignOut} from './actions/registartion/registrationActions';
 import {appendSignUpForm} from './registration/signUp/signUpForm';
@@ -45,11 +45,11 @@ appendSignInForm();
 
 logInNav.addEventListener('click',()=>{
     appendSignInForm();
-    routeChange('signIn')
+    pageChange('signIn')
 });
 signUpNav.addEventListener('click',()=>{
     appendSignUpForm();
-    routeChange('signUp')
+    pageChange('signUp')
 });
 signOutNav.addEventListener('click',onSignOut);
 

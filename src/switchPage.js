@@ -1,5 +1,3 @@
-//temporary routing solution until server is built
-
 const contactMain = document.querySelector("#displayCont");
 const signUpMain = document.querySelector("#signUpMain");
 const signInMain = document.querySelector("#signInMain");
@@ -9,7 +7,7 @@ const outHeader = document.querySelector("#outNavigation");
 const header = document.querySelector("header");
 
 
-export const routeChange = (route) =>{
+export const pageChange = (route) =>{
     switch(route){
         case 'signIn' :
             contactMain.classList.add("hide");
