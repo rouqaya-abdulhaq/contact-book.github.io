@@ -2,6 +2,7 @@ import {userAdmittionHandler} from '../../utilities/admittion';
 import {validateSignUpForm} from '../../utilities/validation/validation';
 import {submitBtnToAlert} from '../domElements/buttonManipulation';
 import {displayErrScreen} from '../../errHandler/errHandler';
+import {proxyUrl} from '../assets/constants';
 
 export const onSignUp = (userInfo) =>{
     if(validateSignUpForm(userInfo)){
@@ -14,7 +15,7 @@ export const onSignUp = (userInfo) =>{
 }
 
 const signUser = (userInfo) =>{
-    fetch('http://localhost:5000/signUp',{
+    fetch(proxyUrl + 'https://contact-book-backend.herokuapp.com/signUp',{
         method : 'POST',
         body : JSON.stringify({ 
             firstName : userInfo.signUpFirstName.value,

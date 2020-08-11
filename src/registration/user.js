@@ -1,4 +1,5 @@
 import {addContactToDom} from '../actions/domElements/addToDom';
+import {proxyUrl} from '../actions/assets/constants';
 
 const title = document.querySelector(".title");
 const body = document.querySelector('body');
@@ -44,7 +45,7 @@ const changeContactTitle = (name)=>{
 }
 
 const fetchContacts = (id) =>{
-    fetch(`http://localhost:5000/loadContacts?id=${id}`,{
+    fetch(proxyUrl + `https://contact-book-backend.herokuapp.com/loadContacts?id=${id}`,{
         method : 'GET',
         headers : {
             'Accept': 'application/json',
