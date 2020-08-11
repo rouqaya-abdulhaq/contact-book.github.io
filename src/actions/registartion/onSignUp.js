@@ -2,7 +2,7 @@ import {userAdmittionHandler} from '../../utilities/admittion';
 import {validateSignUpForm} from '../../utilities/validation/validation';
 import {submitBtnToAlert} from '../domElements/buttonManipulation';
 import {displayErrScreen} from '../../errHandler/errHandler';
-import {proxyUrl} from '../assets/constants';
+import {proxyUrl} from '../../constants/const';
 
 export const onSignUp = (userInfo) =>{
     if(validateSignUpForm(userInfo)){

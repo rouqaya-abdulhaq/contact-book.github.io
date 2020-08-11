@@ -2,7 +2,7 @@ import {validateSignInForm} from '../../utilities/validation/validation';
 import {userAdmittionHandler} from '../../utilities/admittion';
 import {submitBtnToAlert} from '../domElements/buttonManipulation';
 import {displayErrScreen} from '../../errHandler/errHandler';
-import {proxyUrl} from '../assets/constants';
+import {proxyUrl} from '../../constants/const';
 
 export const onSignIn = (userInfo) =>{
     if(validateSignInForm(userInfo)){

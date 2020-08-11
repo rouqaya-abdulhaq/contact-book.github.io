@@ -1,4 +1,4 @@
-import {proxyUrl} from '../assets/constants';
+import {proxyUrl} from '../../constants/const';
 
 export const updateStyle = (style, userId,token) =>{
     fetch(proxyUrl + 'https://contact-book-backend.herokuapp.com/selectStyle',{

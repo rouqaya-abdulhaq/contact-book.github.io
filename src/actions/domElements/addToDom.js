@@ -1,7 +1,7 @@
 import {createContact} from "../../contacts/contactCreate";
 import {extractContact} from '../../utilities/extract';
+import {contactList} from '../../constants/const';
 
-const contactList = document.querySelector("#contactsList");
 
 export const addContactToDom = (contactInfo) => {
     const contactInfoExtract = extractContact(contactInfo);

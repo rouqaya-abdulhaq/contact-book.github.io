@@ -4,7 +4,7 @@ import {submitBtnToAlert} from '../domElements/buttonManipulation';
 import {extractContact,extractContactValues} from '../../utilities/extract';
 import {displayErrScreen} from '../../errHandler/errHandler';
 import {userInfoCopy} from '../../registration/user';
-import {proxyUrl} from '../assets/constants';
+import {proxyUrl} from '../../constants/const';
 
 export const onEdit = (targetedContact,newContactInfo,contactId) =>{
     if(validateContact(newContactInfo)){

@@ -4,7 +4,7 @@ import {addContactToDom} from '../domElements/addToDom';
 import {userInfoCopy} from '../../registration/user';
 import {extractContactValues} from '../../utilities/extract';
 import {displayErrScreen} from '../../errHandler/errHandler';
-import {proxyUrl} from '../assets/constants';
+import {proxyUrl} from '../../constants/const';
 
 export const onSubmit = (contactInfo) => {
     if(validateContact(contactInfo)){

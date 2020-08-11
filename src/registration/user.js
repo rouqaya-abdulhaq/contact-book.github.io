@@ -1,5 +1,5 @@
 import {addContactToDom} from '../actions/domElements/addToDom';
-import {proxyUrl} from '../actions/assets/constants';
+import {proxyUrl} from '../constants/const';
 
 const title = document.querySelector(".title");
 const body = document.querySelector('body');

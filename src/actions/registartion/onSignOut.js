@@ -1,8 +1,8 @@
 import {pageChange} from '../../switchPage';
 import {appendSignInForm} from '../../registration/signIn/signInForm';
 import {updateUser} from '../../registration/user';
+import {contactList} from '../../constants/const';
 
-const contactList = document.querySelector("#contactsList");
 const title = document.querySelector(".title");
 const body = document.querySelector("body");
 

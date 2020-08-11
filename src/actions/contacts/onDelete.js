@@ -1,7 +1,6 @@
-const contactList = document.querySelector("#contactsList"); //TEMPORARY
 import {displayErrScreen} from '../../errHandler/errHandler';
 import {userInfoCopy} from '../../registration/user';
-import {proxyUrl} from '../assets/constants';
+import {proxyUrl,contactList} from '../../constants/const';
 
 export const onDelete = (index,id) =>{
     fetch(proxyUrl + 'https://contact-book-backend.herokuapp.com/contactDelete',{
