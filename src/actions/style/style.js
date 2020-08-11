@@ -1,5 +1,7 @@
+import {proxyUrl} from '../assets/constants';
+
 export const updateStyle = (style, userId,token) =>{
-    fetch('http://localhost:5000/selectStyle',{
+    fetch(proxyUrl + 'https://contact-book-backend.herokuapp.com/selectStyle',{
           method : 'POST',
           headers : {
               'Content-Type': 'application/json',
