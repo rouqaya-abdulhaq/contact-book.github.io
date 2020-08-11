@@ -4,6 +4,7 @@ import {submitBtnToAlert} from '../domElements/buttonManipulation';
 import {extractContact,extractContactValues} from '../../utilities/extract';
 import {displayErrScreen} from '../../errHandler/errHandler';
 import {userInfoCopy} from '../../registration/user';
+import {proxyUrl} from '../assets/constants';
 
 export const onEdit = (targetedContact,newContactInfo,contactId) =>{
     if(validateContact(newContactInfo)){
@@ -18,7 +19,7 @@ export const onEdit = (targetedContact,newContactInfo,contactId) =>{
 const editContact = (targetedContact, newContactInfo,contactId) =>{
     const contact = extractContactValues(newContactInfo);
     contact.contactId = contactId;
-    fetch('http://localhost:5000/contactEdit',{
+    fetch(proxyUrl + 'https://contact-book-backend.herokuapp.com/contactEdit',{
             method : 'PUT',
             headers : {
                 'Accept': 'application/json',
