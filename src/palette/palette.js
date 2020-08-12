@@ -3,8 +3,8 @@ import {createCancelBtn} from '../UI/button/buttons';
 import './styles/paletteList.css';
 import {userInfoCopy} from '../registration/user';
 import {updateStyle} from '../actions/style/style';
+import {body} from '../constants/const';
 
-const body = document.querySelector("body");
 const paletteArea = document.querySelector(".paletteArea");
 
 const paletteStyleClasses = ["default","flowery","seaSide","oranges","vintage",

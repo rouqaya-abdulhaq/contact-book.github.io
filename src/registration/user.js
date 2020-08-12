@@ -1,8 +1,5 @@
 import {addContactToDom} from '../actions/domElements/addToDom';
-import {proxyUrl} from '../constants/const';
-
-const title = document.querySelector(".title");
-const body = document.querySelector('body');
+import {proxyUrl,body,title} from '../constants/const';
 
 
 let user = {

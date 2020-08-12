@@ -1,10 +1,8 @@
 import {pageChange} from '../../switchPage';
 import {appendSignInForm} from '../../registration/signIn/signInForm';
 import {updateUser} from '../../registration/user';
-import {contactList} from '../../constants/const';
+import {contactList,body,title} from '../../constants/const';
 
-const title = document.querySelector(".title");
-const body = document.querySelector("body");
 
 export const onSignOut = () =>{
     updateUser(null);
